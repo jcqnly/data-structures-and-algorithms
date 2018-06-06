@@ -6,3 +6,6 @@ Given a sorted 1D array and a key, find the index of the key.  If the key is not
 
 ## Solution
 ![binary_search](https://github.com/jcqnly/data-structures-and-algorithms/blob/master/assets/binarySearch.png)
+
+## Future Stretch Goal
+Test this code with a larger array.
