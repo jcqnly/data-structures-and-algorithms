@@ -9,7 +9,9 @@ namespace array_binary_search
             int[] givenArray = new int[] { 4, 8, 15, 16, 23, 42};
             int key = 100;
             //pass the givenArray and key to the method to search
-            BinarySearch(givenArray, key);
+            int result = BinarySearch(givenArray, key);
+            //assign the BinarySearch method call to result in order for the returned -1 to show
+            Console.WriteLine(result);
             Console.ReadLine();
         }
 
@@ -37,8 +39,6 @@ namespace array_binary_search
                     min = mid;
                 }
             }
-            //print for show
-            Console.WriteLine($"{key} was not found");
             return -1;
         }
     }
