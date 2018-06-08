@@ -6,13 +6,26 @@ namespace largest_product
     {
         static void Main(string[] args)
         {
-            int[,] givenArray = new int[,] { { 1, 2, 1 }, { 2, 4, 2 }, { 3, 6, 8 }, { 7, 8, 1 } };
+            int[][] myArray = new int[][] 
+            { 
+                new int[]{ 1, 3, 19 }, 
+                new int[]{ 5, 7, 23 }, 
+                new int[]{ 11, 13, 17 }
+            };
 
-            AdjacentProduct(givenArray);
+            int[,] numbers = new int[,]
+                {
+                    { 1, 2, 1 },
+                    { 2, 4, 2 },
+                    { 3, 6, 8 },
+                    { 7, 8, 1 }
+                };
+            //will attempt one day
+            //LargestProduct(numbers);
             Console.Read();
         }
 
-        static void AdjacentProduct(int[,] givenArray)
+        static void LargestProduct(int[][] matrix)
         {
             for (var i = 0; i < givenArray.Length - 1; i++)
             {

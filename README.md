@@ -6,4 +6,4 @@
 
 2. [Binary Search](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/binary_search)
 
-3. [Adjacent Product]()
+3. [Largest Product](Challenges/largest_product)
