@@ -104,7 +104,6 @@ namespace SinglyLinkList
             }
         }
 
-        //Add after O(N)
         /// <summary>
         /// Add a new node after a given value
         /// existingNode is the search key, so that we can put the newNode in front of it
@@ -124,13 +123,16 @@ namespace SinglyLinkList
             while (Current.Next != null)
             {
                 if (Current.Value == existingNode.Value)
-                {
-                    newNode.Next = existingNode.Next;
-                    existingNode.Next = newNode;
+                {//firstly, point the new node to the next value from the current, so the chain is not broken
+                    newNode.Next = Current.Next;
+                    //then set the next node after current to the newNode
+                    Current.Next = newNode;
+                    return;
                 }
-                Current = newNode;
+                //if we don't find the value we want to add after
+                //this well reset the current value to the next one
+                Current = Current.Next;
             }
-
         }
 
         /// <summary>
