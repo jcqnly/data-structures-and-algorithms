@@ -4,7 +4,7 @@ using System.Text;
 
 namespace KthElementFromEnd
 {
-    class LinkList
+    public class LinkList
     {
         public Node Head { get; set; }
         public Node Current { get; set; }
