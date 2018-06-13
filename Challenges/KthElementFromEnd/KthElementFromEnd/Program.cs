@@ -2,12 +2,13 @@
 
 namespace KthElementFromEnd
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Ahoy!");
             TestLL();
+            Console.Read();
         }
 
         /// <summary>
@@ -16,39 +17,20 @@ namespace KthElementFromEnd
         /// </summary>
         static void TestLL()
         {
-            //Add()
-            //the order will be 19 - 2 - 8 - 31 - 10
+            //Add nodes to a link list
+            //the order will be 42 - 19 - 2 - 8 - 31 - 10
             LinkList ll = new LinkList(new Node(10));
             ll.Add(new Node(31));
             ll.Add(new Node(8));
             ll.Add(new Node(2));
             ll.Add(new Node(19));
+            ll.Add(new Node(42));
 
-            //Print()
-            //Output will be 19 - 2 - 8 - 31 - 10
-            ll.Print();
+            //passing a k value to KthElementFromEnd()
+            Node kEth = ll.KthElementFromEnd(0);
+            Console.WriteLine($"Let's find K element and it's {kEth.Value}\n");
 
-            //Find()
-            //found points to a reference in memory that is returned
-            //If that value is null, then the output would be null
-            //In this case, it's not null
-            //finding where 31 is:
-            Node found = ll.Find(31);
-            Console.WriteLine($"Let's find node 31 and it's at {found.Value}\n");
-
-            //AddBefore()
-            Console.WriteLine("AddBefore()");
-            ll.AddBefore(new Node(33), new Node(2));
-            ll.Print();
-
-            //AddAfter()
-            Console.WriteLine("AddAfter()");
-            ll.AddAfter(new Node(10101), new Node(8));
-            ll.Print();
-
-            //AddLast()
-            Console.WriteLine("AddLast()");
-            ll.AddLast(new Node(666));
+            //Output will be 4219 - 2 - 8 - 31 - 10
             ll.Print();
         }
     }
