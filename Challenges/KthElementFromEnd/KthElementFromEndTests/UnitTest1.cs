@@ -10,7 +10,6 @@ namespace KthElementFromEndTests
         [InlineData(0, 4)]//test that this works if k = 0
         [InlineData(1, 8)]
         [InlineData(4, 23)]
-        //[InlineData()]
         public void CanSearchForK(int value, int expected)
         {
             //arrange
