@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SinglyLinkList
 {
-    class LinkList
+    public class LinkList
     {
         public Node Head { get; set; }
 
@@ -25,14 +25,22 @@ namespace SinglyLinkList
         /// </summary>
         /// <param name="node"></param>
         public void Add(Node node)
-        {   //move the Head to the next node in line
+        {
+            //point the head to Current
+            Current = Head;
+            //move the Head to the next node in line
             node.Next = Head;
-            //ADD EXPLANATION
+            //set the node, to add, as the Head
             Head = node;
+            //point the head to Current
             Current = Head;
         }
 
-        //Finding a node O(N)
+        /// <summary>
+        /// Find a node, which takes O(N) time
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public Node Find(int value)
         {   //set the Head to the Current as a starting point:
             Current = Head;
@@ -59,16 +67,18 @@ namespace SinglyLinkList
         /// </summary>
         /// <param name="node"></param>
         public void Print()
-        {   //set the Head to the Current as a starting point:
+        {
+            Console.WriteLine("Printing out: \n");
+            //set the Head to the Current as a starting point:
             Current = Head;
             //keep looping if the next value doesn't point to null
             while (Current.Next != null)
             {   //if it doesn't point to null, print out the value
-                Console.Write($"{Current.Value} -- ");
+                Console.Write($"  {Current.Value}  ");
                 //set the current value to the next value to repeat the process
                 Current = Current.Next;
             }
-
+            Console.WriteLine("\n");
             //to visually see which is the last node pointing to null
             Console.Write($"{Current.Value}");
         }
@@ -116,7 +126,7 @@ namespace SinglyLinkList
             //accounting if the list is only 1 node long:
             if (Head.Value == existingNode.Value)
             {
-                Current.Next = newNode;
+                Add(newNode);
                 return;
             }
             //keep traversing if the last node is not encountered
@@ -130,7 +140,7 @@ namespace SinglyLinkList
                     return;
                 }
                 //if we don't find the value we want to add after
-                //this well reset the current value to the next one
+                //this well reset the current value to the next one, so we can keep traversing
                 Current = Current.Next;
             }
         }
