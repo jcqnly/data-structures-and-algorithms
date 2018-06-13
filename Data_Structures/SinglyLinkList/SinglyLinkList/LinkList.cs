@@ -80,7 +80,7 @@ namespace SinglyLinkList
             }
             Console.WriteLine("\n");
             //to visually see which is the last node pointing to null
-            Console.Write($"{Current.Value}");
+            Console.Write($"Last value is: {Current.Value}\n");
         }
 
         /// <summary>
@@ -160,6 +160,5 @@ namespace SinglyLinkList
             //when that last node is found, set its pointer to new node
             Current.Next = newNode;
         }
-
     }
 }
