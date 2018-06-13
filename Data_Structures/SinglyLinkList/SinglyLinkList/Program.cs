@@ -17,16 +17,19 @@ namespace SinglyLinkList
             LinkList ll = new LinkList(new Node(10));
             ll.Add(new Node(15));
             ll.Add(new Node(20));
+            ll.Add(new Node(22));
+            ll.Add(new Node(31));
 
             //Printing out the list
-            //Output will be 20 - 15 - 10
+            //Output will be 31 - 22 - 20 - 15 - 10
             ll.Print();
-
             //Node found points to a reference in memory that is returned
             Node found = ll.Find(10);
             //If that value is null, then the output would be null
             //In this case, it's not null
-            Console.WriteLine($"Let's find node 10 and it's at {found.Value}");
+            Console.WriteLine($"Let's find node 10 and it's at {found.Value}\n");
+
+            ll.Find(31);
         }
     }
 }
