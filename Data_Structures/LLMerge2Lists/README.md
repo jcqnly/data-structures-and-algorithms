@@ -1,13 +1,12 @@
 # Merge 2 Singly Linked Lists
-This challenge involves finding a number that is **k** distance away on a singly linked list.
-Since singly linked lists only allow direction going forward, we decided 
-to find the length of the list first by incrementing a counter, as a distance marker, as we traversed the singly linked list.
-
-After determining the length, we traversed the list again, but only went the distance minus the value of **k**.
 
 ## Challenge
-Write a method for a singly linked list that takes a number, **k**, as a parameter.
-Return the node that is **k** from the end of the singly linked list.
+Given 2 singly linked lists, merge the two and return the newly merged list.
+Our group decided to make a third list to store the merged list, which created a space complexity of O(N).
+We started off by setting a Current pointer to both the heads of each lists.
+First, we added the value of the 1st list to the 3rd list.  Then the first value of the 2nd list is added to the third list.
+Then we started traversing through the 1st and 2nd lists as long as neither is null and added those values to the 3rd list.
+
 
 ## Solution
 ![Merge 2 Singly Linked List](/assets/KthElementFromEnd.jpg)
