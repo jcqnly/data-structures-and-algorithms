@@ -32,7 +32,9 @@ namespace LLMerge2Lists
             //the order will be 19 - 2 - 8 - 31 
             llTwo.Print();
 
+            //creating a new link list
             LinkList llThree = new LinkList();
+            //passing the first and second linked list into the merge method found in LinkList.cs
             llThree.Merge2(llOne, llTwo);
 
         }

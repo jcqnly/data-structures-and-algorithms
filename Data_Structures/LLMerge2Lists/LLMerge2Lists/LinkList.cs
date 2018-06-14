@@ -19,34 +19,44 @@ namespace LLMerge2Lists
             Current = node;
         }
 
+        /// <summary>
+        /// Merge 2 given singly linked lists
+        /// </summary>
+        /// <param name="llOne"></param>
+        /// <param name="llTwo"></param>
         public void Merge2(LinkList llOne, LinkList llTwo)
         {
+            //set the head to the current node of each of the 2 created lists
             llOne.Current = llOne.Head;
             llTwo.Current = llTwo.Head;
+            //create the 3rd link list to store information to
             LinkList llThree = new LinkList();
-            llThree.Add(llOne.Current);
-            llThree.AddLast(llTwo.Current);
+            //add the value of the current node of llOne as the first node of llThree
+            llThree.Add(new Node(llOne.Current.Value));
+            //set the value of the next node of llTwo as the 2nd node of llThree
+            llThree.AddLast(new Node(llTwo.Current.Value));
+            //reset the Current nodes of both llOne and llTwo
             llOne.Current = llOne.Current.Next;
             llTwo.Current = llTwo.Current.Next;
 
+            //Loop through both llOne and llTwo as long as neither is not null
             while (llOne.Current.Next != null || llTwo.Current.Next != null)
             {
+                //if the current value of llOne is not null
                 if (llOne.Current != null)
-                {
-                    Console.WriteLine("in beginning first if");
+                {   //add the value of that node to the end llThree
                     llThree.AddLast(new Node(llOne.Current.Next.Value));
-                    Console.WriteLine("in first if");
+                    //reset the Current pointer to the next node of llOne
                     llOne.Current = llOne.Current.Next;
                 }
-
+                //if the current value of llTwo is not null
                 if (llTwo.Current.Next != null)
                 {
-                    Console.WriteLine("in beginning second if");
+                    //add the value of that node to the end llThree
                     llThree.AddLast(new Node(llTwo.Current.Next.Value));
-                    Console.WriteLine("in second if");
+                    //reset the Current pointer to the next node of llTwo
                     llTwo.Current = llTwo.Current.Next;
                 }
-                Console.WriteLine("out");
             }
             Console.WriteLine("The newly merged list is: \n");
             llThree.Print();
