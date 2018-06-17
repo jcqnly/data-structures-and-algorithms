@@ -19,19 +19,24 @@ namespace KthElementFromEnd
         {
             //Add nodes to a link list
             //the order will be 42 - 19 - 2 - 8 - 31 - 10
-            LinkList ll = new LinkList(new Node(10));
+            LinkList ll = new LinkList();
+            ll.Add(new Node(10));
             ll.Add(new Node(31));
             ll.Add(new Node(8));
             ll.Add(new Node(2));
             ll.Add(new Node(19));
             ll.Add(new Node(42));
-
-            //passing a k value to KthElementFromEnd()
-            Node kEth = ll.KthElementFromEnd(0);
-            Console.WriteLine($"Let's find K element and it's {kEth.Value}\n");
-
-            //Output will be 4219 - 2 - 8 - 31 - 10
+            //Output will be 42 - 19 - 2 - 8 - 31 - 10
+            Console.WriteLine("The singly linked list is: ");
             ll.Print();
+
+            //k value that passes
+            Node kEth = ll.KthElementFromEnd(5);
+            Console.WriteLine($"This is the value when k is 5 from the end: {kEth.Value}\n");
+
+            //k value that doesn't pass
+            ll.KthElementFromEnd(6);
+            Console.WriteLine($"This is the value when k is 6 from the end: {kEth.Value}\n");
         }
     }
 }

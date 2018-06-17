@@ -13,7 +13,7 @@ namespace KthElementFromEnd
         /// Establish where Head and Current start
         /// </summary>
         /// <param name="node"></param>
-        public LinkList(Node node)
+        public void SinglyLinkList(Node node)
         {
             Head = node;
             Current = node;
@@ -43,8 +43,15 @@ namespace KthElementFromEnd
             //as long as the 2nd counter is less than the position, increment the counter
             while (counter2 < (counter - k))
             {
+                
                 Current = Current.Next;
                 counter2++;
+              
+            }
+            //add excetpion handling for when k exceeds the length of the linked list
+            if (k > counter)
+            {
+                throw new ArgumentException("The given k value is longer than the length of the singly linked list", nameof(k));
             }
             //Current will be on the node that's k from the end after the 2nd while loop
             return Current;
@@ -74,7 +81,6 @@ namespace KthElementFromEnd
         /// <param name="node"></param>
         public void Print()
         {
-            Console.WriteLine("Printing out: \n");
             //set the Head to the Current as a starting point:
             Current = Head;
             //keep looping if the next value doesn't point to null
@@ -84,9 +90,8 @@ namespace KthElementFromEnd
                 //set the current value to the next value to repeat the process
                 Current = Current.Next;
             }
+            Console.Write($"  {Current.Value}  ");
             Console.WriteLine("\n");
-            //to visually see which is the last node pointing to null
-            Console.Write($"Last value is: {Current.Value}\n");
         }
     }
 }
