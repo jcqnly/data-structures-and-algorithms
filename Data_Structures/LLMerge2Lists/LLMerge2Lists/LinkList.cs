@@ -8,6 +8,9 @@ namespace LLMerge2Lists
     {
         public Node Head { get; set; }
         public Node Current { get; set; }
+        //Runner nodes as additional points
+        public Node Runner1 { get; set; }
+        public Node Runner2 { get; set; }
 
         /// <summary>
         /// Set the initial values of Head and Current to the beginnig of the list
@@ -24,42 +27,42 @@ namespace LLMerge2Lists
         /// </summary>
         /// <param name="llOne"></param>
         /// <param name="llTwo"></param>
-        public void Merge2(LinkList llOne, LinkList llTwo)
+        public Node Merge2(LinkList llOne, LinkList llTwo)
         {
-            //set the head to the current node of each of the 2 created lists
+            //set an initial value for the runner nodes
+            Runner1 = llOne.Head;
+            Runner2 = llTwo.Head;
+            //set an initial value for the current nodes of each list
             llOne.Current = llOne.Head;
             llTwo.Current = llTwo.Head;
-            //create the 3rd link list to store information to
-            LinkList llThree = new LinkList();
-            //add the value of the current node of llOne as the first node of llThree
-            llThree.Add(new Node(llOne.Current.Value));
-            //set the value of the next node of llTwo as the 2nd node of llThree
-            llThree.AddLast(new Node(llTwo.Current.Value));
-            //reset the Current nodes of both llOne and llTwo
-            llOne.Current = llOne.Current.Next;
-            llTwo.Current = llTwo.Current.Next;
 
-            //Loop through both llOne and llTwo as long as neither is not null
-            while (llOne.Current.Next != null || llTwo.Current.Next != null)
+            //Loop through both llOne and llTwo as long as the next node neither is not null
+            while ((llOne.Current.Next != null) && (llTwo.Current.Next != null))
             {
-                //if the current value of llOne is not null
-                if (llOne.Current != null)
-                {   //add the value of that node to the end llThree
-                    llThree.AddLast(new Node(llOne.Current.Next.Value));
-                    //reset the Current pointer to the next node of llOne
-                    llOne.Current = llOne.Current.Next;
-                }
-                //if the current value of llTwo is not null
-                if (llTwo.Current.Next != null)
-                {
-                    //add the value of that node to the end llThree
-                    llThree.AddLast(new Node(llTwo.Current.Next.Value));
-                    //reset the Current pointer to the next node of llTwo
-                    llTwo.Current = llTwo.Current.Next;
-                }
+                //move the runner nodes along both lists
+                Runner1 = llOne.Current.Next;
+                Runner2 = llTwo.Current.Next;
+                //this will place the node of llOne before the nodes of llTwo
+                llOne.Current.Next = llTwo.Current;
+                //point the node on llTwo to the runner, which is pointing to the next node in llOne
+                llTwo.Current.Next = Runner1;
+                //reset the nodes of both lists
+                llTwo.Current = Runner2;
+                llOne.Current = Runner1;
             }
-            Console.WriteLine("The newly merged list is: \n");
-            llThree.Print();
+            //accounting for when 1 list is longer than the other
+            if ((llTwo.Current.Next == null) && (llOne.Current.Next != null))
+            {
+                //set the final node of llTwo as the node of the next node along llOne
+                llTwo.Current.Next = llOne.Current.Next;
+                llOne.Current.Next = llTwo.Current;
+            }//if the opposite condition is true, then...
+            else
+            {
+                //set the findal node of llOneto the current node at llTwo
+                llOne.Current.Next = llTwo.Current;
+            }
+            return llOne.Head;          
         }
 
         /// <summary>
@@ -79,6 +82,30 @@ namespace LLMerge2Lists
         }
 
         /// <summary>
+        /// Find a node, which takes O(N) time
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public Node Find(int value)
+        {   //set the Head to the Current as a starting point:
+            Current = Head;
+            //keep looping if the next value doesn't point to null
+            while (Current.Next != null)
+            {   //if that value is value we're looking for, return it
+                if (Current.Value == value)
+                {
+                    return Current;
+                }
+                //otherwise, set the current value to the next one to repeat the process
+                Current = Current.Next;
+            }
+            //If the while condition doesn't hit, it means we're at the last node
+            //if the last value is the one we're looking for, return it
+            //otherwise, retun null because the value is not in the list
+            return Current.Value == value ? Current : null;
+        }
+
+        /// <summary>
         /// Print out all values in the list by iterating through until null is reached
         /// This will take O(N)
         /// </summary>
@@ -95,7 +122,7 @@ namespace LLMerge2Lists
                 //set the current value to the next value to repeat the process
                 Current = Current.Next;
             }
-            Console.WriteLine(Current.Value);
+            Console.WriteLine($"  {Current.Value}  ");
             Console.WriteLine("\n");
         }
 
