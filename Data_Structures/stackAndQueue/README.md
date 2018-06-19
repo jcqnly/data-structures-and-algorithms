@@ -7,7 +7,7 @@ Stacks represent a FILO concept where the
 first element in will be the last element out.
 
 On the other hand, queues represent a FIFO concept where the 
-first element in will be the last element out.
+first element in will be the first element out.
 
 ---
 
