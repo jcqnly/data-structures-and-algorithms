@@ -4,7 +4,7 @@ using System.Text;
 
 namespace QueueWithTwoStacks
 {
-    class Queue
+    public class Queue
     {
         //Since Queue will take in 2 stacks that we're working with
         //2 stack properties
