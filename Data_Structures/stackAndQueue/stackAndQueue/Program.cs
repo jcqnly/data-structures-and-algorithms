@@ -9,24 +9,24 @@ namespace stackAndQueue
             Console.WriteLine("Hello World!");
 
             //instantiate stack and push(add) a few nodes
-            Stack stack = new Stack(new Node(9));
-            stack.Push(new Node(4));
-            stack.Push(new Node(41));
-            stack.Push(new Node(1));
+            Stacks stacks = new Stacks(new Node(9));
+            stacks.Push(new Node(4));
+            stacks.Push(new Node(41));
+            stacks.Push(new Node(1));
 
             Console.WriteLine("The stack we'e working with is: ");
             //output will be (top) 1    41    4    9
-            stack.Print();
+            stacks.Print();
 
             Console.WriteLine("The popped node is: ");
             //Popping a node off the stack
-            Node poppedNode = stack.Pop();
+            Node poppedNode = stacks.Pop();
             Console.WriteLine(poppedNode.Value);
 
 
             Console.WriteLine("The peeked(top) node is: ");
             //Peeking at the top node of the stack
-            Node peekedNode = stack.Peek();
+            Node peekedNode = stacks.Peek();
             Console.WriteLine(peekedNode.Value);
 
             //instantiate queue and enqueue (add) a few nodes

@@ -4,13 +4,13 @@ using System.Text;
 
 namespace stackAndQueue
 {
-    public class Stack
+    public class Stacks
     {
         //estalishing the properties
         public Node Top { get; set; }
 
         //set the value of the Top
-        public Stack(Node node)
+        public Stacks(Node node)
         {
             Top = node;
         }

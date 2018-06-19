@@ -32,8 +32,8 @@ allows elements to be removed from the front.  Visually, the rear
 is on the left of the queue of elements while the front is the 
 right side of the queue of elements.  Enqueue means to add an element
 to the rear of the queue, while dequeue means to remove an element
-from the front.  Finally,  Peek refers to having a look at the front
-node.  Enqueue, Dequeue, and Peek are all O(1) in time complexity.
+from the front.  Finally,  peek refers to having a look at the front
+node.  Enqueue, dequeue, and peek are all O(1) in time complexity.
 
 ---
 
