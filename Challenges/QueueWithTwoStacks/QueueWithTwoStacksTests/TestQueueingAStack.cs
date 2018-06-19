@@ -52,18 +52,19 @@ namespace QueueWithTwoStacksTests
             {
                 Top = new Node(value) //this is the 1st node in
             };
-            stack1.Push(new Node(value));
-            stack1.Push(new Node(value));
+            stack1.Push(new Node(20));
+            stack1.Push(new Node(87));
             //instantiate stack2 with no value
             StackStack stack2 = new StackStack();
             //instantiate new queue with 2 stacks passed in
             Queue queue = new Queue(stack1, stack2);
 
             //Arrange
-            queue.Dequeue();
+            Node foundNode = queue.Dequeue();
 
             //Assert
-            Assert.Equal(stack1.Top.Value, expected);
+            Assert.Equal(value, foundNode.Value);
+            Assert.NotEqual(stack1.Top.Value, foundNode.Value);
         }
     }
 }
