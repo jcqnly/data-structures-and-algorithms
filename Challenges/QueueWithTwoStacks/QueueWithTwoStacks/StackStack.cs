@@ -9,11 +9,9 @@ namespace QueueWithTwoStacks
         //establishing the properties of the StackStack
         public Node Top { get; set; }
 
-        //set the value of the Top in this ctor
-        public StackStack(Node node)
-        {
-            Top = node;
-        }
+        //no ctor needed because we can add those specific values later
+        //plus, we'll be initing an empty stack
+
 
         /// <summary>
         /// Push(add) a node to the top of a stack
