@@ -9,6 +9,7 @@ namespace stackAndQueue
         //estalishing the properties
         public Node Top { get; set; }
 
+        //set the value of the Top
         public Stack(Node node)
         {
             Top = node;

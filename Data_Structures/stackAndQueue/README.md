@@ -1,4 +1,6 @@
 # Stack and Queue
+
+## Overview
 Stacks and queues are data structures that can be represented with nodes.
 
 Stacks represent a FILO concept where the 
@@ -10,6 +12,8 @@ first element in will be the last element out.
 ## Challenge
 Implement a push, pop and peek method for a stack.
 Implement an enqueue, dequeue, and a peek method for a queue.
+
+## Concepts Further Defined
 
 ## Solution
 

@@ -14,7 +14,8 @@ namespace stackAndQueue
             stack.Push(new Node(41));
             stack.Push(new Node(1));
 
-            //output will be (top) 1   41   4   9
+            //output will be (top) 1    41    4    9
+            Console.WriteLine("The stack we'e working with is: ");
             stack.Print();
 
             //Popping a node off the stack
@@ -28,11 +29,25 @@ namespace stackAndQueue
             Node peekedNode = stack.Peek();
             Console.WriteLine(peekedNode.Value);
 
-           /* 
-            //instantiate queue
-            Enqueue a node into your queue
-            Dequeue a node off of your queue
-            Peek at the front of your queue.*/
+            //instantiate queue and enqueue (add) a few nodes
+            Queue queue = new Queue(new Node(100));
+            queue.Enqueue(new Node(666));
+            queue.Enqueue(new Node(222));
+            queue.Enqueue(new Node(444));
+
+            //output will be 100   666   222   444
+            Console.WriteLine("The queue we'e working with is: ");
+            queue.Print();
+
+            //Dequeue a node off of the queue
+            Console.WriteLine("The dequeued(removed) node is: ");
+            Node dequeuedNode = queue.Dequeue();
+            Console.WriteLine(dequeuedNode.Value);
+
+            //Peek at the front of your queue.
+            Console.WriteLine("The front of the queue is: ");
+            Node frontNode = queue.Peek();
+            Console.WriteLine(frontNode.Value);
 
         }
     }
