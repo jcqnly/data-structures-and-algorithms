@@ -4,7 +4,7 @@ using System.Text;
 
 namespace stackAndQueue
 {
-    class Queue
+    public class Queue
     {
         //giving the class the prop
         public Node Rear { get; set; }

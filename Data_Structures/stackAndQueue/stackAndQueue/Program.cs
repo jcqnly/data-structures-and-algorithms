@@ -2,9 +2,9 @@
 
 namespace stackAndQueue
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
 
@@ -14,18 +14,18 @@ namespace stackAndQueue
             stack.Push(new Node(41));
             stack.Push(new Node(1));
 
-            //output will be (top) 1    41    4    9
             Console.WriteLine("The stack we'e working with is: ");
+            //output will be (top) 1    41    4    9
             stack.Print();
 
-            //Popping a node off the stack
             Console.WriteLine("The popped node is: ");
+            //Popping a node off the stack
             Node poppedNode = stack.Pop();
             Console.WriteLine(poppedNode.Value);
 
 
-            //Peeking at the top node of the stack
             Console.WriteLine("The peeked(top) node is: ");
+            //Peeking at the top node of the stack
             Node peekedNode = stack.Peek();
             Console.WriteLine(peekedNode.Value);
 
@@ -39,16 +39,15 @@ namespace stackAndQueue
             Console.WriteLine("The queue we'e working with is: ");
             queue.Print();
 
-            //Dequeue a node off of the queue
             Console.WriteLine("The dequeued(removed) node is: ");
+            //Dequeue a node off of the queue
             Node dequeuedNode = queue.Dequeue();
             Console.WriteLine(dequeuedNode.Value);
 
-            //Peek at the front of your queue.
             Console.WriteLine("The front of the queue is: ");
+            //Peek at the front of your queue.
             Node frontNode = queue.Peek();
             Console.WriteLine(frontNode.Value);
-
         }
     }
 }
