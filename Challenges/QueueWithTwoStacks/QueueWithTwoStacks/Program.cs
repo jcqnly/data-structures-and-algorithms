@@ -7,35 +7,39 @@ namespace QueueWithTwoStacks
         public static void Main(string[] args)
         {
             Console.WriteLine("Daffodil!");
-            EnqueueAStack();
-            DequeueAStack();
+            QueueAStack();
         }
 
-        public static void EnqueueAStack()
+        public static void QueueAStack()
         {
-            //instantiate the stacks
-            StackStack stack1 = new StackStack(new Node(20));
+            //instantiate the stacks with values
+            StackStack stack1 = new StackStack
+            {
+                Top = new Node(20)
+            };//1st node added (bottom node, so 20)
+
             stack1.Push(new Node(15));
             stack1.Push(new Node(10));
 
-            //output is 10   15   20
+            //output is (top) 10   15   20 (<-20 being the first node in)
             stack1.Print();
 
-            Console.WriteLine("Enqueueing with the push method:");
+            //Instantiate another stack to work with
+            //this can be empty because we didn't define a constructor
+            StackStack stack2 = new StackStack();
+            //stack2 is empty
+
+
+            Console.WriteLine("Enqueueing the stack:");
             //enqueueing with the push method
-            stack1.Push(new Node(5));
+            Queue queue = new Queue(stack1, stack2);
+            queue.Enqueue(new Node(666));
 
-            //output will be 5  10  15  20
-            stack1.Print();
-
-            //HOW TO PUSH TO AN EMPTY STACK?
-
-
-        }
-
-        public static void DequeueAStack()
-        {
-
+            Console.WriteLine("Dequeueing the stack:");
+            //List is now:
+            //666  5  10  15  20 (<-20 being the first node in)
+            //Dequeue will return the FIFO value of stack1, which is 20:
+            Console.WriteLine(queue.Dequeue().Value);
         }
     }
 }
