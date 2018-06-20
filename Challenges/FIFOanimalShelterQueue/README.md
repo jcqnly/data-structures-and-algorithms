@@ -6,25 +6,24 @@ selection of animals.
 
 ## Challenge
 Given a queue of animals, enqueue (add) an animal to the shelter.
-Animal can either be cat or dog.
+Animals can either be cat or dog.
 Using the same queue, dequeue (remove) an animal from the shelter; 
 the animal selection will be dependent on a search parameter for
 either cat or dog.
 Return the longest waiting animal of that type.
+
 For any other parameter, return either a cat or dog, whoever was
 waiting the longest.
+However, if the shelter is full of cats, but an adopter is looking 
+to adopt a dog, they'll get the cat who has been there
+the longest instead.
 
----
-
-## Problem Solving Process
-The problem domain required the use of a queue.
 
 ---
 
 ## Solution
 
 ![Whiteboard Solution](/assets/FIFOanimalShelter.jpg)
-
 
 ---
 
