@@ -11,3 +11,5 @@
 4. [Kth Element From the End](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/KthElementFromEnd)
 
 5. [Queue With Stacks](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/QueueWithTwoStacks)
+
+6. [FIFO Animal Shelter](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FIFOanimalShelterQueue)
