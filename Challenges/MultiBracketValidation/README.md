@@ -46,6 +46,11 @@ comparing it to the count of left and right brackets.
 
 ---
 
+## Future Goal
+This challenge should be solved using a queue data structure.
+
+---
+
 ## Acknowledgments
 Thanks to Jermaine for his non-complicated method of solving this.
 
