@@ -10,6 +10,7 @@ namespace MultiBracketValidationTests
         [InlineData("{}(){}", true)]
         [InlineData("[({}]", false)]
         [InlineData("(](", false)]
+        [InlineData("", false)]
         public void CanValidateBrackets(string stringToTest, bool expected)
         {
             //Act
