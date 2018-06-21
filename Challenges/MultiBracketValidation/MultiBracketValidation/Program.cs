@@ -10,7 +10,7 @@ namespace MultiBracketValidation
             string stringToTest2 = "[({}]";//output false
             string stringToTest3 = "()[[Extra Characters]]";//output true
             string stringToTest4 = "(](";//output false
-            string stringToTest5 = "{}{Code}[Fellows](())";//output true
+            string stringToTest5 = "";//output false
 
             Console.WriteLine(ValidateBracket(stringToTest));
             Console.WriteLine(ValidateBracket(stringToTest2));
@@ -50,9 +50,13 @@ namespace MultiBracketValidation
                     if (charToTest[i] == rightBracketChars[j]) counter2++;
                 }
             }
+            counter3 = counter + counter2;
+            //this means there were no brackets, so evaluate to false;
+            if (counter3 == 0) return false;
+            
             //since there are 2 brackets in a pair and both are counted,
             //then they're balanced if both exist
-            if ((counter3 = (counter + counter2)) % 2 == 0)
+            if (counter3 % 2 == 0)
             {   //counter3 should then be even and return true
                 return true;
             }
