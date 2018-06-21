@@ -13,3 +13,5 @@
 5. [Queue With Stacks](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/QueueWithTwoStacks)
 
 6. [FIFO Animal Shelter](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FIFOanimalShelterQueue)
+
+7. [Multi Bracket Validation](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/MultiBracketValidation)
