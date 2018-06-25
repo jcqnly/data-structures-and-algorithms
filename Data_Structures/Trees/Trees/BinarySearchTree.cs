@@ -3,48 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Trees
-{
-    public class BinarySearchTree
+{   //inheriting preorder, inorder and postorder from BinaryTree.cs
+    public class BinarySearchTree : BinaryTree
     {
-        /// <summary>
-        /// Use the breadth traversal method to search for a given value
-        /// </summary>
-        /// <param name="node"></param>
-        /// <param name="value"></param>
-        /// <returns></returns>
-        public bool Search(Node node, int value)
-        {
-            Queue<Node> breadth = new Queue<Node>();
-            breadth.Enqueue(node);
-            Console.WriteLine($"Searching for {node.Value}");
-            try
-            {
-                while (breadth.TryPeek(out node))
-                {
-                    Node front = breadth.Dequeue();
-                    Console.WriteLine(front.Value);
-                    if (front.Value == value)
-                    {
-                        Console.WriteLine($"Found Node: {node.Value}");
-                        return true;
-                    }
-                    if (front.LeftChild != null)
-                    {
-                        breadth.Enqueue(front.LeftChild);
-                    }
-                    if (front.RightChild != null)
-                    {
-                        breadth.Enqueue(front.RightChild);
-                    }
-                }
-                throw new NullReferenceException();
-            }
-            catch (NullReferenceException)
-            {
-                Console.WriteLine($"Value not found");
-                return false;
-            }
-        }
         /// <summary>
         /// Returns the new node that was added for each condition
         /// </summary>
@@ -92,8 +53,7 @@ namespace Trees
                     Console.WriteLine($" --> {newNode.Value}");
                 }
                 return newNode;
-            }
-            
+            }          
             return root;
         }
     }

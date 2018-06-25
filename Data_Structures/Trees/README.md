@@ -60,6 +60,8 @@ is located.
 
 Otherwise, throw an exception error if the node doesn't exist.
 
+The time complexity is O(N).
+
 ---
 
 ## Binary Search Tree Search()
@@ -70,6 +72,8 @@ Pass either of the params to the search method again and continue
 until the search value is found.  If it isn't found, throw an exception
 with a message that says "value is not found."
 
+Time Complexity of this is O(log N).
+
 ---
 
 ## Binary Search Tree AddNode()
@@ -79,6 +83,8 @@ If the value is greater than the root, go right on the tree.
 Pass either of the params to the search method again and continue
 until one of the child nodes is null at which point the value is
 added to that child.
+
+Time Complexity of this is O(log N).
 
 ---
 

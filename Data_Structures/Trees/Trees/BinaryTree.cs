@@ -64,20 +64,24 @@ namespace Trees
             Console.WriteLine(node.Value);
         }
 
+        /// <summary>
+        /// Searches the tree, level by level, node by node
+        /// </summary>
+        /// <param name="node"></param>
         public void BreadthFirst(Node node)
         {
             Queue<Node> breadth = new Queue<Node>();
             breadth.Enqueue(node);
 
             while (breadth.TryPeek(out node))
-            {
+            {   //put the reference node front in the dequeue
                 Node front = breadth.Dequeue();
                 Console.Write(front.Value);
-
+                //if there is something, enqueue that front's left child
                 if (front.LeftChild != null)
                 {
                     breadth.Enqueue(front.LeftChild);
-                }
+                }//if there is something, enqueue that front's right child
                 if (front.RightChild != null)
                 {
                     breadth.Enqueue(front.RightChild);

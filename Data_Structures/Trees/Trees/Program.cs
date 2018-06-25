@@ -6,12 +6,15 @@ namespace Trees
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            BinarySearchTest();
-            BinaryTreeSearchTest();
+            Console.WriteLine("Binary Search!");
+            BinarySearchTraversal();
+            Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("Binary Tree Search!");
+            BinaryTreeSearchTraversal();
         }
 
-        public static void BinarySearchTest()
+        public static void BinarySearchTraversal()
         {
             //instantiating a new object of the BinarySearchTree class
             BinaryTree binaryTree = new BinaryTree();
@@ -55,11 +58,11 @@ namespace Trees
             binaryTree.BreadthFirst(nodeA);
 
             //implementing the search functionality for the Binary Tree search
-            Console.WriteLine($"Searching a Binary Tree for a value: {nodeA.Value}");
+            Console.WriteLine($"\nSearching a Binary Tree for a value: {nodeA.Value}");
             binaryTree.Search(nodeA, 1);
         }
 
-        public static void BinaryTreeSearchTest()
+        public static void BinaryTreeSearchTraversal()
         {
             //instantiating a new object of the BinarySearchTree class
             BinarySearchTree binarySearchTree = new BinarySearchTree();
@@ -71,6 +74,7 @@ namespace Trees
             Node nodeE = new Node(75);
             Node nodeF = new Node(300);
 
+            //nodes that we'll be adding
             Node nodeG = new Node(200);
             Node nodeH = new Node(15);
 
@@ -83,6 +87,7 @@ namespace Trees
             //adding a node of a larger value
             Console.WriteLine($"Adding a node {nodeG.Value} to our tree");
             binarySearchTree.Add(nodeA, nodeG);
+
             //adding a node of a lesser value
             Console.WriteLine($"Adding a node {nodeH.Value} to our tree");
             binarySearchTree.Add(nodeA, nodeH);
