@@ -28,11 +28,6 @@ namespace Trees
                         Console.WriteLine($"Found Node: {node.Value}");
                         return true;
                     }
-                    if (front.LeftChild.Value == value || front.LeftChild.Value == value)
-                    {
-                        Console.WriteLine($"Found Node: {node.Value}");
-                        return true;
-                    }
                     if (front.LeftChild != null)
                     {
                         breadth.Enqueue(front.LeftChild);
@@ -50,7 +45,12 @@ namespace Trees
                 return false;
             }
         }
-
+        /// <summary>
+        /// Returns the new node that was added for each condition
+        /// </summary>
+        /// <param name="root"></param>
+        /// <param name="newNode"></param>
+        /// <returns></returns>
         public Node Add(Node root, Node newNode)
         {
             //if there is no tree, make the newNode the root
@@ -58,35 +58,13 @@ namespace Trees
             {
                 root = newNode;
                 Console.WriteLine($"Root is: {root.Value}");
-                return root;
+                return newNode;
             }
-            else if (root.Value < newNode.Value)
-            {
-                if (root.RightChild != null)
-                {
-                    //if the value is greater than the root, newNode becomes
-                    //the right child of the root
-                    root.RightChild = newNode;
-                    Console.WriteLine($" --> {root.RightChild.Value}");
-                    //call the method again to check newNode against the
-                    //the RightChild of the node that was just checked
-                    Add(root.RightChild, newNode);
-                }
-                else//otherwise append it
-                {
-                    root.RightChild = newNode;
-                    Console.WriteLine($" --> {root.RightChild.Value}");
-                }
-                return root.RightChild;
-            }
-            else if (root.Value > newNode.Value)
+            if (newNode.Value < root.Value)
             {
                 if (root.LeftChild != null)
                 {
-                    //if the value is greater than the root, newNode becomes
-                    //the left child of the root
-                    root.LeftChild = newNode;
-                    Console.WriteLine($" {root.LeftChild.Value} <--");
+                    //Console.WriteLine($" {newNode.Value} <--");
                     //call the method again to check newNode against the
                     //the LeftChild of the node that was just checked
                     Add(root.LeftChild, newNode);
@@ -94,10 +72,28 @@ namespace Trees
                 else//otherwise append it
                 {
                     root.LeftChild = newNode;
-                    Console.WriteLine($" {root.LeftChild.Value} <--");
+                    Console.WriteLine($" {newNode.Value} <--");
                 }
-                return root.LeftChild;
+                return newNode;
             }
+
+            if (newNode.Value > root.Value)
+            {
+                if (root.RightChild != null)
+                {
+                    //Console.WriteLine($" --> {newNode.Value}");
+                    //call the method again to check newNode against the
+                    //the RightChild of the node that was just checked
+                    Add(root.RightChild, newNode);
+                }
+                else//otherwise append it
+                {
+                    root.RightChild = newNode;
+                    Console.WriteLine($" --> {newNode.Value}");
+                }
+                return newNode;
+            }
+            
             return root;
         }
     }
