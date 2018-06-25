@@ -72,7 +72,7 @@ namespace Trees
             Node nodeF = new Node(300);
 
             Node nodeG = new Node(200);
-            Node nodeH = new Node(75);
+            Node nodeH = new Node(15);
 
             //implementing the Add functionality
             binarySearchTree.Add(nodeA, nodeB);
@@ -80,11 +80,11 @@ namespace Trees
             binarySearchTree.Add(nodeA, nodeD);
             binarySearchTree.Add(nodeA, nodeE);
             binarySearchTree.Add(nodeA, nodeF);
-
-            Console.WriteLine($"Adding a node that is greater than the root {nodeG.Value}");
+            //adding a node of a larger value
+            Console.WriteLine($"Adding a node {nodeG.Value} to our tree");
             binarySearchTree.Add(nodeA, nodeG);
-
-            Console.WriteLine($"Adding a node that is less than the root {nodeH.Value}");
+            //adding a node of a lesser value
+            Console.WriteLine($"Adding a node {nodeH.Value} to our tree");
             binarySearchTree.Add(nodeA, nodeH);
 
             //implementing the search functionality for the Binary Search Tree search

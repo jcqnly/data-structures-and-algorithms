@@ -52,11 +52,8 @@ namespace TreeTest
             binarySearchTree.Add(nodeA, nodeE);
             binarySearchTree.Add(nodeA, nodeF);
 
-            //arrange
-            binarySearchTree.Search(nodeB, 50);
-
             //assert
-            Assert.Equal(50, nodeB.Value);
+            Assert.True(binarySearchTree.Search(nodeA, 150));
         }
 
         [Fact]
