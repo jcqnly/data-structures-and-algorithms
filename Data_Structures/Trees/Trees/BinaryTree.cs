@@ -6,8 +6,6 @@ namespace Trees
 {
     public class BinaryTree
     {
-        //public Node Root { get; set; }
-
         public void PreOrder(Node node)
         {
             Console.WriteLine(node.Value);
@@ -86,7 +84,11 @@ namespace Trees
                 {
                     Node front = breadth.Dequeue();
                     Console.WriteLine(front.Value);
-
+                    if (front.Value == value)
+                    {
+                        Console.WriteLine($"Found Node: {node.Value} is the root!");
+                        return true;
+                    }
                     if (front.LeftChild.Value == value || front.LeftChild.Value == value)
                     {
                         Console.WriteLine($"Found Node: {node.Value}");

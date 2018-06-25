@@ -54,7 +54,7 @@ namespace Trees
             binaryTree.BreadthFirst(nodeA);
 
             Console.WriteLine($"Searching a Binary Tree for a value: ");
-            binaryTree.Search(nodeA, 9);
+            binaryTree.Search(nodeA, 1);
         }
     }
 }
