@@ -1,4 +1,4 @@
-# Stack and Queue
+# Binary Tree and Binary Search Tree
 
 ## Overview
 
