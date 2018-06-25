@@ -9,8 +9,20 @@ A binary tree means that each node will have between 0-2 nodes each.
 These nodes can be null.
 
 A binary search tree has a specific ordering structure where the nodes
-on the right are less in value than the nodes on the right.  The Big O
+on the left are less in value than the nodes on the right.  The Big O
 of a binary search tree will always be O(log N).
+
+---
+
+## Use Cases
+Use cases for a _Binary Tree_ can be used for searching for related
+musicians, artists, influential people, etc.  If you find one person
+or group you like, you can look at who they've inspired or influence.
+The immediate imagery that came to mind is a family tree.
+
+Use cases for a _Binary Search Tree_ can be searching for numbers
+that are used to identify people, like Social Security Numbers or
+bank account numbers.
 
 ---
 
@@ -62,9 +74,13 @@ Otherwise, throw an exception error if the node doesn't exist.
 
 ## Solution
 
-Whiteboard:
+Binary Tree:
 
-![]()
+![Binary Tree Breadth First Traversal Search](/assets/binarySearch.jpg)
+
+Binary Search Tree:
+
+![Binary Search Tree](/assets/binarySearchTree.jpg)
 
 ---
 

@@ -7,10 +7,11 @@ namespace Trees
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            BinarySearch();
+            BinarySearchTest();
+            BinaryTreeSearchTest();
         }
 
-        static void BinarySearch()
+        public static void BinarySearchTest()
         {
             //instantiating a new object of the BinarySearchTree class
             BinaryTree binaryTree = new BinaryTree();
@@ -53,8 +54,42 @@ namespace Trees
             //1, 2, 3, 4, 5, 6
             binaryTree.BreadthFirst(nodeA);
 
-            Console.WriteLine($"Searching a Binary Tree for a value: ");
+            //implementing the search functionality for the Binary Tree search
+            Console.WriteLine($"Searching a Binary Tree for a value: {nodeA.Value}");
             binaryTree.Search(nodeA, 1);
+        }
+
+        public static void BinaryTreeSearchTest()
+        {
+            //instantiating a new object of the BinarySearchTree class
+            BinarySearchTree binarySearchTree = new BinarySearchTree();
+
+            Node nodeA = new Node(100);
+            Node nodeB = new Node(50);
+            Node nodeC = new Node(150);
+            Node nodeD = new Node(25);
+            Node nodeE = new Node(75);
+            Node nodeF = new Node(300);
+
+            Node nodeG = new Node(200);
+            Node nodeH = new Node(75);
+
+            //implementing the Add functionality
+            binarySearchTree.Add(nodeA, nodeB);
+            binarySearchTree.Add(nodeA, nodeC);
+            binarySearchTree.Add(nodeA, nodeD);
+            binarySearchTree.Add(nodeA, nodeE);
+            binarySearchTree.Add(nodeA, nodeF);
+
+            Console.WriteLine($"Adding a node that is greater than the root {nodeG.Value}");
+            binarySearchTree.Add(nodeA, nodeG);
+
+            Console.WriteLine($"Adding a node that is less than the root {nodeH.Value}");
+            binarySearchTree.Add(nodeA, nodeH);
+
+            //implementing the search functionality for the Binary Search Tree search
+            Console.WriteLine($"Searching a Binary Search Tree for a value: {nodeB.Value}");
+            binarySearchTree.Search(nodeB, 50);
         }
     }
 }

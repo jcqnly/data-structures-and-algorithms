@@ -6,6 +6,10 @@ namespace Trees
 {
     public class BinaryTree
     {
+        /// <summary>
+        /// This traversal method checks the root first
+        /// </summary>
+        /// <param name="node"></param>
         public void PreOrder(Node node)
         {
             Console.WriteLine(node.Value);
@@ -21,6 +25,11 @@ namespace Trees
             }
         }
 
+        /// <summary>
+        /// This traversal method checks the root node
+        /// in between checking the left and right child nodes
+        /// </summary>
+        /// <param name="node"></param>
         public void InOrder(Node node)
         {
             if (node.LeftChild != null)
@@ -36,6 +45,10 @@ namespace Trees
             }
         }
 
+        /// <summary>
+        /// This traversal method checks the root node last
+        /// </summary>
+        /// <param name="node"></param>
         public void PostOrder(Node node)
         {
             if (node.LeftChild != null)
@@ -72,6 +85,13 @@ namespace Trees
             }
         }
 
+        /// <summary>
+        /// This searches the tree, layer by layer,
+        /// node by node, for the given search value
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
         public bool Search(Node node, int value)
         {
             Queue<Node> breadth = new Queue<Node>();
@@ -85,15 +105,15 @@ namespace Trees
                     Node front = breadth.Dequeue();
                     Console.WriteLine(front.Value);
                     if (front.Value == value)
-                    {
-                        Console.WriteLine($"Found Node: {node.Value} is the root!");
+                    {//if it's the root, return the root
+                        Console.WriteLine($"Found Node: {node.Value}");
                         return true;
-                    }
-                    if (front.LeftChild.Value == value || front.LeftChild.Value == value)
+                    }//otherwise check the value of both the left and right child
+                    if (front.LeftChild.Value == value || front.RightChild.Value == value)
                     {
                         Console.WriteLine($"Found Node: {node.Value}");
                         return true;
-                    }
+                    }//if the value is not there, recursively traverse the nodes
                     if (front.LeftChild != null)
                     {
                         breadth.Enqueue(front.LeftChild);
@@ -106,7 +126,7 @@ namespace Trees
                 throw new NullReferenceException();
             }
             catch (NullReferenceException)
-            {
+            {//this is for when the search value is no where in the tree
                 Console.WriteLine($"Value not found");
                 return false;
             }
