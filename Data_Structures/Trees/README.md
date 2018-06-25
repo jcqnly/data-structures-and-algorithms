@@ -63,12 +63,22 @@ Otherwise, throw an exception error if the node doesn't exist.
 ---
 
 ## Binary Search Tree Search()
-
+This method compares the root value against the given search value.
+If the value is less than the root, go left on the tree.
+If the value is greater than the root, go right on the tree.
+Pass either of the params to the search method again and continue
+until the search value is found.  If it isn't found, throw an exception
+with a message that says "value is not found."
 
 ---
 
 ## Binary Search Tree AddNode()
-
+This method compares the root value against the given value to be added.
+If the value is less than the root, go left on the tree.
+If the value is greater than the root, go right on the tree.
+Pass either of the params to the search method again and continue
+until one of the child nodes is null at which point the value is
+added to that child.
 
 ---
 
@@ -76,20 +86,20 @@ Otherwise, throw an exception error if the node doesn't exist.
 
 Binary Tree:
 
-![Binary Tree Breadth First Traversal Search](/assets/binarySearch.jpg)
+![Binary Tree Breadth First Traversal Search](/../assets/binarySearch.jpg)
 
 Binary Search Tree:
 
-![Binary Search Tree](/assets/binarySearchTree.jpg)
+![Binary Search Tree](/../assets/binarySearchTree.jpg)
 
 ---
 
 ## Acknowledgments
-Thanks to Gayle McDowell and this [video](https://www.youtube.com/watch?v=oSWTXtMglKE) for the walk through of these concepts.
-
 Thanks to [jaatay](https://github.com/jaatay) and [IndigoShock](https://github.com/IndigoShock) for working with me on this challenge.
 
 Thanks to [Aiverson1011](https://github.com/Aiverson1011) for the guidance.
+
+Thanks to Gayle McDowell and this [video](https://www.youtube.com/watch?v=oSWTXtMglKE) for the walk through of these concepts.
 
 Thanks to [taylorjoshuaw](https://github.com/taylorjoshuaw) 
 for this lovely README layout.
