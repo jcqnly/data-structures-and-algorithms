@@ -86,11 +86,11 @@ added to that child.
 
 Binary Tree:
 
-![Binary Tree Breadth First Traversal Search](/../assets/binarySearch.jpg)
+![Binary Tree Breadth First Traversal Search](/assets/BinarySearch.jpg)
 
 Binary Search Tree:
 
-![Binary Search Tree](/../assets/binarySearchTree.jpg)
+![Binary Search Tree](/assets/BinarySearchTree.jpg)
 
 ---
 
