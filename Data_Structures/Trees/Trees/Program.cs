@@ -74,7 +74,7 @@ namespace Trees
             Node nodeE = new Node(75);
             Node nodeF = new Node(300);
 
-            //nodes that we'll be adding
+            //nodes that we'll be adding and searching for
             Node nodeG = new Node(200);
             Node nodeH = new Node(15);
 
@@ -84,6 +84,7 @@ namespace Trees
             binarySearchTree.Add(nodeA, nodeD);
             binarySearchTree.Add(nodeA, nodeE);
             binarySearchTree.Add(nodeA, nodeF);
+
             //adding a node of a larger value
             Console.WriteLine($"Adding a node {nodeG.Value} to our tree");
             binarySearchTree.Add(nodeA, nodeG);

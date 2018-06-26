@@ -1,7 +1,7 @@
 # Binary Tree and Binary Search Tree
 
 ## Concepts defined
-Trees consists of a root with a left or a right node.  Those child nodes
+Trees consists of a root with a left or a right node.  These child nodes
 can have a left or a right child node themselves and so forth. A leaf
 is a node with no child nodes.
 
@@ -15,10 +15,9 @@ of a binary search tree will always be O(log N).
 ---
 
 ## Use Cases
-Use cases for a _Binary Tree_ can be used for searching for related
+Use cases for a _Binary Tree_ includes searching for related
 musicians, artists, influential people, etc.  If you find one person
-or group you like, you can look at who they've inspired or influence.
-The immediate imagery that came to mind is a family tree.
+or group you like, you can look at who they've inspired or influenced.
 
 Use cases for a _Binary Search Tree_ can be searching for numbers
 that are used to identify people, like Social Security Numbers or
