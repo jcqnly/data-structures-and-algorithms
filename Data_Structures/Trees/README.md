@@ -1,7 +1,7 @@
 # Binary Tree and Binary Search Tree
 
 ## Concepts defined
-Trees consists of a root with a left or a right node.  Those child nodes
+Trees consists of a root with a left or a right node.  These child nodes
 can have a left or a right child node themselves and so forth. A leaf
 is a node with no child nodes.
 
@@ -15,10 +15,9 @@ of a binary search tree will always be O(log N).
 ---
 
 ## Use Cases
-Use cases for a _Binary Tree_ can be used for searching for related
+Use cases for a _Binary Tree_ includes searching for related
 musicians, artists, influential people, etc.  If you find one person
-or group you like, you can look at who they've inspired or influence.
-The immediate imagery that came to mind is a family tree.
+or group you like, you can look at who they've inspired or influenced.
 
 Use cases for a _Binary Search Tree_ can be searching for numbers
 that are used to identify people, like Social Security Numbers or
@@ -60,6 +59,8 @@ is located.
 
 Otherwise, throw an exception error if the node doesn't exist.
 
+The time complexity is O(N).
+
 ---
 
 ## Binary Search Tree Search()
@@ -70,6 +71,8 @@ Pass either of the params to the search method again and continue
 until the search value is found.  If it isn't found, throw an exception
 with a message that says "value is not found."
 
+Time Complexity of this is O(log N).
+
 ---
 
 ## Binary Search Tree AddNode()
@@ -79,6 +82,8 @@ If the value is greater than the root, go right on the tree.
 Pass either of the params to the search method again and continue
 until one of the child nodes is null at which point the value is
 added to that child.
+
+Time Complexity of this is O(log N).
 
 ---
 
