@@ -15,3 +15,5 @@
 6. [FIFO Animal Shelter](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FIFOanimalShelterQueue)
 
 7. [Multi Bracket Validation](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/MultiBracketValidation)
+
+8. [FizzBuzz Tree](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FizzBuzzTree)
