@@ -4,7 +4,7 @@ using System.Text;
 
 namespace FizzBuzzTree
 {
-    class BinaryTree
+    public class BinaryTree
     {
         /// <summary>
         /// This traversal method checks the root first

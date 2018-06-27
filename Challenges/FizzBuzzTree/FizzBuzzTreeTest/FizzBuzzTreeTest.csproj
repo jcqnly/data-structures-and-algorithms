@@ -13,4 +13,13 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="FizzBuzzTree">
+      <HintPath>..\FizzBuzzTree\bin\Debug\netcoreapp2.0\FizzBuzzTree.dll</HintPath>
+    </Reference>
+    <Reference Include="Trees">
+      <HintPath>..\..\..\Data_Structures\Trees\Trees\bin\Debug\netcoreapp2.0\Trees.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
