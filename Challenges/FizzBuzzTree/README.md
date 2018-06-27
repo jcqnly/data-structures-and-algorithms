@@ -11,7 +11,13 @@ values.
 ---
 
 ## Problem Solving Process
+Our group chose to go the preorder method because the directions said
+built in methods were not allowed, which we took to include Enqueue and
+Dequeue.  This meant that the breadth traversal route was out of the
+question.
 
+Our process will take O(n) in terms of time complexity.  However, in terms
+of space complexity, our algorithm is O(1) as no additional space was created.
 
 ---
 

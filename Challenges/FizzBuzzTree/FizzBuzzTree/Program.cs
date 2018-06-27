@@ -26,6 +26,9 @@ namespace FizzBuzzTree
             nodeC.LeftChild = nodeF;
 
             FizzBuzzTree(nodeA);
+
+            Console.WriteLine("Printing the new tree via the preorder traversal : ");
+            binaryTree.PreOrder(nodeA);
         }
 
         public static Node FizzBuzzTree(Node node)
@@ -42,7 +45,6 @@ namespace FizzBuzzTree
             {
                 node.Value = "Buzz";
             }
-
             if (node.LeftChild != null)
             {
                 FizzBuzzTree(node.LeftChild);
