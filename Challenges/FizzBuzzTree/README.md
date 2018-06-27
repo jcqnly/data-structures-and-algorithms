@@ -24,7 +24,7 @@ of space complexity, our algorithm is O(1) as no additional space was created.
 ## Whiteboard Solution
 Problem Domain Whiteboard:
 
-![Whiteboard Solution](/assets/fizzbuzztree1.jpg)
+![Whiteboard Solution](/assets/fizzbuzztree2.jpg)
 
 Pseudo:
 
