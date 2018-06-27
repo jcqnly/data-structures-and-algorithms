@@ -1,3 +1,4 @@
+using static FizzBuzzTree.Program;
 using FizzBuzzTree;
 using Xunit;
 
@@ -29,7 +30,7 @@ namespace FizzBuzzTreeTest
             nodeC.LeftChild = nodeF;
 
             //arrange
-            Node found = binaryTree.FBTree(nodeA);
+            Node found = FBTree(nodeA);
 
             //assert
             Assert.Equal(expected, found.Value);
