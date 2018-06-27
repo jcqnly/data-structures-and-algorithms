@@ -17,3 +17,5 @@
 7. [Multi Bracket Validation](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/MultiBracketValidation)
 
 8. [FizzBuzz Tree](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FizzBuzzTree)
+
+9. [Binary Tree Max Value](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/BinaryTreeMax)
