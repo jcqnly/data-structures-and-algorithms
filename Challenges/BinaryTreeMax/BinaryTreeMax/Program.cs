@@ -54,23 +54,15 @@ namespace BinaryTreeMax
             while (breadth.TryPeek(out node))
             {
                 Node front = breadth.Dequeue();
-                if (front.LeftChild != null)
-                {   //add the value of the LeftChild to the queue
+                //check if the current front value is greater than the max
+                if (front.Value > max)
+                    max = front.Value;
+
+                //the following 2 if statements adds the nodes to our queue
+                if (front.LeftChild != null)  
                     breadth.Enqueue(front.LeftChild);
-                    if (front.LeftChild.Value > max)
-                    {  //if that value is larger than max, set the new value as max
-                        max = front.LeftChild.Value;
-                    }
-                }
-                if (front.RightChild != null)
-                {   //repeat the same process for the other node, on the other side
-                    //if it exists
+                if (front.RightChild != null)  
                     breadth.Enqueue(front.RightChild);
-                    if (front.RightChild.Value > max)
-                    {
-                        max = front.RightChild.Value;
-                    }
-                }
             }
             return max;
         }

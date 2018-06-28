@@ -17,7 +17,7 @@ the remaining node values.
 ---
 
 ## Whiteboard Solution
-![](/assets/.jpg)
+![Find Max Binary Tree](/assets/FindMaxWhiteboard.png)
 
 
 ---
