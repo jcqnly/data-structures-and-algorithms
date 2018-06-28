@@ -6,18 +6,20 @@ namespace TreeTest
 {
     public class TestingTrees
     {
-        [Fact]
+        [Fact]//supposed to be search
         public void CanAddNodeToBST()
         {
             //act
+            //instantiating a new object of the BinarySearchTree class
             BinarySearchTree binarySearchTree = new BinarySearchTree();
-
+            //setting the values
             Node nodeA = new Node(100);
             Node nodeB = new Node(50);
             Node nodeC = new Node(150);
             Node nodeD = new Node(25);
             Node nodeE = new Node(75);
             Node nodeF = new Node(300);
+            //add nodes to the tree
             binarySearchTree.Add(nodeA, nodeB);
             binarySearchTree.Add(nodeA, nodeC);
             binarySearchTree.Add(nodeA, nodeD);
@@ -38,14 +40,14 @@ namespace TreeTest
             //act
             //instantiating a new object of the BinarySearchTree class
             BinarySearchTree binarySearchTree = new BinarySearchTree();
-
+            //setting the values
             Node nodeA = new Node(100);
             Node nodeB = new Node(50);
             Node nodeC = new Node(150);
             Node nodeD = new Node(25);
             Node nodeE = new Node(75);
             Node nodeF = new Node(300);
-
+            //add nodes to the tree
             binarySearchTree.Add(nodeA, nodeB);
             binarySearchTree.Add(nodeA, nodeC);
             binarySearchTree.Add(nodeA, nodeD);
@@ -53,28 +55,34 @@ namespace TreeTest
             binarySearchTree.Add(nodeA, nodeF);
 
             //assert
-            Assert.True(binarySearchTree.Search(nodeA, 150));
+            Assert.True(binarySearchTree.Search(nodeA, 300));
         }
 
         [Fact]
-        public void CanAddNodeInBT()
+        public void CanSearchNodeInBT()
         {
             //act
             //instantiating a new object of the BinarySearchTree class
             BinaryTree binaryTree = new BinaryTree();
-            //setting the values, so we can get a visualization
+            //setting the values
             Node nodeA = new Node(1);
             Node nodeB = new Node(2);
             Node nodeC = new Node(3);
             Node nodeD = new Node(4);
             Node nodeE = new Node(5);
             Node nodeF = new Node(6);
+            //make the tree
+            nodeA.LeftChild = nodeB;
+            nodeA.RightChild = nodeC;
+            nodeB.LeftChild = nodeD;
+            nodeB.RightChild = nodeE;
+            nodeC.LeftChild = nodeF;
 
             //arrange
-            binaryTree.Search(nodeA, 1);
+            binaryTree.Search(nodeA, 6);
 
             //assert
-            Assert.Equal(1, nodeA.Value);
+            Assert.True(binaryTree.Search(nodeA, 6));
         }
     }
 }

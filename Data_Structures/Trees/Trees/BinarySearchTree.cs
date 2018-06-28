@@ -4,8 +4,50 @@ using System.Text;
 
 namespace Trees
 {   //inheriting preorder, inorder and postorder from BinaryTree.cs
-    public class BinarySearchTree : BinaryTree
+    public class BinarySearchTree
     {
+        /// <summary>
+        /// This searches the tree, layer by layer,
+        /// node by node, for the given search value
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public bool Search(Node node, int value)
+        {
+            Queue<Node> breadth = new Queue<Node>();
+            breadth.Enqueue(node);
+            Console.WriteLine($"Searching for {node.Value}");
+
+            try
+            {
+                while (breadth.TryPeek(out node))
+                {
+                    Node front = breadth.Dequeue();
+                    Console.WriteLine(front.Value);
+                    if (front.Value == value)
+                    {//if it's the root, return the root
+                        Console.WriteLine($"Found Node: {node.Value}");
+                        return true;
+                    }//if the value is not there, recursively traverse the nodes
+                    if (front.LeftChild != null)
+                    {
+                        breadth.Enqueue(front.LeftChild);
+                    }
+                    if (front.RightChild != null)
+                    {
+                        breadth.Enqueue(front.RightChild);
+                    }
+                }
+                throw new NullReferenceException();
+            }
+            catch (NullReferenceException)
+            {//this is for when the search value is no where in the tree
+                Console.WriteLine($"Value not found");
+                return false;
+            }
+        }
+
         /// <summary>
         /// Returns the new node that was added for each condition
         /// </summary>
