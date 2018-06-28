@@ -9,10 +9,14 @@ duplicate values.
 
 ## Problem Solving Process
 Our group chose the breadth first traversal method.  The initial max
-value is the first enqueued node.  From there, if either the right
-or left child of the node we're on is larger than the max, reassign max
-to that value.  Continue enqueueing and dequeueing the tree to compare 
-the remaining node values.
+value is the first enqueued node and in the initial max value.  
+From there, if the current front node is larger than the max, 
+reassign max to this value.  Continue enqueueing and dequeueing 
+the tree to compare the remaining node values.
+
+The big O of time is O(N) as the traversal time depends on the number
+nodes.  The big O of space is O(1) as the queue is continually being
+dequeued and enqueued.
 
 ---
 
