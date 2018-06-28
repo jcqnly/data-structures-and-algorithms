@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Trees
-{   //inheriting preorder, inorder and postorder from BinaryTree.cs
+{   
     public class BinarySearchTree
     {
         /// <summary>
         /// This searches the tree, layer by layer,
         /// node by node, for the given search value
         /// </summary>
-        /// <param name="node"></param>
-        /// <param name="value"></param>
-        /// <returns></returns>
+        /// <param name="node">node</param>
+        /// <param name="value">value</param>
+        /// <returns>true of false</returns>
         public bool Search(Node node, int value)
         {
             Queue<Node> breadth = new Queue<Node>();
@@ -51,9 +51,9 @@ namespace Trees
         /// <summary>
         /// Returns the new node that was added for each condition
         /// </summary>
-        /// <param name="root"></param>
-        /// <param name="newNode"></param>
-        /// <returns></returns>
+        /// <param name="root">root</param>
+        /// <param name="newNode">newNode</param>
+        /// <returns>root</returns>
         public Node Add(Node root, Node newNode)
         {
             //if there is no tree, make the newNode the root

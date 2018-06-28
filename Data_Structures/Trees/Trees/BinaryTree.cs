@@ -12,7 +12,7 @@ namespace Trees
         /// </summary>
         /// <param name="node"></param>
         /// <param name="value"></param>
-        /// <returns></returns>
+        /// <returns>true of false</returns>
         public bool Search(Node node, int value)
         {
             Queue<Node> breadth = new Queue<Node>();
@@ -51,7 +51,7 @@ namespace Trees
         /// <summary>
         /// This traversal method checks the root first
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">node</param>
         public void PreOrder(Node node)
         {
             Console.WriteLine(node.Value);
@@ -71,7 +71,7 @@ namespace Trees
         /// This traversal method checks the root node
         /// in between checking the left and right child nodes
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">nod</param>
         public void InOrder(Node node)
         {
             if (node.LeftChild != null)
@@ -90,7 +90,7 @@ namespace Trees
         /// <summary>
         /// This traversal method checks the root node last
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">node</param>
         public void PostOrder(Node node)
         {
             if (node.LeftChild != null)
@@ -109,7 +109,7 @@ namespace Trees
         /// <summary>
         /// Searches the tree, level by level, node by node
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">node</param>
         public void BreadthFirst(Node node)
         {
             Queue<Node> breadth = new Queue<Node>();
