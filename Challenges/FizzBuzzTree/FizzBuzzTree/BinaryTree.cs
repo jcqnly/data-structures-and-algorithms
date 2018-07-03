@@ -7,6 +7,43 @@ namespace FizzBuzzTree
     public class BinaryTree
     {
         /// <summary>
+        /// traverses the tree with using a preorder route and
+        /// determines if a tree's fizzbuzzyness
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns>node</returns>
+        public static Node FBTree(Node node)
+        {
+            Console.WriteLine(node.Value);
+            //convert the node's value to an int
+            Int32.TryParse(node.Value, out int valueOfNode);
+            if (valueOfNode % 5 == 0 && valueOfNode % 3 == 0)
+            {   //test for the strictest condition first
+                node.Value = "FizzBuzz";
+            }
+            else if (valueOfNode % 3 == 0)
+            {   //then test if the int is divisible by 3
+                node.Value = "Fizz";
+            }
+            else if (valueOfNode % 5 == 0)
+            {   //then test if the int is divisible by 5
+                node.Value = "Buzz";
+            }
+            if (node.LeftChild != null)
+            {   //keep calling the method to continue traversing
+                //the tree if there are still nodes on either
+                //side
+                FBTree(node.LeftChild);
+            }
+
+            if (node.RightChild != null)
+            {
+                FBTree(node.RightChild);
+            }
+            return node;
+        }
+
+        /// <summary>
         /// This traversal method checks the root first
         /// </summary>
         /// <param name="node"></param>

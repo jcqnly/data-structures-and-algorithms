@@ -1,9 +1,10 @@
 using FizzBuzzTree;
+using System;
 using Xunit;
 
-namespace FizzBuzzTreeTest
+namespace FBTreetest
 {
-    public class TestFizzBuzzTree
+    public class TestFBTree
     {
         [Theory]
         [InlineData("FizzBuzz", "45")]
@@ -29,7 +30,7 @@ namespace FizzBuzzTreeTest
             nodeC.LeftChild = nodeF;
 
             //arrange
-            Node found = BinaryTree.FBTree(nodeA);
+            Node found = FBTree(nodeA);
 
             //assert
             Assert.Equal(expected, found.Value);
