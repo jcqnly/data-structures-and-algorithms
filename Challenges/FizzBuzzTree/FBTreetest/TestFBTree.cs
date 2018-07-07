@@ -30,7 +30,7 @@ namespace FBTreetest
             nodeC.LeftChild = nodeF;
 
             //arrange
-            Node found = FBTree(nodeA);
+            Node found = BinaryTree.FBTree(nodeA);
 
             //assert
             Assert.Equal(expected, found.Value);
