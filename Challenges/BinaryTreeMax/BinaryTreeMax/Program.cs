@@ -59,9 +59,9 @@ namespace BinaryTreeMax
                     max = front.Value;
 
                 //the following 2 if statements adds the nodes to our queue
-                if (front.LeftChild != null)  
+                if (front.LeftChild != null)
                     breadth.Enqueue(front.LeftChild);
-                if (front.RightChild != null)  
+                if (front.RightChild != null)
                     breadth.Enqueue(front.RightChild);
             }
             return max;
