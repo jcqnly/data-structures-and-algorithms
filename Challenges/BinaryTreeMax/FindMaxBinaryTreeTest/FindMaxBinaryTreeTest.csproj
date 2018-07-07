@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -14,9 +14,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="BinaryTreeMax">
-      <HintPath>..\BinaryTreeMax\bin\Debug\netcoreapp2.0\BinaryTreeMax.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\BinaryTreeMax\BinaryTreeMax.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Trees">
       <HintPath>..\..\..\Data_Structures\Trees\Trees\bin\Debug\netcoreapp2.0\Trees.dll</HintPath>
     </Reference>
