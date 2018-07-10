@@ -1,20 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Graphs
 {
     public class Node
     {
         public bool Visited { get; set; }
+        public bool BFSVisited { get; set; } = true;
         public int Value { get; set; }
-        public Node Next { get; set; }
-        public List<int> edges = new List<int>();
+        public List<Node> Edges { get; set; }
 
         public Node(int value)
         {
             Value = value;
-            Next = null;
+            Edges = new List<Node>();
         }
     }
 }
