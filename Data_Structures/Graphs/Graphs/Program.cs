@@ -55,7 +55,11 @@ namespace Graphs
             NodeList.Add(node10);
 
             //Gets the neighbors of a given node
-            graph.GetNeighbors(node1);
+            List<Node> neighbors = graph.GetNeighbors(node1);
+            foreach (Node neighbor in neighbors)
+            {
+                Console.WriteLine($"Again, the neighbors are: {neighbor.Value}");
+            }
 
             //finds the size of the graph
             graph.Size(NodeList);

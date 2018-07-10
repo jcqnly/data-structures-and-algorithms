@@ -13,13 +13,13 @@ namespace Graphs
         public void AddEdge(Node source, Node destination)
         {   
             source.Edges.Add(destination);
+            //adding the following line to make the graph undirected:
             destination.Edges.Add(source);
             Console.WriteLine($"Adding an edge between {source.Value} and {destination.Value}");
-            //returned and represented as (source, destination), e.g (from source, to destination)?
         }
 
         /// <summary>
-        /// Gets all nodes in the grapd
+        /// Gets all nodes in the graph
         /// </summary>
         /// <param name="node"></param>
         /// <returns>List of nodes</returns>
@@ -33,7 +33,6 @@ namespace Graphs
             {
                 Node front = breadth.Dequeue();
                 order.Add(front);
-
                 foreach (Node child in front.Edges)
                 {
                     if (!child.Visited)
@@ -43,7 +42,6 @@ namespace Graphs
                     }
                 }
             }
-
             foreach (Node item in order)
             {
                 Console.WriteLine($"The following were in the list {item.Value}");
@@ -77,10 +75,7 @@ namespace Graphs
         public int Size(List<Node> nodes)
         {
             int count = 0;
-            foreach (Node node in nodes)
-            {
-                count++;
-            }
+            foreach (Node node in nodes) count++;
             return count;
         }
 
@@ -88,7 +83,7 @@ namespace Graphs
         /// Takes in a node and traverses through the entire graph
         /// </summary>
         /// <param name="node"></param>
-        /// <returns></returns>
+        /// <returns>List of all the nodes in the graph</returns>
         public List<Node> BreadthFirst(Node node)
         {
             List<Node> order = new List<Node>();
@@ -99,7 +94,8 @@ namespace Graphs
             {
                 Node front = breadth.Dequeue();
                 order.Add(front);
-
+                //the Visited bool value was switched to all true in GetNodes(),
+                //so this logic is the opposite to compensate for that switch
                 foreach (Node child in front.Edges)
                 {
                     if (child.Visited)
@@ -109,13 +105,10 @@ namespace Graphs
                     }
                 }
             }
-
             foreach (Node item in order)
             {
                 Console.WriteLine($"This is from a Breadth First Search: {item.Value}");
-
             }
-
             return order;
         }
     }

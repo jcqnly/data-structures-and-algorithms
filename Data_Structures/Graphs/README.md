@@ -8,7 +8,7 @@ connected to each other by lines referred to as edges.
 Graphs with directed edges are like one-way streets while undirected edges are 
 like two-way streets.
 
-#### Complete vs Conncted vs Disconnected
+#### Complete vs Connected vs Disconnected
 A complete graph is where all nodes are connected to other nodes.
 
 A connected graph has nodes that have at least one edge.
