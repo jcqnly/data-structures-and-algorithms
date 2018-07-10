@@ -3,7 +3,7 @@ using Xunit;
 
 namespace TestGraphs
 {
-    public class UnitTest1
+    public class GraphTests
     {
         [Fact]
         public void Test1()
