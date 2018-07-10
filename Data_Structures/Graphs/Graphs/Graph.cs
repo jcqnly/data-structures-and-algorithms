@@ -42,10 +42,6 @@ namespace Graphs
                     }
                 }
             }
-            foreach (Node item in order)
-            {
-                Console.WriteLine($"The following were in the list {item.Value}");
-            }
             return order;
         }
 
@@ -59,11 +55,6 @@ namespace Graphs
             List<Node> result = new List<Node>();
             for (var i = 0; i < node.Edges.Count; i++)
                 result.Add(node.Edges[i]);
-            Console.WriteLine($"Finding neighbors for {node.Value}");
-            foreach (Node item in result)
-            {
-                Console.WriteLine($"The neighbors were {item.Value}");
-            }
             return result;
         }
 
@@ -104,10 +95,6 @@ namespace Graphs
                         breadth.Enqueue(child);
                     }
                 }
-            }
-            foreach (Node item in order)
-            {
-                Console.WriteLine($"This is from a Breadth First Search: {item.Value}");
             }
             return order;
         }

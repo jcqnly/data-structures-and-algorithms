@@ -39,7 +39,9 @@ namespace Graphs
             graph.AddEdge(node9, node10);
 
             //returns all nodes
-            graph.GetNodes(node9);
+            List<Node> allNodes = graph.GetNodes(node9);
+            foreach(Node node in allNodes)
+                Console.WriteLine($"The following is in the list: {node.Value}");
 
             //add all the nodes to a list of type Node
             List<Node> NodeList = new List<Node>();
@@ -56,17 +58,18 @@ namespace Graphs
 
             //Gets the neighbors of a given node
             List<Node> neighbors = graph.GetNeighbors(node1);
+            Console.WriteLine($"Finding neighbors for {node1.Value}...");
             foreach (Node neighbor in neighbors)
-            {
-                Console.WriteLine($"Again, the neighbors are: {neighbor.Value}");
-            }
+                Console.WriteLine($"The neighbors are: {neighbor.Value}");
 
             //finds the size of the graph
             graph.Size(NodeList);
             Console.WriteLine($"Size is {graph.Size(NodeList)}");
 
             //Traverses through the entire graph
-            graph.BreadthFirst(node9);
+            List<Node> BFSNodes = graph.BreadthFirst(node9);
+            foreach(Node node in BFSNodes)
+                Console.WriteLine($"This is from the BreadthFirstSearch: {node.Value}");
 
             Console.Read();
         }
