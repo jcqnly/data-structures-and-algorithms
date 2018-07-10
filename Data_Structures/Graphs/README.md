@@ -77,13 +77,10 @@ visited in order
 
 ## Visual
 
-Graphs:
+A Graph represented as an adjacency list:
 
-![](/assets/)
+![adjacency list](/assets/adjacencyList.jpg)
 
-Graphs2
-
-![](/assets/)
 
 ---
 
