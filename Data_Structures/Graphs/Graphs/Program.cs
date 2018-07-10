@@ -13,7 +13,7 @@ namespace Graphs
 
         public static void TryOutGraphs()
         {
-            //implement graph
+            //instantiate new graph
             Graph graph = new Graph();
 
             Node node1 = new Node(50);
@@ -27,7 +27,7 @@ namespace Graphs
             Node node9 = new Node(2);
             Node node10 = new Node(17);
 
-            //add vertices to graph WWWWWWWOOOOOORRRRRRKKKSS
+            //add edges between nodes
             graph.AddEdge(node1, node2);
             graph.AddEdge(node1, node3);
             graph.AddEdge(node3, node4);
@@ -38,9 +38,10 @@ namespace Graphs
             graph.AddEdge(node8, node9);
             graph.AddEdge(node9, node10);
 
-            //GetNodes returns all nodes WOOOORKS
+            //returns all nodes
             graph.GetNodes(node9);
 
+            //add all the nodes to a list of type Node
             List<Node> NodeList = new List<Node>();
             NodeList.Add(node1);
             NodeList.Add(node2);
@@ -53,14 +54,14 @@ namespace Graphs
             NodeList.Add(node9);
             NodeList.Add(node10);
 
-            //GetNeighbors, 11 & 3 are neighbors of 50 WWWWWWWOOOOOORRRRRRKKKSS
+            //Gets the neighbors of a given node
             graph.GetNeighbors(node1);
 
-            //Size WWWWWWWOOOOOORRRRRRKKKSS
+            //finds the size of the graph
             graph.Size(NodeList);
             Console.WriteLine($"Size is {graph.Size(NodeList)}");
 
-            //BreadthFirst
+            //Traverses through the entire graph
             graph.BreadthFirst(node9);
 
             Console.Read();

@@ -6,7 +6,7 @@ namespace Graphs
     public class Graph
     { 
         /// <summary>
-        /// adds an edge between 2 nodes to the graph
+        /// add an edge between 2 nodes to the graph
         /// </summary>
         /// <param name="source"></param>
         /// <param name="destination"></param>
@@ -14,12 +14,15 @@ namespace Graphs
         {   
             source.Edges.Add(destination);
             destination.Edges.Add(source);
-            Console.WriteLine($"Add an edge between {source.Value} and {destination.Value}");
+            Console.WriteLine($"Adding an edge between {source.Value} and {destination.Value}");
             //returned and represented as (source, destination), e.g (from source, to destination)?
         }
 
-        //GetNodes() return all nodes in the graph as a collection
-        //returns a List of type Node
+        /// <summary>
+        /// Gets all nodes in the grapd
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns>List of nodes</returns>
         public List<Node> GetNodes(Node node)
         {   
             List<Node> order = new List<Node>();
@@ -48,8 +51,11 @@ namespace Graphs
             return order;
         }
 
-        //GetNeighbors()
-        //returns a collection of nodes connected to a given node
+        /// <summary>
+        /// Gets the neighbors of a given node
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns>List of nodes</returns>
         public List<Node> GetNeighbors(Node node)
         {   //instantiate the list to be returned, of type Node
             List<Node> result = new List<Node>();
@@ -63,7 +69,11 @@ namespace Graphs
             return result;
         }
 
-        //Size()
+        /// <summary>
+        /// Finds the number of vertices in a graph
+        /// </summary>
+        /// <param name="nodes"></param>
+        /// <returns>an int that is the size of the graph</returns>
         public int Size(List<Node> nodes)
         {
             int count = 0;
@@ -74,7 +84,11 @@ namespace Graphs
             return count;
         }
 
-        //BreadthFirst()
+        /// <summary>
+        /// Takes in a node and traverses through the entire graph
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
         public List<Node> BreadthFirst(Node node)
         {
             List<Node> order = new List<Node>();
