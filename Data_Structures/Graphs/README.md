@@ -85,6 +85,8 @@ A Graph represented as an adjacency list:
 ---
 
 ## Acknowledgments
+Thanks to [jaatay](https://github.com/jaatay) and [IndigoShock](https://github.com/IndigoShock) for working with me on this challenge.
+
 Thanks to [Aiverson1011](https://github.com/Aiverson1011) for the guidance.
 
 Thanks to [taylorjoshuaw](https://github.com/taylorjoshuaw) 
