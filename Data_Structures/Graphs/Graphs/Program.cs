@@ -65,6 +65,5 @@ namespace Graphs
 
             Console.Read();
         }
-
     }
 }
