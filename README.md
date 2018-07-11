@@ -19,3 +19,5 @@
 8. [FizzBuzz Tree](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FizzBuzzTree)
 
 9. [Binary Tree Max Value](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/BinaryTreeMax)
+
+10. [Get Edges - A graph implementation](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/GetEdge)

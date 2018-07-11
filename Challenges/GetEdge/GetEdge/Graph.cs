@@ -7,6 +7,26 @@ namespace GetEdge
     public class Graph
     {
         /// <summary>
+        /// Determines if there is a direct conection between the source and destination
+        /// </summary>
+        /// <param name="source"></param>
+        /// <param name="destination"></param>
+        /// <returns>Tuple that is a bool and a value of the weight</returns>
+        public Tuple<bool, decimal> GetEdge(Node source, Node destination)
+        {
+            List<Node> neighbors = GetNeighbors(source);
+            Console.WriteLine($"Let`s go from {source.CityName} to {destination.CityName}");
+
+            if (neighbors.Contains(destination))
+            {
+                Console.WriteLine($"Yes, we can go from {source.CityName} to {destination.CityName}");
+                foreach (KeyValuePair<Node, decimal> value in destination.Edges)
+                    return Tuple.Create(true, value.Value);
+            }
+            Console.WriteLine($"Sorry, there are no direct flights from {source.CityName} to {destination.CityName}");
+            return (Tuple.Create<bool, decimal>(false, 0));
+        }
+        /// <summary>
         /// add an edge between 2 nodes to the graph
         /// </summary>
         /// <param name="source"></param>
@@ -16,7 +36,7 @@ namespace GetEdge
             source.Edges.Add(destination, weight);
             //adding the following line to make the graph undirected:
             destination.Edges.Add(source, weight);
-            Console.WriteLine($"Adding an edge between {source.CityName} and {destination.CityName}");
+            Console.WriteLine($"Adding a flight from {source.CityName} to {destination.CityName}");
         }
 
         /// <summary>
