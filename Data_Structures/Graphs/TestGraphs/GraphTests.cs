@@ -33,21 +33,10 @@ namespace TestGraphs
             graph.AddEdge(node3, node8);
             graph.AddEdge(node8, node9);
             graph.AddEdge(node9, node10);
-
-            List<Node> NodeList = new List<Node>();
-            NodeList.Add(node1);
-            NodeList.Add(node2);
-            NodeList.Add(node3);
-            NodeList.Add(node4);
-            NodeList.Add(node5);
-            NodeList.Add(node6);
-            NodeList.Add(node7);
-            NodeList.Add(node8);
-            NodeList.Add(node9);
-            NodeList.Add(node10);
+            List<Node> allNodes = graph.GetNodes(node1);
 
             //act
-            int nodeListSize = graph.Size(NodeList);
+            int nodeListSize = graph.Size(allNodes);
 
             //assert
             Assert.Equal(10, nodeListSize);
