@@ -32,6 +32,7 @@ namespace Graphs
             while (breadth.TryPeek(out node))
             {
                 Node front = breadth.Dequeue();
+                front.Visited = true;
                 order.Add(front);
                 foreach (Node child in front.Edges)
                 {
@@ -84,6 +85,7 @@ namespace Graphs
             while (breadth.TryPeek(out node))
             {
                 Node front = breadth.Dequeue();
+                front.Visited = false;
                 order.Add(front);
                 //the Visited bool value was switched to all true in GetNodes(),
                 //so this logic is the opposite to compensate for that switch

@@ -12,7 +12,7 @@ namespace GetEdge
             //instantiate a new graph
             Graph graph = new Graph();
             Node node1 = new Node("Seattle");
-            Node node2 = new Node("Narnia");
+            Node node2 = new Node("New New York");
             Node node3 = new Node("Winterfell");
             Node node4 = new Node("North Pole");
             Node node5 = new Node("Eden");
@@ -27,7 +27,6 @@ namespace GetEdge
 
             Console.WriteLine("-------------------------------------------------------");
 
-            graph.GetNeighbors(node1);
             //direct flight case
             Tuple<bool, decimal> flight = graph.GetEdge(node1, node2);
             Console.WriteLine($"Flight is {flight.Item1} and it costs {flight.Item2}");
