@@ -8,11 +8,7 @@ namespace GetEdge
         public static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            GetEdge();
-        }
 
-        public static void GetEdge()
-        {
             //instantiate a new graph
             Graph graph = new Graph();
             Node node1 = new Node("Seattle");
@@ -29,38 +25,19 @@ namespace GetEdge
             graph.AddEdge(node4, node5, 10);
             graph.AddEdge(node4, node6, 50);
 
+            Console.WriteLine("-------------------------------------------------------");
+
             graph.GetNeighbors(node1);
+            //direct flight case
+            Tuple<bool, decimal> flight = graph.GetEdge(node1, node2);
+            Console.WriteLine($"Flight is {flight.Item1} and it costs {flight.Item2}");
 
-            List<Node> neighbors = graph.GetNeighbors(node1);
-            Console.WriteLine($"Let`s go from {node1.CityName} to {node2.CityName}");
+            Console.WriteLine("-------------------------------------------------------");
 
-            if (neighbors.Contains(node2))
-            {
-                Console.WriteLine($"Yes, we can go from {node1.CityName} to {node2.CityName}.  It will cost {node2.Edges.Keys}");
-                foreach (KeyValuePair<Node, decimal> value in node2.Edges)
-                {
-                    Console.WriteLine($"It will cost {value.Value}");
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Sorry, there are no direct flights from {node1.CityName} to {node5.CityName}");
-            }
-
-            Console.WriteLine($"Let`s go from {node1.CityName} to {node6.CityName}");
-
-            if (neighbors.Contains(node6))
-            {
-                Console.WriteLine($"Yes, we can go from {node1.CityName} to {node6.CityName}.");
-                foreach (KeyValuePair<Node, decimal> value in node6.Edges)
-                {
-                    Console.WriteLine($"It will cost {value.Value}");
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Sorry, there are no direct flights from {node1.CityName} to {node6.CityName}");
-            }
+            //non-direct flight case
+            Tuple<bool, decimal> flight2 = graph.GetEdge(node1, node6);
+            Console.WriteLine($"Flight is {flight2.Item1} and it costs {flight2.Item2}");
+            Console.Read();
 
         }
     }
