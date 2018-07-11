@@ -34,27 +34,14 @@ namespace Graphs
             graph.AddEdge(node3, node5);
             graph.AddEdge(node5, node7);
             graph.AddEdge(node5, node6);
-            graph.AddEdge(node3, node8);
-            graph.AddEdge(node8, node9);
-            graph.AddEdge(node9, node10);
+            graph.AddEdge(node6, node8);
+            graph.AddEdge(node7, node9);
+            graph.AddEdge(node8, node10);
 
             //returns all nodes
-            List<Node> allNodes = graph.GetNodes(node9);
+            List<Node> allNodes = graph.GetNodes(node1);
             foreach(Node node in allNodes)
                 Console.WriteLine($"The following is in the list: {node.Value}");
-
-            //add all the nodes to a list of type Node
-            List<Node> NodeList = new List<Node>();
-            NodeList.Add(node1);
-            NodeList.Add(node2);
-            NodeList.Add(node3);
-            NodeList.Add(node4);
-            NodeList.Add(node5);
-            NodeList.Add(node6);
-            NodeList.Add(node7);
-            NodeList.Add(node8);
-            NodeList.Add(node9);
-            NodeList.Add(node10);
 
             //Gets the neighbors of a given node
             List<Node> neighbors = graph.GetNeighbors(node1);
@@ -63,8 +50,9 @@ namespace Graphs
                 Console.WriteLine($"The neighbors are: {neighbor.Value}");
 
             //finds the size of the graph
-            graph.Size(NodeList);
-            Console.WriteLine($"Size is {graph.Size(NodeList)}");
+            int graphSize = graph.Size(allNodes);
+
+            Console.WriteLine($"Size is {graphSize}");
 
             //Traverses through the entire graph
             List<Node> BFSNodes = graph.BreadthFirst(node9);
