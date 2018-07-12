@@ -21,3 +21,5 @@
 9. [Binary Tree Max Value](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/BinaryTreeMax)
 
 10. [Get Edges - A graph implementation](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/GetEdge)
+
+11. [Find Islands - A graph implementation](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FindIslands)
