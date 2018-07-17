@@ -50,7 +50,7 @@ Handle a collision in the event that 2 keys are the same.
 
 A visualization of a hashtable:
 
-![Hash Table](/assets/hashTableVisual.jpg)
+![Hash Table](/assets/hashTableVisual.jpeg)
 
 ---
 
