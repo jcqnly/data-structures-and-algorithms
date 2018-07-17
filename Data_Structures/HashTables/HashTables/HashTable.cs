@@ -6,61 +6,94 @@ namespace HashTables
 {
     public class HashTable
     {
-        /// <summary>
-        /// Determine the index of where to put the ASCII value of the word
-        /// </summary>
-        /// <param name="arr"></param>
-        /// <param name="wordValue"></param>
-        /// <param name="word"></param>
-        public void Add(Node[] arr, int wordValue, string word)
+        //a prop of every HashTable is a HashArray of Node type
+        public Node[] HashArray { get; set; }
+
+        public HashTable()
         {
-            //formula to determine the location of where to put the ASCII val of given word
-            int index = arr.Length % wordValue;
-            Console.WriteLine($"Length of array is: {arr.Length}");
-            Console.WriteLine($"The word is: {word} and its ASCII value is: {wordValue}");
-            Console.WriteLine($"Index in array is: {index}");
-
-            //instantiate a new node b/c each index of the hashtable is a Node
-            //this will help deal with collisions later
-            Node node = new Node(index, wordValue);
-
-            Console.WriteLine($"The Key/Index is: {node.Key} and the value is: {node.Value}");
-            //place the created node into the index of the hashtable
-            arr[index] = node;
+            //set this length to 1024
+            HashArray = new Node[1024];
         }
 
         /// <summary>
-        /// Searches through an array of Node type with a key/index passed in
+        /// Calculates the index, within the array, to place a value later on
         /// </summary>
-        /// <param name="arr"></param>
-        /// <param name="indexToLook"></param>
-        /// <returns>a node that is found</returns>
-        public Node Find(Node[] arr, int keyToLook)
+        /// <param name="key">string</param>
+        /// <returns>the index based on the hash value of a key</returns>
+        public int GetHash(string key)
         {
-            Node valueToFind = arr[keyToLook];
-            Console.WriteLine($"The value of index {keyToLook} is {valueToFind.Value}");
-            return valueToFind;
+            decimal total = 0;
+            int index = 0;
+            //total the ASCII value of each character in the given key
+            foreach (char c in key) total += c;
+            //determine where to place a value based on the hash of the key
+            index = (int)Math.Floor((total * 599) / 1024);
+            return index;
         }
 
         /// <summary>
-        /// Checks every node to see if a key exists
+        /// Create a new node, find a hash for the key, and check if the index is occupied
+        /// If it is occupied, chain the nodes together
         /// </summary>
-        /// <param name="arr"></param>
-        /// <param name="indexTolook"></param>
-        /// <returns>true/false</returns>
-        public bool Contains(Node[] arr, int keyToLook)
+        /// <param name="key">string</param>
+        /// <param name="value">int</param>
+        public void Add(string key, int value)
         {
-            for (int i = 0; i < arr.Length; i++)
-            {   //if there is something in the node, at that index, have a look
-                if (arr[i] != null)
-                    if (arr[i].Key == keyToLook) return true;
+            Node node = new Node(key, value);
+            int index = GetHash(key);
+            //if there is a collision, chain the new node to the one already there
+            if (HashArray[index] != null) node.Next = HashArray[index];
+            //if that index is unoccupied, add the node
+            HashArray[index] = node;
+        }
+
+        /// <summary>
+        /// Finds the value at the given key
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>value of a given key</returns>
+        public int Find(string key)
+        {
+            //get the hash value of the key
+            int index = GetHash(key);
+            //go straight to that index in the array
+            Node current = HashArray[index];
+            //look through linkedlist, if there is one at that index, for the key
+            while (current.Next != null)
+            {   //return the value if the key is found
+                if (current.Key == key) return current.Value;
+                //reset counter to continue traversal
+                current = current.Next;
             }
-            return false;
+            //otherwise, return the value of the last node
+            if (current.Key == key) return current.Value;
+            //If the key doesn't exist, return 0;
+            return 0;
         }
 
-        public int GetHash(Node[] arr, int keyToLook)
+        /// <summary>
+        /// Determines if a given key exists in the hashtable
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        public bool Contains(string key)
         {
-            return arr[keyToLook].Value;
+            //get the hash value of the key
+            int index = GetHash(key);
+            //go straight to that index
+            Node current = HashArray[index];   
+            if (current == null) return false;
+            //travel through the linkedlist at an index, if there is one
+            //to check if the key is there
+            while (current.Next != null)
+            {
+                if (current.Key == key) return true;
+                current = current.Next;
+            }
+            //check the last node for the key
+            if (current.Key == key) return true;
+            //return false if the key is not found
+            return false;
         }
     }
 }

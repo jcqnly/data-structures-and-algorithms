@@ -1,33 +1,34 @@
 # Hash Tables
-Hash tables are a type of data structure that maps keys 
-to values and makes it easy to search for that value if 
-given a key.  The key is the indexer and the value is 
-accessed by the key.  Searches happen quickly if a key is given. 
-Due to this, the time complexity is O(1) for hash tables.
-
-Overall, Hashtables are like arrays under the hood.
+Hashtables are like arrays under the hood. They are a type of data structure 
+that maps keys to values and makes it easy to search for that value if 
+given a key.  Due to this characteristic, the time complexity of a 
+search and insertion on a hashtable is 0(1).
 
 ---
 ## Hashtable Implementation
+This implementation will add key/value pairs to a node, which will then be 
+placed into an index of the hashtable. Nodes were chosen so that in the 
+case of a collision, the new node can be linked to the node that is already 
+at the index.
+
+#### Key
+The given string is the key, which is turned into a hash value.  The hash 
+value is where the value, associated with the key, will be placed.
 
 #### Value
-In this problem domain, a string is given.  An example would be "cat". 
-The ASCII values for "cat" is then determined.  This will be the 
-value added to the index of the array, which is the hashtable.
-
-#### Index/Key
-The index is then determined by this equation: 
-```
-index = arrayLength % ASCIIValOfWord
-```
+In this problem domain, a value is an arbitrary positive number.
 
 ---
 ## Use Cases
-Finding any information by its number can be implemented with a 
-hash table.  This can be applied to looking up employees by their 
-employee ID number. For the graph implementation that involved 
-weights, we can store the edges and its weight in a hashtable.  
-Given an edge, we can find out the weight.
+Hashtables provide a quick lookup of information.  An example would be 
+hashing an employee name and storing that in a hashtable.  That key can be 
+associated with other information like their address, phone number or 
+any personal identification information.
+
+Another example would be a for an ecommerce site that needs to store a 
+collection of baskets for all its shoppers and the baskets would have all 
+the contents they want to buy.  A lookup of the basket hash will show 
+the contexts of their basket.
 
 ---
 
@@ -54,7 +55,7 @@ A visualization of a hashtable:
 ---
 
 ## Acknowledgments
-Thanks to Jermain and Steph for walking through this together.
+Thanks to Mario for walking me through this.
 
 Thanks to [taylorjoshuaw](https://github.com/taylorjoshuaw) 
 for this lovely README layout.
