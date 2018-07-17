@@ -22,6 +22,6 @@
 
 10. [Get Edges - (graph)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/GetEdge)
 
-11. [Find Islands - (graph)](htps://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FindIslands)
+11. [Find Islands - (graph)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FindIslands)
 
 12. [Repeat Word -(hashtable)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/RepeatedWord)
