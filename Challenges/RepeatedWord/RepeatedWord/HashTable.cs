@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace RepeatedWord
 {
@@ -13,6 +14,34 @@ namespace RepeatedWord
         {
             //set this length to 1024
             HashArray = new Node[1024];
+        }
+
+        public string RepeatedWord(string words)
+        {
+            HashTable ht = new HashTable();
+
+            //strip punctuation from a given string and convert all letters to lowercase
+            string pattern = @"[\p{P}\p{S}]";
+            string strippedString = Regex.Replace(words, pattern, "").ToLower();
+
+            //split string on the spaces and put all words into an array
+            string[] stringArray = strippedString.Split(" ");
+
+            //loop through each word, hash the words and store them in a hashtable
+            for (int i = 0; i < stringArray.Length; i++)
+            {
+                //first check if the hashtable contains word at the current index
+                if (ht.Contains(stringArray[i]))
+                {
+                    string foundWord = stringArray[i];
+                    //if there is a mathch, stop searching
+                    return foundWord;
+                }
+                //otherwise add the word at the current index to the table
+                ht.Add(stringArray[i], i);
+                Console.WriteLine(stringArray[i]);
+            }
+            return "Found no repeating words";
         }
 
         /// <summary>
