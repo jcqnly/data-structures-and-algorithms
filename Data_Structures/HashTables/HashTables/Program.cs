@@ -14,56 +14,46 @@ namespace HashTables
 
         public static void TryOutHashTable()
         {
-            //declare an array, of type Node, to the size of prime number
-            Node[] arrayHashTable = new Node[599];
-
-            //instantiate a hashfunction to determine the word ASCII value
-            HashFunction hf = new HashFunction();
-
-            //convert the value of "dog" into ASCII
-            //key: 287 value: 312
-            string word1 = "cat";
-            int wordValue = hf.ConvertWord(word1);
-
-            //convert the value of "cat" into ASCII
-            //key: 285 value: 314
-            string word2 = "dog";
-            int wordValue2 = hf.ConvertWord(word2);
-
-            //instantiate a new hashtable to put the word into the array
             HashTable ht = new HashTable();
 
-            //add "cat" ASCII value
-            ht.Add(arrayHashTable, wordValue, word1);
-            //add "dog" ASCII value
-            ht.Add(arrayHashTable, wordValue2, word2);
+            //add values at a given key
+            ht.Add("cat", 50);
+            ht.Add("act", 5);
+            ht.Add("dog", 1);
+            ht.Add("god", 30);
+            ht.Add("art", 75);
+            ht.Add("rat", 23);
+            ht.Add("man", 99);
 
-            //visualize the hashtable
-            for (int i = 0; i < arrayHashTable.Length; i++)
+            //prove all keys added exist in the hashtable
+            //all keys given are less than 100, so you don't have to scroll
+            //through 1024 values to see them
+            for (int i = 0; i < ht.HashArray.Length; i++)
             {
-                if (arrayHashTable[i] != null)
-                    Console.WriteLine($"index {i} | Key: {arrayHashTable[i].Key} Value: {arrayHashTable[i].Value}");
-                else if (arrayHashTable[i] == null)
-                    Console.WriteLine($"index {i}");
+                if (ht.HashArray[i] != null)
+                    Console.WriteLine($"key: {ht.HashArray[i].Key} and value: {ht.HashArray[i].Value}");
+                Console.WriteLine($"{i}");
             }
 
-            //find the value given the array to search through and the index
-            int keyToLook1 = 287;
-            Node node = ht.Find(arrayHashTable, keyToLook1);
-            Console.WriteLine($"At key {keyToLook1}, is a value of: {node.Value}");
+            //get hash value for a key
+            int hashValue1 = ht.GetHash("art");
+            Console.WriteLine($"Hash value for art is {hashValue1}");
+            //find the value for a given key
+            int findValue1 = ht.Find("art");
+            Console.WriteLine($"Finding the value for a key that was added: {findValue1}");
 
-            //check if the hashtable contains a key/index
-            //true - a key exists
-            Console.WriteLine($"Does key {keyToLook1} exist? {ht.Contains(arrayHashTable, keyToLook1)}!");
+            Console.WriteLine("--------------------------------------");
 
-            //false = a key doesn't exist
-            //randomly chosen at the moment:
-            int keyToLook2 = 99;
-            Console.WriteLine($"Does key {keyToLook2} exist? {ht.Contains(arrayHashTable, keyToLook2)}!");
-
-            int keyToLook3 = 285;
-            int hashValue = ht.GetHash(arrayHashTable, keyToLook3);
-            Console.WriteLine($"The value is {hashValue}.");
+            //handling collision in the case that 2 keys are same
+            //use 'cat' and 'act' in this case
+            int hashValue2 = ht.GetHash("act");
+            Console.WriteLine($"Hash value for act is {hashValue2}");
+            int findValue2 = ht.Find("act");
+            Console.WriteLine($"Finding the value for a key that was added: {findValue2}");
+            int hashValue3 = ht.GetHash("cat");
+            Console.WriteLine($"Hash value for cat is {hashValue3}");
+            int findValue3 = ht.Find("cat");
+            Console.WriteLine($"Finding the value for a key that was added: {findValue3}");
         }
     }
 }
