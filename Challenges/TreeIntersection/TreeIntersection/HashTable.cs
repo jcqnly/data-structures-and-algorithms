@@ -15,6 +15,39 @@ namespace TreeIntersection
         }
 
         /// <summary>
+        /// Searches through both given trees to check for common values
+        /// </summary>
+        /// <param name="BST1">binary search tree</param>
+        /// <param name="nodeA">node</param>
+        /// <param name="BST2">binary search tree</param>
+        /// <param name="nodeG">node</param>
+        /// <returns>hashtable with common values</returns>
+        public HashTable TreeIntersection(BinarySearchTree BST1, Node nodeA, BinarySearchTree BST2, Node nodeG)
+        {
+            //put both trees into hashtables
+            HashTable ht = new HashTable();
+            ht = BST1.BreadthFirst(nodeA);
+
+            HashTable ht2 = new HashTable();
+            ht2 = BST2.BreadthFirst(nodeG);
+
+            HashTable ht3 = new HashTable();
+
+            for (int i = 0; i < ht.HashArray.Length; i++)
+            {
+                if (ht.HashArray[i] != null)
+                {
+                    if (ht2.Contains(ht.HashArray[i].Key))
+                    {
+                        ht3.Add(ht.HashArray[i].Key, 1);
+                        Console.WriteLine($"found a match: {ht.HashArray[i].Key}");
+                    }
+                }
+            }
+            return ht3;
+        }
+
+        /// <summary>
         /// Calculates the index, within the array, to place a value later on
         /// </summary>
         /// <param name="key">string</param>
