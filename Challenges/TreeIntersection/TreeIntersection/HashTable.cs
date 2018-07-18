@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Text.RegularExpressions;
 
-namespace RepeatedWord
+namespace TreeIntersection
 {
-    public class HashTable
+    class HashTable
     {
         //a prop of every HashTable is a HashArray of Node type
         public Node[] HashArray { get; set; }
@@ -16,35 +15,8 @@ namespace RepeatedWord
             HashArray = new Node[1024];
         }
 
-        /// <summary>
-        /// check if a word is repeated
-        /// </summary>
-        /// <param name="words"></param>
-        /// <returns>first repeated word, or a msg saying there's no repeated words</returns>
-        public string RepeatedWord(string words)
-        {
-            HashTable ht = new HashTable();
+        //tree Intersection Method
 
-            //strip punctuation from a given string and convert all letters to lowercase
-            string pattern = @"[\p{P}\p{S}]";
-            string strippedString = Regex.Replace(words, pattern, "").ToLower();
-
-            //split string on the spaces and put all words into an array
-            string[] stringArray = strippedString.Split(" ");
-
-            //loop through each word, hash the words and store them in a hashtable
-            for (int i = 0; i < stringArray.Length; i++)
-            {
-                //first check if the hashtable contains word at the current index
-                //if there is a mathch, stop searching
-                if (ht.Contains(stringArray[i])) return stringArray[i];
-
-                //otherwise add the word at the current index to the table
-                ht.Add(stringArray[i], i);
-                Console.WriteLine(stringArray[i]);
-            }
-            return "Found no repeating words";
-        }
 
         /// <summary>
         /// Calculates the index, within the array, to place a value later on
