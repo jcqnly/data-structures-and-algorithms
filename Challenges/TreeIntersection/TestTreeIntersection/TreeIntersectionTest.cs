@@ -1,22 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
+using System;
+using TreeIntersection;
+using Xunit;
 
-namespace TreeIntersection
+namespace TestTreeIntersection
 {
-    public class Program
+    public class TreeIntersectionTest
     {
-        public static void Main(string[] args)
+        [Theory]
+        [InlineData(40000)]
+        [InlineData(1)]
+        [InlineData(80)]
+        public void CanFindCommonValuesInTwoTrees(int value)
         {
-            Console.WriteLine("Hello World!");
-
-            //instantiate binary search tree 1
             BinarySearchTree BST1 = new BinarySearchTree();
             //declare nodes to add to BST1
             Node nodeA = new Node(100);
             Node nodeB = new Node(50);
             Node nodeC = new Node(150);
             Node nodeD = new Node(75);
-            Node nodeE = new Node(300);
+            Node nodeE = new Node(value);
             Node nodeF = new Node(25);
 
             BST1.Add(nodeA, nodeB);
@@ -25,14 +27,13 @@ namespace TreeIntersection
             BST1.Add(nodeA, nodeE);
             BST1.Add(nodeA, nodeF);
 
-            //instantiate binary search tree 2
             BinarySearchTree BST2 = new BinarySearchTree();
             //declare nodes to add to BST2
             Node nodeG = new Node(100);
             Node nodeH = new Node(50);
             Node nodeI = new Node(150);
             Node nodeJ = new Node(175);
-            Node nodeK = new Node(400);
+            Node nodeK = new Node(value);
             Node nodeL = new Node(205);
 
             BST2.Add(nodeG, nodeH);
@@ -41,10 +42,12 @@ namespace TreeIntersection
             BST2.Add(nodeG, nodeK);
             BST2.Add(nodeG, nodeL);
 
+            //act
             HashTable ht = new HashTable();
-            //nodes need to be passed in because Breadth First Searches
-            //need a node to start searching from
             ht = ht.TreeIntersection(BST1, nodeA, BST2, nodeG);
+
+            //assert
+            Assert.True(ht.Contains(value.ToString()));
         }
     }
 }
