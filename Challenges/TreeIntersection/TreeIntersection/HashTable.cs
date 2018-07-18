@@ -31,6 +31,30 @@ namespace TreeIntersection
         }
 
         /// <summary>
+        /// Finds the value at the given key
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns>value of a given key</returns>
+        public int Find(string key)
+        {
+            //get the hash value of the key
+            int index = GetHash(key);
+            //go straight to that index in the array
+            HTNode current = HashArray[index];
+            //look through linkedlist, if there is one at that index, for the key
+            while (current.Next != null)
+            {   //return the value if the key is found
+                if (current.Key == key) return current.Value;
+                //reset counter to continue traversal
+                current = current.Next;
+            }
+            //otherwise, return the value of the last node
+            if (current.Key == key) return current.Value;
+            //If the key doesn't exist, return 0;
+            return 0;
+        }
+
+        /// <summary>
         /// Create a new node, find a hash for the key, and check if the index is occupied
         /// If it is occupied, chain the nodes together
         /// </summary>

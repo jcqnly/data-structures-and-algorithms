@@ -52,8 +52,13 @@ namespace TreeIntersection
 
             for (int i = 0; i < ht.HashArray.Length; i++)
             {
-                if (ht.HashArray[i].Key.Contains(ht2.HashArray[i].Key))
-                    Console.WriteLine($"Found a match for: {ht.HashArray[i].Key} and value: {ht.HashArray[i].Value}");
+                if (ht.HashArray[i] != null)
+                {
+                    if (ht2.Contains(ht.HashArray[i].Key))
+                    {
+                        Console.WriteLine($"found a match: {ht.HashArray[i].Key}");
+                    }              
+                }
             }
             Console.ReadLine();
         }
