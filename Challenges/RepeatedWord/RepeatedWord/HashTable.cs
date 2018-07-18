@@ -16,6 +16,11 @@ namespace RepeatedWord
             HashArray = new Node[1024];
         }
 
+        /// <summary>
+        /// check if a word is repeated
+        /// </summary>
+        /// <param name="words"></param>
+        /// <returns>first repeated word, or a msg saying there's no repeated words</returns>
         public string RepeatedWord(string words)
         {
             HashTable ht = new HashTable();
@@ -31,12 +36,9 @@ namespace RepeatedWord
             for (int i = 0; i < stringArray.Length; i++)
             {
                 //first check if the hashtable contains word at the current index
-                if (ht.Contains(stringArray[i]))
-                {
-                    string foundWord = stringArray[i];
-                    //if there is a mathch, stop searching
-                    return foundWord;
-                }
+                //if there is a mathch, stop searching
+                if (ht.Contains(stringArray[i])) return stringArray[i];
+
                 //otherwise add the word at the current index to the table
                 ht.Add(stringArray[i], i);
                 Console.WriteLine(stringArray[i]);
