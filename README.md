@@ -24,4 +24,6 @@
 
 11. [Find Islands - (graph)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FindIslands)
 
-12. [Repeat Word -(hashtable)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/RepeatedWord)
+12. [Repeat Word - (hashtable)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/RepeatedWord)
+
+13. [Tree Intersection - (hashtable and binary search tree)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/TreeIntersection)
