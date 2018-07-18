@@ -12,6 +12,15 @@ namespace TreeIntersection
             //instantiate binary search tree 1
             BinarySearchTree BST1 = new BinarySearchTree();
 
+            //instantiate binary search tree 2
+            BinarySearchTree BST2 = new BinarySearchTree();
+
+            TreeIntersection(BST1, BST2);
+        }
+
+
+        public static void TreeIntersection(BinarySearchTree BST1, BinarySearchTree BST2)
+        {
             //declare nodes to add to BST1
             Node nodeA = new Node(100);
             Node nodeB = new Node(50);
@@ -25,9 +34,6 @@ namespace TreeIntersection
             BST1.Add(nodeA, nodeD);
             BST1.Add(nodeA, nodeE);
             BST1.Add(nodeA, nodeF);
-
-            //instantiate binary search tree 2
-            BinarySearchTree BST2 = new BinarySearchTree();
 
             //declare nodes to add to BST2
             Node nodeG = new Node(100);
