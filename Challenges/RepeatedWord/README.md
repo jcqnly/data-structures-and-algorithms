@@ -18,7 +18,7 @@ were no repeating words.
 --
 ## Whiteboard
 
-![Rpeated Word](/assets/repeatWord.jpg)
+![Rpeated Word](/assets/repeatWord.jpeg)
 
 ---
 
