@@ -1,5 +1,6 @@
 # Left Join
-A hashtable implementation
+A hashtable implementation.  The method that solves this implementation lives in 
+HashTable.cs and is called LeftJoinHashTable
 
 ---
 ## Challenge
@@ -16,13 +17,20 @@ join concept.
 
 ---
 ## Problem Solving Process
-The current hashtable data structure does not allow for null values and the 
-value was set to a type int.
+The current hashtable class uses a node class that takes in a Key and Value that 
+are both of STRING type.  The hashtable class used has been refactored slightly 
+to handle the slightly refactored node class.
 
-For this challenge, the Value, in the key/value pair, will be set to a 
-type string.
+The process involves creating a third hashtable to store the left join. 
+Then go through the entire length of hashtable 1. 
+As long as that index, of hashtable 1, is not null, check if hashtable 
+2 has that key.  If it does, add the key and both of the values to 
+hashtable 3.  Otherwise, there was no match found. Since this implements a left 
+join, add the key and value of hashtable 1 to hashtable 3.
 
+Return Hashtable 3.
 
+---
 ## Visual
 
 Whiteboard:

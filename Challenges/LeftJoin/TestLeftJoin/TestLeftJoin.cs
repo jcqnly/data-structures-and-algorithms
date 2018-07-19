@@ -1,5 +1,4 @@
 using LeftJoin;
-using System;
 using Xunit;
 
 namespace TestLeftJoin
