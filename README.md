@@ -27,3 +27,5 @@
 12. [Repeat Word - (hashtable)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/RepeatedWord)
 
 13. [Tree Intersection - (hashtable and binary search tree)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/TreeIntersection)
+
+14. [Left Join - (hashtable) ](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/LeftJoin)
