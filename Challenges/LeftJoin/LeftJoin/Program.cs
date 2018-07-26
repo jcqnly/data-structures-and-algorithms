@@ -11,6 +11,9 @@ namespace LeftJoin
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Call LeftJoinHashTable method of the HashTable class to try out solution
+        /// </summary>
         public static void TryLeftJoin()
         {
             //instantiate new Hashtable ht1 and add contents

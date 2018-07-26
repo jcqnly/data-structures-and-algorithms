@@ -16,12 +16,14 @@ namespace LeftJoin
         }
 
         /// <summary>
-        /// Checks if ht2 has the ht1 key
-        /// if there is, save it
+        /// Checks if hashtable2 has the hashtable1 key
+        /// if it exists, add the value of that key from HashTable2 and Hashtabel1 to Hashtable3
+        /// if it doesn't exist, add only the key value pair from Hashtable1 to Hashtable3 along
+        /// with the string "null" to indicate that Hashtable2 did not have that key
         /// </summary>
-        /// <param name="ht1"></param>
-        /// <param name="ht2"></param>
-        /// <returns>hashtable</returns>
+        /// <param name="ht1">HashTable1</param>
+        /// <param name="ht2">HashTable2</param>
+        /// <returns>HashTable3 with a left join</returns>
         public HashTable LeftJoinHashTable(HashTable ht1, HashTable ht2)
         {
             //instantiate a new hashtable to store the left join table
