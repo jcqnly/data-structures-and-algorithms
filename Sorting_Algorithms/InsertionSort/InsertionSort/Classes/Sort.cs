@@ -8,17 +8,16 @@ namespace InsertionSort.Classes
     {
         public int[] InsertionSort(int[] arrayToSort)
         {
-            int temp;
-            for (int i = 0; i < arrayToSort.Length; i++)
+            int i = 1;
+            while (i < arrayToSort.Length)
             {
-                //current index is larger than the one to the right
-                if (arrayToSort[i] > arrayToSort[i + 1])
+                int j = i;
+                while (j > 0 && arrayToSort[j-1] > arrayToSort[j])
                 {
-                    temp = arrayToSort[i];
-                    arrayToSort[i + 1] = arrayToSort[i];
-                    arrayToSort[i + 1] = temp;
+                    arrayToSort[j] = arrayToSort[j - 1];
+                    j = j - 1;
                 }
-
+                i++;
             }
             return arrayToSort;
         }
