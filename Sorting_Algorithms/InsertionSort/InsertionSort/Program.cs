@@ -9,7 +9,7 @@ namespace InsertionSort
         {
             Console.WriteLine("Hello World!");
             //create an array to work with
-            int[] unsortedArray = new int[] { 4, 10, 9, 2, 7, 6, 1, 5, 3, 8 };
+            int[] unsortedArray = new int[] { 10, 4, 9, 2, 7, 6, 1, 5, 3, 8 };
 
             //call insertion sort
             Sort insertionSort = new Sort();
