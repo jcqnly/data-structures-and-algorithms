@@ -25,6 +25,10 @@ Use cases would be for challenges that works with an unsorted array.
 Sorting an array can facilitate in solving a challenge.
 
 ---
+## Visual
+![Insertion Sort Whiteboard](/assets/insertionSort.jpeg)
+
+---
 ## Problem Solving Process
 For this implementation, the process compares a number against a sorted list. 
 If the number to the left is larger, the 2 numbers are 
