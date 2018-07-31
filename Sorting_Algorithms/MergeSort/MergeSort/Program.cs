@@ -90,11 +90,11 @@ namespace MergeSort
             Array.Copy(arrayToSort, right, temp, index, rightEnd - right + 1);
             Array.Copy(temp, leftStart, arrayToSort, leftStart, size);
 
-            //foreach (var num in arrayToSort)
-            //{
-            //    Console.WriteLine(num);
-            //}
-            //Console.WriteLine("-----------");
+            foreach (var num in arrayToSort)
+            {
+                Console.WriteLine(num);
+            }
+            Console.WriteLine("-----------");
             return arrayToSort;
         }
     }
