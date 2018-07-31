@@ -22,7 +22,7 @@ values.
 
 ---
 ## Visual
-![Merger Sort](/assets/mergeSort.png)
+![Merge Sort](/assets/mergeSort.jpeg)
 
 ---
 ## Acknowledgments
