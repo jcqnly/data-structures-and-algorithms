@@ -25,4 +25,5 @@ values.
 ![]()
 
 ---
-## Problem Solving Process
+## Acknowledgments
+Thanks to the [Hacker Rank Tutorial](https://www.youtube.com/watch?v=KF2j-9iSf4Q)
