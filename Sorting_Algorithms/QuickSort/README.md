@@ -24,3 +24,9 @@ array.
 
 ---
 ## Visual
+![Quick Sort](/assets/quickSort.jpeg)
+
+## Acknowledgments
+Thanks to the [Hacker Rank Tutorial](https://www.youtube.com/watch?v=SLauY6PpjW4)
+Thanks to the [Joe James Tutorial](https://www.youtube.com/watch?v=SLauY6PpjW4)
+
