@@ -1,5 +1,5 @@
 # Merge Sort
-Given an array, sort it.
+Given an array, sort it using a merge sort.
 
 ---
 ## Challenge
