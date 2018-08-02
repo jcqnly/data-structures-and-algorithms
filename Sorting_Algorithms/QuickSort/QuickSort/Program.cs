@@ -60,6 +60,12 @@ namespace QuickSort
                     right--;
                 }
             }
+
+            foreach (var num in array)
+            {
+                Console.WriteLine(num);
+            }
+            Console.WriteLine("-----------");
             return left;
         }
 
