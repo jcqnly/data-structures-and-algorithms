@@ -3,10 +3,10 @@ using Xunit;
 
 namespace RadixSortTests
 {
-    public class UnitTest1
+    public class RadixTest
     {
         [Fact]
-        public void Test1()
+        public void CanRadixSort()
         {
 
         }
