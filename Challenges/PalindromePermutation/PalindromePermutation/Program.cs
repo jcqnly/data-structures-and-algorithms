@@ -9,10 +9,10 @@ namespace PalindromePermutation
         public static void Main(string[] args)
         {
             string string1 = "civic";
-            //string string2 = "ivicc";
+            string string2 = "ivicc";
             string string3 = "llic";
             Console.WriteLine(hasPalindromePermutation(string1));
-            //Console.WriteLine(hasPalindromePermutation(string2));
+            Console.WriteLine(hasPalindromePermutation(string2));
             Console.WriteLine(hasPalindromePermutation(string3));
             
         }
