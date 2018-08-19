@@ -19,6 +19,7 @@ namespace RotateArray
         {
             //temp array to hold the number of values equal to the # of rotations
             int[] tempArr = new int[rotations];
+            int length = arr.Length;
 
             //store up to the number of values in tempArr
             for (int i = 0; i <= rotations - 1; i++)
@@ -26,16 +27,17 @@ namespace RotateArray
                 tempArr[i] = arr[i];
             }
 
-            //rotate arr, this will leave null values at the end
+            //rotate arr
             for (int j = 0; j < arr.Length - rotations; j++)
             {
                 arr[j] = arr[j + rotations];
             }
 
             //append the tempArr elements to the end of arr
-            for (int k = 0; k < tempArr.Length-1; k++)
+            for (int k = 0; k < tempArr.Length; k++)
             {
-                arr[k] = tempArr[k];
+                arr[length - rotations] = tempArr[k];
+                length++;
             }
 
             return arr;
