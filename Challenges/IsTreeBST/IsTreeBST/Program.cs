@@ -9,6 +9,7 @@ namespace IsTreeBST
 		{
 			Console.WriteLine("Hello World!");
 			var set = new SortedSet<int>();
+
 		}
 
 		public bool IsBST()
