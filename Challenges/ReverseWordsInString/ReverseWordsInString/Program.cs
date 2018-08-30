@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace ReverseWordsInString
 {
@@ -13,13 +15,35 @@ namespace ReverseWordsInString
 			//reverse words in a string
 			//Hello world -> world Hello
 
-			ReverseWords(givenString);
+			//ReverseWordsBruteForce(givenString);
+			ReverseWordsStringBuilder(givenString);
 		}
 
-		public static string ReverseWords(string givenString)
+		/// <summary>
+		/// Brute force
+		/// </summary>
+		/// <param name="givenString"></param>
+		/// <returns></returns>
+		public static string ReverseWordsBruteForce(string givenString)
 		{
 
+			List<string> newString = new List<string>();
 
+			return givenString;
+		}
+
+		/// <summary>
+		/// Stringbuilder
+		/// </summary>
+		/// <param name="givenString"></param>
+		/// <returns></returns>
+		public static string ReverseWordsStringBuilder(string givenString)
+		{
+			string[] newString = givenString.Split(" ");
+			foreach (string s in newString)
+			{
+				Console.WriteLine(s);
+			}
 			return givenString;
 		}
 	}
