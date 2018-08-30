@@ -1,12 +1,40 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace ReverseWordsInString
 {
-	class Program
+	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			string givenString = "Hello world!";
+
+			//reverse words in a string
+			//Hello world -> world Hello
+
+			Console.WriteLine(ReverseWordsStringBuilder(givenString));		
+		}
+
+		/// <summary>
+		/// Solving the problem with Stringbuilder
+		/// </summary>
+		/// <param name="givenString"></param>
+		/// <returns></returns>
+		public static string ReverseWordsStringBuilder(string givenString)
+		{
+			string[] newString = givenString.Split(" ");
+			StringBuilder sb = new StringBuilder();
+			for (int i = newString.Length - 1; i >= 0; i--)
+			{
+				sb.Append(newString[i]);
+				if (i != 0)
+				{
+					sb.Append(" ");
+				}		
+			}
+
+			return sb.ToString();
 		}
 	}
 }
