@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReverseWordsInString", "ReverseWordsInString\ReverseWordsInString.csproj", "{063D18DF-63A4-4ECC-B2C2-7F3A62978AF4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReverseWordsInString", "ReverseWordsInString\ReverseWordsInString.csproj", "{063D18DF-63A4-4ECC-B2C2-7F3A62978AF4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestReverseString", "TestReverseString\TestReverseString.csproj", "{6C06C050-E8D0-43D2-91A6-0305C6CFBA52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{063D18DF-63A4-4ECC-B2C2-7F3A62978AF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{063D18DF-63A4-4ECC-B2C2-7F3A62978AF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{063D18DF-63A4-4ECC-B2C2-7F3A62978AF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C06C050-E8D0-43D2-91A6-0305C6CFBA52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C06C050-E8D0-43D2-91A6-0305C6CFBA52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C06C050-E8D0-43D2-91A6-0305C6CFBA52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C06C050-E8D0-43D2-91A6-0305C6CFBA52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
