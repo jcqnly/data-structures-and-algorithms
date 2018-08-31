@@ -31,3 +31,5 @@
 14. [Left Join - (hashtable) ](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/LeftJoin)
 
 15. [Palindrome Permutations](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/PalindromePermutation)
+
+16. [Capitalize Letter](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/CapitalizeLetter)
