@@ -4,7 +4,7 @@ using static ReverseWordsInString.Program;
 
 namespace TestReverseString
 {
-	public class UnitTest1
+	public class TestReverseString
 	{
 		[Theory]
 		[InlineData("Hello world", "world Hello")]
@@ -12,7 +12,6 @@ namespace TestReverseString
 		[InlineData("1 cup of coffee", "coffee of cup 1")]
 		public void CanReverseString(string input, string expected)
 		{
-			//assert
 			Assert.Equal(expected, ReverseWordsStringBuilder(input));
 		}
 	}
