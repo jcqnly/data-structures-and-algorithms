@@ -10,7 +10,7 @@ namespace CapitalizeLetter
 			string stringToCapitalize = "apple @pple aPPLES dog";
 			Console.WriteLine(CapitalizeLetterInString(stringToCapitalize));
 			Console.WriteLine(CapitalizeLetterWithStringBuilder(stringToCapitalize));
-			//try this in Regex
+			//try Regex
 
 		}
 
@@ -58,7 +58,7 @@ namespace CapitalizeLetter
 			{
 				if (char.IsWhiteSpace(stringToCapitalize[i]))
 				{
-					ewString += stringToCapitalize[i];
+					NewString += stringToCapitalize[i];
 					i++;
 
 					if (char.IsLower(stringToCapitalize[i]))
