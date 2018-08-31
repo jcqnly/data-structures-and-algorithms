@@ -3,7 +3,7 @@ using Xunit;
 
 namespace TestCapitalizeLetter
 {
-	public class UnitTest1
+	public class TestCapitalizeLetter
 	{
 		[Fact]
 		public void Test1()
