@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 
 namespace CapitalizeLetter
 {
@@ -7,7 +8,19 @@ namespace CapitalizeLetter
 		public static void Main(string[] args)
 		{
 			string stringToCapitalize = "apple @pple aPPLES dog";
-			CapitalizeLetterInString(stringToCapitalize);
+			//CapitalizeLetterInString(stringToCapitalize);
+			CapitalizeLetterWithStringBuilder(stringToCapitalize);
+
+		}
+
+		public static void CapitalizeLetterWithStringBuilder(string stringToCapitalize)
+		{
+			string[] newString = stringToCapitalize.Split(" ");
+			StringBuilder sb = new StringBuilder();
+			for (int i = 0; i < newString.Length; i++)
+			{
+
+			}
 		}
 
 		/// <summary>
