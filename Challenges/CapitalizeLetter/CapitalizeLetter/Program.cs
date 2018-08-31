@@ -19,7 +19,10 @@ namespace CapitalizeLetter
 			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < newString.Length; i++)
 			{
-
+				if (char.IsLetter(newString[i][0]))
+				{
+					char.ToUpper(newString[i][0]);
+				}
 			}
 		}
 
