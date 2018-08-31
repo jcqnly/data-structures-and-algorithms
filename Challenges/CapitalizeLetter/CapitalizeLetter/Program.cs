@@ -8,7 +8,7 @@ namespace CapitalizeLetter
 		public static void Main(string[] args)
 		{
 			string stringToCapitalize = "apple @pple aPPLES dog";
-			//CapitalizeLetterInString(stringToCapitalize);
+			Console.WriteLine(CapitalizeLetterInString(stringToCapitalize));
 			Console.WriteLine(CapitalizeLetterWithStringBuilder(stringToCapitalize));
 			//try this in Regex
 
@@ -46,7 +46,7 @@ namespace CapitalizeLetter
 		/// a letter in the alphabet
 		/// </summary>
 		/// <param name="stringToCapitalize"></param>
-		public static void CapitalizeLetterInString(string stringToCapitalize)
+		public static string CapitalizeLetterInString(string stringToCapitalize)
 		{
 			string NewString = "";
 			if (!char.IsUpper(stringToCapitalize[0]))
@@ -58,7 +58,7 @@ namespace CapitalizeLetter
 			{
 				if (char.IsWhiteSpace(stringToCapitalize[i]))
 				{
-					NewString += stringToCapitalize[i];
+					ewString += stringToCapitalize[i];
 					i++;
 
 					if (char.IsLower(stringToCapitalize[i]))
@@ -69,7 +69,7 @@ namespace CapitalizeLetter
 				}
 				NewString += stringToCapitalize[i];
 			}
-			Console.WriteLine(NewString);
+			return NewString;
 		}
 	}
 }
