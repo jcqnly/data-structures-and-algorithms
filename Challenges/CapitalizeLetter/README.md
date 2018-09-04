@@ -6,3 +6,7 @@ word if it is a letter.
 
 
 ## Input
+"i like 4appy d@Ys"
+
+## Output
+"I Like 4appy D@Ys"
