@@ -15,4 +15,7 @@ ___
 ## Problem Solving Process
 Firstly, the given string is split on a space and stored in a new array.  
 The new array is then iterated, starting from the end towards the start of the array.  
-As each word is iterated through, the word is appended to a String builder.
+As each word is iterated through, the word is appended to a String builder as long as 
+i hasn't reached the beginning of the array.  If i is 0, then the String builder variable 
+is returned as a string.
+
