@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace TwoSums
@@ -16,30 +17,56 @@ namespace TwoSums
 
 			int[] nums = new int[] { 2, 7, 11, 15};
 			int target = 13;
-			//TODO: modularize solution
-			foreach (int i in TwoSum(nums, target))
-			{
-				Console.WriteLine(i);
-			}
+			//brute force route
+			//foreach (int i in TwoSum(nums, target)) Console.WriteLine(i);
+
+			//TODO: solve with a hashtable
+			foreach (int i in TwoSumHashTable(nums, target)) Console.WriteLine(i);
+
 		}
 
+		/// <summary>
+		/// Brute force
+		/// </summary>
+		/// <param name="nums"></param>
+		/// <param name="target"></param>
+		/// <returns></returns>
 		public static int[] TwoSum(int[] nums, int target)
 		{
-			int[] index = new int[2];
-
 			for (int i = 0; i < nums.Length; i++)
 			{
 				for (int j = i + 1; j < nums.Length; j++)
 				{
 					if (nums[i] + nums[j] == target)
 					{
-						Console.WriteLine($"The 2 indices are {i} and {j}");
-						index[0] = i;
-						index[1] = j;
+						//Console.WriteLine($"The 2 indices are {i} and {j}");
+						return new int[] { i, j};
 					}
 				}
 			}
-			return index;
+			//TODO: find out how to return an exception
+			return new int[] { 0 };
+		}
+
+		/// <summary>
+		/// Hashtable route
+		/// </summary>
+		/// <param name="nums"></param>
+		/// <param name="target"></param>
+		/// <returns></returns>
+		public static int[] TwoSumHashTable(int[] nums, int target)
+		{
+			Hashtable ht = new Hashtable();
+			for (int i = 0; i < nums.Length; i++)
+			{
+				ht.Add(i, nums[i]);
+				int otherValue = target - nums[i];
+				if (ht.Contains(otherValue))
+				{
+					return new int[] { i, otherValue };
+				}
+			}
+			return new int[] { 100 };
 		}
 	}
 }
