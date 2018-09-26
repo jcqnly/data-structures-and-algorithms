@@ -8,19 +8,12 @@ namespace TwoSums
 	{
 		public static void Main(string[] args)
 		{
-			//iterate through array
-			//if the number is greater than the target, ignore it and move on
-			//if the number is not greater than the target, store its index in a var
-				//iterate through the rest of the array
-				//if the number at each index, added to that first value, is the target
-				//store that index in a var
-
 			int[] nums = new int[] { 2, 7, 11, 15};
 			int target = 13;
 			//brute force route
-			//foreach (int i in TwoSum(nums, target)) Console.WriteLine(i);
+			foreach (int i in TwoSum(nums, target)) Console.WriteLine(i);
 
-			//TODO: solve with a hashtable
+			//TODO: solve with a hashtable/dictionary
 			foreach (int i in TwoSumHashTable(nums, target)) Console.WriteLine(i);
 
 		}
@@ -56,15 +49,16 @@ namespace TwoSums
 		/// <returns></returns>
 		public static int[] TwoSumHashTable(int[] nums, int target)
 		{
-			Hashtable ht = new Hashtable();
+			Dictionary<int, int> storeArray = new Dictionary<int, int>();
+			//Hashtable ht = new Hashtable();
 			for (int i = 0; i < nums.Length; i++)
 			{
-				ht.Add(i, nums[i]);
 				int otherValue = target - nums[i];
-				if (ht.Contains(otherValue))
+				if (storeArray.ContainsKey(otherValue))
 				{
-					return new int[] { i, otherValue };
+					return new int[] { i, otherValue};
 				}
+				storeArray.Add(i, nums[i]);
 			}
 			return new int[] { 100 };
 		}
