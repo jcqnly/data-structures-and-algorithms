@@ -15,11 +15,15 @@ namespace TwoSums
 
 			int[] nums = new int[] { 2, 7, 11, 15};
 			int target = 13;
+			//TODO: modularize solution
+			TwoSum(nums, target);
+		}
 
+		public static int[] TwoSum(int[] nums, int target)
+		{
 			for (int i = 0; i < nums.Length; i++)
 			{
-				//int temp = nums[i];
-				for (int j = i+1; j < nums.Length; j++)
+				for (int j = i + 1; j < nums.Length; j++)
 				{
 					if (nums[i] + nums[j] == target)
 					{
@@ -27,14 +31,7 @@ namespace TwoSums
 					}
 				}
 			}
-			//TODO: modularize solution
-			//TwoSum(nums, target);
+			return 
 		}
-
-		//public int[] TwoSum(int[] nums, int target)
-		//{
-
-		//	return 
-		//}
 	}
 }
