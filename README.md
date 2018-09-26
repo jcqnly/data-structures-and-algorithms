@@ -2,37 +2,37 @@
 
 ## Table of Contents
 
-1. [Reverse an Array](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/array_reverse)
+1. [Reverse an Array](/Challenges/array_reverse)
 
-2. [Binary Search](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/binary_search)
+2. [Binary Search](/Challenges/binary_search)
 
-3. [Largest Product](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/largest_product)
+3. [Largest Product](/Challenges/largest_product)
 
-4. [Kth Element From the End](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/KthElementFromEnd)
+4. [Kth Element From the End](/Challenges/KthElementFromEnd)
 
-5. [Queue With Stacks](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/QueueWithTwoStacks)
+5. [Queue With Stacks](/Challenges/QueueWithTwoStacks)
 
-6. [FIFO Animal Shelter](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FIFOanimalShelterQueue)
+6. [FIFO Animal Shelter](/Challenges/FIFOanimalShelterQueue)
 
-7. [Multi Bracket Validation](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/MultiBracketValidation)
+7. [Multi Bracket Validation](/Challenges/MultiBracketValidation)
 
-8. [FizzBuzz Tree](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FizzBuzzTree)
+8. [FizzBuzz Tree](/Challenges/FizzBuzzTree)
 
-9. [Binary Tree Max Value](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/BinaryTreeMax)
+9. [Binary Tree Max Value](/Challenges/BinaryTreeMax)
 
-10. [Get Edges - (graph)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/GetEdge)
+10. [Get Edges - (graph)](/Challenges/GetEdge)
 
-11. [Find Islands - (graph)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/FindIslands)
+11. [Find Islands - (graph)](/Challenges/FindIslands)
 
-12. [Repeat Word - (hashtable)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/RepeatedWord)
+12. [Repeat Word - (hashtable)](/Challenges/RepeatedWord)
 
-13. [Tree Intersection - (hashtable and binary search tree)](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/TreeIntersection)
+13. [Tree Intersection - (hashtable and binary search tree)](/Challenges/TreeIntersection)
 
-14. [Left Join - (hashtable) ](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/LeftJoin)
+14. [Left Join - (hashtable) ](/Challenges/LeftJoin)
 
-15. [Palindrome Permutations](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/PalindromePermutation)
+15. [Palindrome Permutations](/Challenges/PalindromePermutation)
 
-16. [Capitalize Letter](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/CapitalizeLetter)
+16. [Capitalize Letter](/Challenges/CapitalizeLetter)
 
 17. [Reverse Words In A String](/Challenges/ReverseWordsInString)
 
