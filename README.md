@@ -34,7 +34,7 @@
 
 16. [Capitalize Letter](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/CapitalizeLetter)
 
-17. [Reverse Words In A String](https://github.com/jcqnly/data-structures-and-algorithms/tree/master/Challenges/ReverseWordsInString)
+17. [Reverse Words In A String](/Challenges/ReverseWordsInString)
 
 18. [Two Sums](/Challenges/TwoSums)
 
