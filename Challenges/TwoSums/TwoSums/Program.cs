@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TwoSums
 {
@@ -16,11 +17,16 @@ namespace TwoSums
 			int[] nums = new int[] { 2, 7, 11, 15};
 			int target = 13;
 			//TODO: modularize solution
-			TwoSum(nums, target);
+			foreach (int i in TwoSum(nums, target))
+			{
+				Console.WriteLine(i);
+			}
 		}
 
 		public static int[] TwoSum(int[] nums, int target)
 		{
+			int[] index = new int[2];
+
 			for (int i = 0; i < nums.Length; i++)
 			{
 				for (int j = i + 1; j < nums.Length; j++)
@@ -28,10 +34,12 @@ namespace TwoSums
 					if (nums[i] + nums[j] == target)
 					{
 						Console.WriteLine($"The 2 indices are {i} and {j}");
+						index[0] = i;
+						index[1] = j;
 					}
 				}
 			}
-			return 
+			return index;
 		}
 	}
 }
