@@ -8,13 +8,13 @@ namespace TwoSums
 	{
 		public static void Main(string[] args)
 		{
-			int[] nums = new int[] { 2, 7, 11, 15};
+			int[] nums = new int[] { 2, 5, 7, 9, 11, 15};
 			int target = 13;
-			//brute force route
+			//brute force using O(N)^2 complexity
 			foreach (int i in TwoSum(nums, target)) Console.WriteLine(i);
 
-			//TODO: solve with a hashtable/dictionary
-			foreach (int i in TwoSumHashTable(nums, target)) Console.WriteLine(i);
+			//Using a dictionary for O(N) complexity
+			foreach (int i in TwoSumDictionary(nums, target)) Console.WriteLine(i);
 
 		}
 
@@ -42,25 +42,24 @@ namespace TwoSums
 		}
 
 		/// <summary>
-		/// Hashtable route
+		/// Dictionaly route
 		/// </summary>
 		/// <param name="nums"></param>
 		/// <param name="target"></param>
 		/// <returns></returns>
-		public static int[] TwoSumHashTable(int[] nums, int target)
+		public static int[] TwoSumDictionary(int[] nums, int target)
 		{
 			Dictionary<int, int> storeArray = new Dictionary<int, int>();
-			//Hashtable ht = new Hashtable();
 			for (int i = 0; i < nums.Length; i++)
 			{
 				int otherValue = target - nums[i];
-				if (storeArray.ContainsKey(otherValue))
+				if (storeArray.ContainsKey(nums[i]))
 				{
-					return new int[] { i, otherValue};
+					return new int[] { i, storeArray[nums[i]] };
 				}
-				storeArray.Add(i, nums[i]);
+				storeArray.Add(otherValue, i);
 			}
-			return new int[] { 100 };
+			return null;
 		}
 	}
 }

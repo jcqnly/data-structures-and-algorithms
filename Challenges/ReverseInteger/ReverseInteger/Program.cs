@@ -2,11 +2,17 @@
 
 namespace ReverseInteger
 {
-	class Program
+	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
 			Console.WriteLine("Hello World!");
+			int x = 
+		}
+
+		public static int Reverse(int x)
+		{
+
 		}
 	}
 }
