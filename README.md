@@ -37,6 +37,3 @@
 17. [Reverse Words In A String](/Challenges/ReverseWordsInString)
 
 18. [Two Sums](/Challenges/TwoSums)
-
-
-
