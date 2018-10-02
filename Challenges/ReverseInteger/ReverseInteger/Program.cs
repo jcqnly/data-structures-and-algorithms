@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace ReverseInteger
 {
@@ -40,8 +41,13 @@ namespace ReverseInteger
 			}
 			//add the last num to the list
 			reverseNum.Add(num);
-
-			return num;
+			StringBuilder sb = new StringBuilder();
+			foreach (int x in reverseNum)
+			{
+				sb.Append(x.ToString());
+			}
+			string answer = sb.ToString();
+			return int.Parse(answer);
 		}
 	}
 }
