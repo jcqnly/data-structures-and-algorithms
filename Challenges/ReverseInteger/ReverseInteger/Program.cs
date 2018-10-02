@@ -19,35 +19,40 @@ namespace ReverseInteger
 
 		public static int Reverse(int num)
 		{
-			//StackOverflow answer:
-			//int result = 0;
-			//while (num > 0)
+			//StackOverflow answer with while conditional changed to account for negative num:
+			int result = 0;
+			while (num != 0)
+			{
+				result = result * 10 + num % 10;
+				Console.WriteLine($"{num % 10}");
+				num /= 10;
+			}
+			return result;
+
+			//TODO: refactor original solution to account for negative num
+			//int modulus;
+			//List<int> reverseNum = new List<int>();
+
+			//while (num != 0)
 			//{
-			//	result = result * 10 + num % 10;
-			//	num /= 10;
+			//	//1. find modulus of x
+			//	modulus = num % 10;
+			//	//2. add modulus to list
+			//	reverseNum.Add(modulus);
+			//	//3. divide x by 10 and store that in a diff var
+			//	num = num / 10;
+			//	//4. repeat 1-3 (using a while loop)
 			//}
-			//return result;
-			int modulus;
-			List<int> reverseNum = new List<int>();
-			while (num >= 10)
-			{
-				//1. find modulus of x
-				modulus = num % 10;
-				//2. add modulus to list
-				reverseNum.Add(modulus);
-				//3. divide x by 10 and store that in a diff var
-				num = num / 10;
-				//4. repeat 1-3 (using a while loop)
-			}
-			//add the last num to the list
-			reverseNum.Add(num);
-			StringBuilder sb = new StringBuilder();
-			foreach (int x in reverseNum)
-			{
-				sb.Append(x.ToString());
-			}
-			string answer = sb.ToString();
-			return int.Parse(answer);
+
+			////add the last num to the list
+			//reverseNum.Add(num);
+			//StringBuilder sb = new StringBuilder();
+			//foreach (int x in reverseNum)
+			//{
+			//	sb.Append(x.ToString());
+			//}
+			//string answer = sb.ToString();
+			//return int.Parse(answer);
 		}
 	}
 }
