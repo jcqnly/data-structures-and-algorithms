@@ -10,7 +10,7 @@
 
 4. [Kth Element From the End](/Challenges/KthElementFromEnd)
 
-5. [Queue With Stacks](/Challenges/QueueWithTwoStacks)
+5. [Queue With Two Stacks](/Challenges/QueueWithTwoStacks)
 
 6. [FIFO Animal Shelter](/Challenges/FIFOanimalShelterQueue)
 
@@ -37,3 +37,19 @@
 17. [Reverse Words In A String](/Challenges/ReverseWordsInString)
 
 18. [Two Sums](/Challenges/TwoSums)
+
+19. [Count And Say](/Challenges/CountAndSay)
+
+20. [Reverse Integer](/Challenges/ReverseInteger)
+
+21. [IsTreeBST](/Challenges/IsTreeBST)
+
+22. [Merge Singly Linked List](/Challenges/MergeSinglyLinkedListFromEnd)
+
+23. [NormalizePhoneNumber](/Challenges/NormalizePhoneNumber)
+
+24. [Reduce Letters](/Challenges/ReduceLetters)
+
+25. [Rotate A Matrix](/Challenges/RotateAMatrix)
+
+26. [Rotate Array](/Challenges/RotateArray)
