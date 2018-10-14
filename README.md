@@ -56,4 +56,4 @@
 
 27. [Shift an Array](/Challenges/ArrayShift)
 
-28. [Balance Paranthesis]()
+28. Need to finish[Balance Parenthesis](/Challenges/BalanceParans)
