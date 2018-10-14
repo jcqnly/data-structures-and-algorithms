@@ -53,3 +53,7 @@
 25. [Rotate A Matrix](/Challenges/RotateAMatrix)
 
 26. [Rotate Array](/Challenges/RotateArray)
+
+27. [Shift an Array](/Challenges/ArrayShift)
+
+28. []()
