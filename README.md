@@ -46,13 +46,13 @@
 
 22. [Merge Singly Linked List](/Challenges/MergeSinglyLinkedListFromEnd)
 
-23. [NormalizePhoneNumber](/Challenges/NormalizePhoneNumber)
+23. Need to finish[NormalizePhoneNumber](/Challenges/NormalizePhoneNumber)
 
-24. [Reduce Letters](/Challenges/ReduceLetters)
+24. Need to finish[Reduce Letters](/Challenges/ReduceLetters)
 
 25. [Rotate A Matrix](/Challenges/RotateAMatrix)
 
-26. [Rotate Array](/Challenges/RotateArray)
+26. Need to finish[Rotate Array](/Challenges/RotateArray)
 
 27. [Shift an Array](/Challenges/ArrayShift)
 
