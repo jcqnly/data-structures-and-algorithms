@@ -8,19 +8,19 @@ namespace BalanceParans
 		public static void Main(string[] args)
 		{
 			Console.WriteLine("Balance paranthesis in a string");
+
 			string givenString1 = "g)a)v(u(r(r))";
 			Console.WriteLine($"Original string\n{givenString1}");
 			Console.WriteLine($"Balanced string\n{BalanceParenthesis(givenString1)}");
+
 			string givenString2 = "1+5)+5+)6+(5+9)*9";
 			Console.WriteLine($"Original string\n{givenString2}");
 			Console.WriteLine($"Balanced string\n{BalanceParenthesis(givenString2)}");
-
 		}
 
 		public static string BalanceParenthesis(string givenString)
 		{
 			int counter = 0;
-
 			char[] parens = {'(', ')'};
 			StringBuilder sb = new StringBuilder();
 			for(int i = 0; i < givenString.Length; i++)
@@ -32,9 +32,10 @@ namespace BalanceParans
 					sb.Append(givenString[i]);
 					counter++;
 				}
+				//if we're at the end
 				else if (i == givenString.Length - 1 && counter > 0)
 				{
-					//append matching closing parens for as many open parens as there are
+					//append matching closing parens for as many open parens that need a closing buddy
 					while (counter >= 0)
 					{
 						sb.Append(parens[1]);
@@ -45,7 +46,15 @@ namespace BalanceParans
 				{
 					//remove closing parens if we haven't come across an open parens yet
 					//do that by not appending anything
-					
+					sb.Append("");
+				}
+				//if it's a closing parens that already has an opening buddy and we're not at the end
+				else if (givenString[i] == parens[1] && i != givenString.Length - 1 && counter > 0)
+				{
+					//append that closing parens and decr counter because an open parens has been
+					//accounted for with a closing parens
+					sb.Append(givenString[i]);
+					counter--;
 				}
 				else
 				{
