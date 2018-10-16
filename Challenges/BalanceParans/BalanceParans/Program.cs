@@ -25,8 +25,8 @@ namespace BalanceParans
 			StringBuilder sb = new StringBuilder();
 			for(int i = 0; i < givenString.Length; i++)
 			{
-				//if char is open parens and there are no other open parens
-				if (givenString[i] == parens[0] && counter == 0)
+				//if char is open parens
+				if (givenString[i] == parens[0])
 				{
 					//append it and incr counter
 					sb.Append(givenString[i]);
@@ -36,16 +36,16 @@ namespace BalanceParans
 				else if (i == givenString.Length - 1 && counter > 0)
 				{
 					//append matching closing parens for as many open parens that need a closing buddy
-					while (counter >= 0)
+					while (counter > 0)
 					{
 						sb.Append(parens[1]);
 						counter--;
 					}
 				}
+				//we come across an closing parens, but there are no previous open parens
 				else if (givenString[i] == parens[1] && counter == 0)
 				{
-					//remove closing parens if we haven't come across an open parens yet
-					//do that by not appending anything
+					//meaning that it's by itself and we don't want it
 					sb.Append("");
 				}
 				//if it's a closing parens that already has an opening buddy and we're not at the end
