@@ -38,7 +38,7 @@
 
 18. [Two Sums](/Challenges/TwoSums)
 
-19. [Count And Say](/Challenges/CountAndSay)
+19. Need to finish[Count And Say](/Challenges/CountAndSay)
 
 20. [Reverse Integer](/Challenges/ReverseInteger)
 
