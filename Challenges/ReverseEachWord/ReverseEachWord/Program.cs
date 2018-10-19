@@ -2,11 +2,20 @@
 
 namespace ReverseEachWord
 {
-	class Program
+	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			Console.WriteLine("Reverse each word in a string, but maintain the word order");
+			string input = "Hello world";
+			ReverseWord(input);
+		}
+
+		public static string ReverseWord(string input)
+		{
+
+
+			return input;
 		}
 	}
 }

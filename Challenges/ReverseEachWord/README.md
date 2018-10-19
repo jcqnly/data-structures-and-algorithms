@@ -5,7 +5,7 @@ word order.
 ## Input
 "Hello world"
 
-
 ## Output
 
 "olleH dlrow"
+
