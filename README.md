@@ -1,4 +1,4 @@
-# Data Structures and Algorithms Challenges
+r# Data Structures and Algorithms Challenges
 
 ## Table of Contents
 
@@ -57,5 +57,9 @@
 27. [Shift an Array](/Challenges/ArrayShift)
 
 28. [Balance Parenthesis](/Challenges/BalanceParans)
+
+29. [Reverse Each Word in a String](/Challenges/ReverseEachWord)
+
+30. []()
 
 
