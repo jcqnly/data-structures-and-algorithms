@@ -1,4 +1,4 @@
-r# Data Structures and Algorithms Challenges
+# Data Structures and Algorithms Challenges
 
 ## Table of Contents
 

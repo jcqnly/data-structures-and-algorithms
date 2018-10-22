@@ -22,6 +22,12 @@ namespace LLMerge2Lists
             Current = node;
         }
 
+		public Node Merge2LessSpace(LinkList llOne, LinkList llTwo)
+		{
+
+			return llOne.Head;
+		}
+
         /// <summary>
         /// Merge 2 given singly linked lists
         /// </summary>
