@@ -12,11 +12,19 @@ namespace ReverseEachWord
 			Console.WriteLine(ReverseWord(input));
 		}
 
+		/// <summary>
+		/// Takes in a string and reverses each word and maintains word order
+		/// </summary>
+		/// <param name="input">type string to reverse</param>
+		/// <returns>string where each word is reversed</returns>
 		public static string ReverseWord(string input)
 		{
 			StringBuilder sb = new StringBuilder();
 			//split word on space
+			//in some IDE, this syntax will throw an error "cannot convert type string[] to char"
 			string[] splitString = input.Split(" ");
+			//another way to split on a space is:
+			//string[] splitString = input.Split(new char[] {' '});
 
 			//iterate through every word
 			for (int i = 0; i <= splitString.Length - 1; i++)
