@@ -22,9 +22,9 @@ namespace ReverseEachWord
 			StringBuilder sb = new StringBuilder();
 			//split word on space
 			//in some IDE, the " " will throw an error "cannot convert type string[] to char"
-			string[] splitString = input.Split(" ");
-			//changingi this to ' ' helps
-			//string[] splitString = input.Split(' ');
+			//string[] splitString = input.Split(" ");
+			//changing this to ' ' helps and is the fastest option of all 
+			string[] splitString = input.Split(' ');
 			//another way to split on a space is:
 			//string[] splitString = input.Split(new char[] {' '});
 
@@ -35,13 +35,12 @@ namespace ReverseEachWord
 				for (int j = splitString[i].Length - 1; j >= 0; j--)
 				{
 					sb.Append(splitString[i][j]);
-					//Console.WriteLine(splitString[i][j]);
 				}
 				sb.Append(" ");
 			}
 			return sb.ToString();
 		}
 
-		//stretch goal: find another solution
+		//stretch goal: figure out edge cases
 	}
 }
