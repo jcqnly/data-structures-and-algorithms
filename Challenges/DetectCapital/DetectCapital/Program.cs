@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MergeTwoLinkedLists
+namespace DetectCapital
 {
 	public class Program
 	{
