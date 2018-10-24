@@ -19,8 +19,8 @@ namespace LLMerge2Lists
             llOne.Add(new Node(2));
             llOne.Add(new Node(19));
 
-            //the order will be 19 - 2 - 10 - 41
-            llOne.Print();
+			//the order will be 19 - 2 - 10 - 41
+			llOne.Print();
 
             //Add() llTwo
             LinkList llTwo = new LinkList();
@@ -29,8 +29,8 @@ namespace LLMerge2Lists
             llTwo.Add(new Node(9));
             llTwo.Add(new Node(20));
 
-            //the order will be 20 - 9 - 8 - 31 
-            llTwo.Print();
+			//the order will be 20 - 9 - 8 - 31 
+			llTwo.Print();
 
             //creating a new link list
             llOne.Merge2(llOne, llTwo);

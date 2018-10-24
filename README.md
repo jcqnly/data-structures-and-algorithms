@@ -58,4 +58,8 @@
 
 28. [Balance Parenthesis](/Challenges/BalanceParans)
 
+29. [Reverse Each Word in a String](/Challenges/ReverseEachWord)
+
+30. []()
+
 
