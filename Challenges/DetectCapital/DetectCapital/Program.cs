@@ -9,15 +9,11 @@ namespace DetectCapital
 			Console.WriteLine("Detect Capital");
 			string string1 = "C"; //true
 			string string2 = "c"; //true
-			//string string3 = "Dot Net Rocks!"; //true
-			//string string4 = ".NET"; //true
-			string string5 = "BeE"; //false
+			string string3 = "BeE"; //false
 
 			Console.WriteLine($"{string1} is {DetectCap(string1)}");
 			Console.WriteLine($"{string2} is {DetectCap(string2)}");
-			//Console.WriteLine($"{string3} is {DetectCap(string3)}");
-			//Console.WriteLine($"{string4} is {DetectCap(string4)}");
-			Console.WriteLine($"{string5} is {DetectCap(string5)}");
+			Console.WriteLine($"{string3} is {DetectCap(string3)}");
 		}
 
 		public static bool DetectCap(string input)
