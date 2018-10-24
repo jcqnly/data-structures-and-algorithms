@@ -22,6 +22,11 @@ namespace DetectCapital
 
 		public static bool DetectCap(string input)
 		{
+			//if letter is 1 char long and it's a cap
+			if (input.Length == 1 && char.IsUpper(input[0]))
+			{
+				return true; //return true
+			}
 
 			return true;
 		}
