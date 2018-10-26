@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MiddleOfLinkedList
 {
-	public class LinkedList
+	public class LinkList
 	{
 		public Node Head { get; set; }
 
@@ -78,9 +78,10 @@ namespace MiddleOfLinkedList
 				//set the current value to the next value to repeat the process
 				Current = Current.Next;
 			}
+			Console.Write($"  {Current.Value}  ");
 			Console.WriteLine("\n");
 			//to visually see which is the last node pointing to null
-			Console.Write($"Last value is: {Current.Value}\n");
+			//Console.Write($"Last value is: {Current.Value}\n");
 		}
 
 		/// <summary>
@@ -161,5 +162,4 @@ namespace MiddleOfLinkedList
 			Current.Next = newNode;
 		}
 	}
-}
 }
