@@ -21,7 +21,7 @@ namespace MiddleOfLinkedList
 		/// <summary>
 		/// Finds the Middle of a LinkedList; 2N time solution
 		/// </summary>
-		/// <param name="ll"></param>
+		/// <param name="ll">a linked list</param>
 		public static void FindMiddle(LinkList ll)
 		{
 			ll.Current = ll.Head;
@@ -42,5 +42,7 @@ namespace MiddleOfLinkedList
 
 			Console.WriteLine($"Middle of the Linked List is {ll.Head.Value}");
 		}
+
+		//stretch goal - find another solution
 	}
 }
