@@ -11,13 +11,16 @@ namespace MiddleOfLinkedList
 			
 			LinkedList<Node> ll = new LinkedList<Node>();
 
-			ll.AddLast(3);
-			ll.AddLast(2);
-			ll.AddLast(1);
+			ll.AddLast(new Node(3));
+			ll.AddLast(new Node(2));
+			ll.AddLast(new Node(1));
+			
+			FindMiddle(Node);
 		}
 
 		public static void FindMiddle(Node head)
 		{
+
 			Node current = head;
 		}
 	}
