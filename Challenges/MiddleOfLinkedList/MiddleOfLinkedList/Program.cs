@@ -12,14 +12,35 @@ namespace MiddleOfLinkedList
 			ll.Add(new Node(15));
 			ll.Add(new Node(52));
 			ll.Add(new Node(6));
+			ll.Add(new Node(16));
 
 			ll.Print();
-			Console.ReadLine();
+			FindMiddle(ll);
 		}
 
-		public static void FindMiddle(Node head)
+		/// <summary>
+		/// Finds the Middle of a LinkedList; 2N time solution
+		/// </summary>
+		/// <param name="ll"></param>
+		public static void FindMiddle(LinkList ll)
 		{
+			ll.Current = ll.Head;
+			double counter = 0;
+			while (ll.Current.Next != null)
+			{
+				ll.Current = ll.Current.Next;
+				counter++;
+			}
 
+			double midIndex = Math.Ceiling(counter/2);
+
+			while(midIndex > 0)
+			{
+				ll.Head = ll.Head.Next;
+				midIndex--;
+			}
+
+			Console.WriteLine($"Middle of the Linked List is {ll.Head.Value}");
 		}
 	}
 }
