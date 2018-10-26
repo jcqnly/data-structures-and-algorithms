@@ -60,6 +60,6 @@
 
 29. [Reverse Each Word in a String](/Challenges/ReverseEachWord)
 
-30. []()
+30. [Middle Of a Linked List](/Challenges/MiddleOfLinkedList)
 
 
