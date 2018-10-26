@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MiddleOfLinkedList
 {
@@ -6,7 +7,18 @@ namespace MiddleOfLinkedList
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			Console.WriteLine("Find the Middle of a Linked List");
+			
+			LinkedList<Node> ll = new LinkedList<Node>();
+
+			ll.AddLast(3);
+			ll.AddLast(2);
+			ll.AddLast(1);
+		}
+
+		public static void FindMiddle(Node head)
+		{
+			Node current = head;
 		}
 	}
 }
