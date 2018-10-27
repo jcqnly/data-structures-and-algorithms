@@ -16,6 +16,15 @@ namespace MiddleOfLinkedList
 
 			ll.Print();
 			FindMiddle(ll);
+
+			LinkList ll2 = new LinkList(new Node(11));
+			ll2.Add(new Node(5));
+			ll2.Add(new Node(21));
+			ll2.Add(new Node(2));
+			ll2.Add(new Node(12));
+
+			ll2.Print();
+			FindMiddleWithArray(ll2);
 		}
 
 		/// <summary>
@@ -44,5 +53,9 @@ namespace MiddleOfLinkedList
 		}
 
 		//stretch goal - find another solution
+		public static void FindMiddleWithArray(LinkList ll2)
+		{
+
+		}
 	}
 }
