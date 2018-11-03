@@ -9,8 +9,18 @@ namespace RemoveDupesFromSortedArray
 		{
 			Console.WriteLine("Remove dupes from sorted array.");
 
-			int[] array = new int[] { 1, 1, 1, 2, 2, 3 };
-			Console.WriteLine(RemoveDupes(array));
+			int[] array1 = new int[] { 1, 1, 1, 2, 2, 3 };
+			Console.WriteLine($"Total number of numbers is {RemoveDupes(array1)}");
+
+			Console.WriteLine("----");
+
+			int[] array2 = new int[] { 1, 2, 2, 2, 2, 3, 4, 4 };
+			Console.WriteLine($"Total number of numbers is {RemoveDupes(array2)}");
+
+			Console.WriteLine("----");
+
+			int[] array3 = new int[] { 1, 2, 3, 4, 4, 4, 4 };
+			Console.WriteLine($"Total number of numbers is {RemoveDupes(array3)}");
 		}
 
 		public static int RemoveDupes(int[] arr)
@@ -21,15 +31,23 @@ namespace RemoveDupesFromSortedArray
 
 			for (int i = 0; i < numsList.Count; i++)
 			{
+				//make sure we're not at the end to prevent index out of range
 				if (i != numsList.Count - 1)
 				{
+					//check if the next num is a dupe
 					if (numsList[i] == numsList[i + 1])
 					{
 						counter++;
-						if (counter > 2)
+						if (counter >= 2)
 						{
+							//if the first number has multiple dupes, the first part
+							//of this if checks if we are at the very first num
+							if ((i != 0) && (numsList[i] == numsList[i-1]))
+							{
+								//if we are not and the num before it is a dupe, reset the counter
+								counter = 1;
+							}
 							numsList.Remove(numsList[i]);
-							counter = 1;
 						}
 					}
 				}
