@@ -9,8 +9,13 @@ namespace RemoveDupesFromSortedArray
 		{
 			Console.WriteLine("Remove dupes from sorted array.");
 
-			int[] array = new int[] { 1, 1, 1, 2, 2, 3 };
-			Console.WriteLine(RemoveDupes(array));
+			int[] array1 = new int[] { 1, 1, 1, 2, 2, 3 };
+			Console.WriteLine(RemoveDupes(array1));
+
+			Console.WriteLine("----");
+
+			int[] array2 = new int[] { 1, 2, 2, 2, 2, 3, 4, 4 };
+			Console.WriteLine(RemoveDupes(array2));
 		}
 
 		public static int RemoveDupes(int[] arr)
