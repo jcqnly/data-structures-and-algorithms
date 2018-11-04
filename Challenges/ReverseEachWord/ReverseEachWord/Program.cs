@@ -10,6 +10,7 @@ namespace ReverseEachWord
 			Console.WriteLine("Reverse each word in a string, but maintain the word order");
 			string input = "Hello world";
 			Console.WriteLine(ReverseWord(input));
+			Console.WriteLine(ReverseWordNoSplit(input));
 		}
 
 		/// <summary>
@@ -38,6 +39,19 @@ namespace ReverseEachWord
 				}
 				sb.Append(" ");
 			}
+			return sb.ToString();
+		}
+
+		/// <summary>
+		/// Reverse each word, but don't use the split method
+		/// </summary>
+		/// <param name="input"></param>
+		/// <returns></returns>
+		public static string ReverseWordNoSplit(string input)
+		{
+			StringBuilder sb = new StringBuilder();
+
+
 			return sb.ToString();
 		}
 
