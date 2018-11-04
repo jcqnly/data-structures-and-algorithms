@@ -9,7 +9,7 @@ namespace ReverseEachWord
 		{
 			Console.WriteLine("Reverse each word in a string, but maintain the word order");
 			string input = "Hello world";
-			Console.WriteLine(ReverseWord(input));
+			//Console.WriteLine(ReverseWord(input));
 			Console.WriteLine(ReverseWordNoSplit(input));
 		}
 
@@ -50,7 +50,22 @@ namespace ReverseEachWord
 		public static string ReverseWordNoSplit(string input)
 		{
 			StringBuilder sb = new StringBuilder();
+			//loop through length of string
+			for (int i = 0; i < input.Length; i++)
+			{
+				//if we come across a space
+				if (char.IsWhiteSpace(input[i]))
+				{
+					//iterate backwards from that space to the beginning of that word
+					for (int j = i-1; j >= 0; j--)
+					{
+						sb.Append(input[j]);
+						Console.WriteLine($"{input[j]}");
+					}
+					sb.Append(" ");
+				}
 
+			}
 
 			return sb.ToString();
 		}
