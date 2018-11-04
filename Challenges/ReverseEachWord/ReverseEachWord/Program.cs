@@ -50,21 +50,27 @@ namespace ReverseEachWord
 		public static string ReverseWordNoSplit(string input)
 		{
 			StringBuilder sb = new StringBuilder();
+			int counter = 0;
 			//loop through length of string
-			for (int i = 0; i < input.Length; i++)
+			for (int i = 0; i <= input.Length-1; i++)
 			{
+				counter++;
 				//if we come across a space
-				if (char.IsWhiteSpace(input[i]))
+				if (char.IsWhiteSpace(input[i]) || i == input.Length-1)
 				{
 					//iterate backwards from that space to the beginning of that word
-					for (int j = i-1; j >= 0; j--)
+					for (int j = i-1; counter >= j; j--)
 					{
+						counter--;
 						sb.Append(input[j]);
 						Console.WriteLine($"{input[j]}");
 					}
-					sb.Append(" ");
+					counter = 0;
+					if (i != input.Length - 1)
+					{
+						sb.Append(" ");
+					}
 				}
-
 			}
 
 			return sb.ToString();
