@@ -55,13 +55,18 @@ namespace ReverseEachWord
 			//loop through length of string
 			for (int i = 0; i < input.Length; i++)
 			{
+				//if it's not a white space, increment counter
 				if (!Char.IsWhiteSpace(input[i])) letterCount++;
+
+				//this is the pointer for where we are in the word to append
 				int temp = i;
-				//start appending process if the next letter is a whitespace or the length of the string
+
+				//start appending process if the letter is a whitespace or 
+				//we're at the end of the string
 				if (Char.IsWhiteSpace(input[i]) || i == input.Length - 1)
 				{
-					temp--;
-					while (letterCount > temp)
+					if (Char.IsWhiteSpace(input[i])) temp--;
+					while (letterCount > 0)
 					{
 						sb.Append(input[temp]);
 						letterCount--;
@@ -69,6 +74,7 @@ namespace ReverseEachWord
 						temp--;
 					}
 				}
+				if (Char.IsWhiteSpace(input[i])) sb.Append(" ");
 				
 			}
 
