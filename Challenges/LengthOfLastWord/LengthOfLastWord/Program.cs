@@ -6,7 +6,7 @@ namespace LengthOfLastWord
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Length of last word:");
+			Console.WriteLine("Find the length of last word using the split method");
 
 			//empty string
 			string input1 = "";
@@ -18,8 +18,20 @@ namespace LengthOfLastWord
 			string input2 = "Hello world";
 			Console.WriteLine($"The string was '{input2}' and the length of the last word is: {LastWordLength(input2)}");
 
+			Console.WriteLine("Find length of the last word WITHOUT the split method");
+
+			//regular string
+			string input3 = "Hello world";
+			Console.WriteLine($"The string was '{input3}' and the length of the last word is: {LastWordLengthNoSplit(input3)}");
+
 		}
 
+		/// <summary>
+		/// Find the length of the last word of a given string
+		/// Used the split method to split up the words
+		/// </summary>
+		/// <param name="input"></param>
+		/// <returns></returns>
 		public static int LastWordLength(string input)
 		{
 			//split words on space
@@ -33,7 +45,13 @@ namespace LengthOfLastWord
 				counter++;
 				Console.WriteLine(i);
 			}
+			return counter;
+		}
 
+
+		public static int LastWordLengthNoSplit(string input)
+		{
+			int counter = 0;
 			return counter;
 		}
 	}
