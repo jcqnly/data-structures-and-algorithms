@@ -55,17 +55,15 @@ namespace ReverseEachWord
 			for (int i = 0; i <= input.Length-1; i++)
 			{
 				counter++;
-				int j = i;
 				//if we come across a space
-				if (char.IsWhiteSpace(input[i+1]) || i == input.Length-1)
+				if (char.IsWhiteSpace(input[i]) || i == input.Length)
 				{
 					//iterate backwards from that space to the beginning of that word
-					while (counter >= j)
+					while (counter > 0)
 					{ 
-						sb.Append(input[j]);
-						Console.WriteLine($"{input[j]}");
+						sb.Append(input[counter-1]);
+						Console.WriteLine($"{input[counter-1]}");
 						counter--;
-						j--;
 					}
 					counter = 0;
 					if (i != input.Length - 1)
