@@ -52,6 +52,12 @@ namespace LengthOfLastWord
 		public static int LastWordLengthNoSplit(string input)
 		{
 			int counter = 0;
+			int i = input.Length - 1;
+			while (!Char.IsWhiteSpace(input[i]))
+			{
+				counter++;
+				i--;
+			}
 			return counter;
 		}
 	}
