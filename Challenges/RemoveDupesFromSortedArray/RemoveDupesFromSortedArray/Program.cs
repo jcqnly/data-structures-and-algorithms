@@ -8,17 +8,17 @@ namespace RemoveDupesFromSortedArray
 		public static void Main(string[] args)
 		{
 			Console.WriteLine("Remove dupes from sorted array.");
-
+			//lots of dupes at the beginning
 			int[] array1 = new int[] { 1, 1, 1, 2, 2, 3 };
 			Console.WriteLine($"Total number of numbers is {RemoveDupes(array1)}");
 
 			Console.WriteLine("----");
-
+			//lots of dupes in the middle
 			int[] array2 = new int[] { 1, 2, 2, 2, 2, 3, 4, 4 };
 			Console.WriteLine($"Total number of numbers is {RemoveDupes(array2)}");
 
 			Console.WriteLine("----");
-
+			//lots of dupes at the end
 			int[] array3 = new int[] { 1, 2, 3, 4, 4, 4, 4 };
 			Console.WriteLine($"Total number of numbers is {RemoveDupes(array3)}");
 		}
