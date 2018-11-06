@@ -61,23 +61,28 @@ namespace ReverseEachWord
 				//this is the pointer for where we are in the word to append
 				int temp = i;
 
-				//start appending process if the letter is a whitespace or 
+				//start appending process if i is a space or 
 				//we're at the end of the string
 				if (Char.IsWhiteSpace(input[i]) || i == input.Length - 1)
 				{
+					//since we're at a space, and temp = i, decrement i because
+					//we want the stuff before the space
 					if (Char.IsWhiteSpace(input[i])) temp--;
+
+					//start appending from the end of the word for however many letters there are
 					while (letterCount > 0)
 					{
 						sb.Append(input[temp]);
 						letterCount--;
+						//get out of this while loop if there are no more letters
 						if (letterCount == 0) break;
 						temp--;
 					}
 				}
-				if (Char.IsWhiteSpace(input[i])) sb.Append(" ");
-				
-			}
 
+				//finally, append a space if we're at a space after appending previous letters
+				if (Char.IsWhiteSpace(input[i])) sb.Append(" ");			
+			}
 			return sb.ToString();
 		}
 
