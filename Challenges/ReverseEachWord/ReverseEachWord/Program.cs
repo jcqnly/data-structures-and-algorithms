@@ -50,29 +50,39 @@ namespace ReverseEachWord
 		public static string ReverseWordNoSplit(string input)
 		{
 			StringBuilder sb = new StringBuilder();
-			int counter = 0;
+			//set a counter.  this will determine where i needs to be
+			int letterCount = 0;
 			//loop through length of string
-			for (int i = 0; i <= input.Length-1; i++)
+			for (int i = 0; i < input.Length; i++)
 			{
-				counter++;
-				//if we come across a space
-				if (char.IsWhiteSpace(input[i]) || i == input.Length)
+				//if it's not a white space, increment counter
+				if (!Char.IsWhiteSpace(input[i])) letterCount++;
+
+				//this is the pointer for where we are in the word to append
+				int temp = i;
+
+				//start appending process if i is a space or 
+				//we're at the end of the string
+				if (Char.IsWhiteSpace(input[i]) || i == input.Length - 1)
 				{
-					//iterate backwards from that space to the beginning of that word
-					while (counter > 0)
-					{ 
-						sb.Append(input[counter-1]);
-						Console.WriteLine($"{input[counter-1]}");
-						counter--;
-					}
-					counter = 0;
-					if (i != input.Length - 1)
+					//since we're at a space, and temp = i, decrement i because
+					//we want the stuff before the space
+					if (Char.IsWhiteSpace(input[i])) temp--;
+
+					//start appending from the end of the word for however many letters there are
+					while (letterCount > 0)
 					{
-						sb.Append(" ");
+						sb.Append(input[temp]);
+						letterCount--;
+						//get out of this while loop if there are no more letters
+						if (letterCount == 0) break;
+						temp--;
 					}
 				}
-			}
 
+				//finally, append a space if we're at a space after appending previous letters
+				if (Char.IsWhiteSpace(input[i])) sb.Append(" ");			
+			}
 			return sb.ToString();
 		}
 
