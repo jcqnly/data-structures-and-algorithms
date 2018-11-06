@@ -26,27 +26,38 @@ namespace RemoveDupesFromSortedArray
 		public static int RemoveDupes(int[] arr)
 		{
 			var numsList = new List<int>(arr);
+			int counter = 1;
 
-			//int counter = 0;
-
-			//for (int i = 0; i < numsList.Count; i++)
-			//{
-			//	counter++;
-			//	if (i != numsList.Count - 1)
-			//	{
-			//		if (numsList[i] == numsList[i+1] && counter > 2)
-			//		{
-			//			numsList.Remove(numsList[i]);
-			//			counter = 0;
-			//		}
-			//	}
-			//}
+			for (int i = 0; i < numsList.Count; i++)
+			{
+				//make sure we're not at the end to prevent index out of range
+				if (i != numsList.Count - 1)
+				{
+					//check if the next num is a dupe
+					if (numsList[i] == numsList[i + 1])
+					{
+						//if it is, increment the counter
+						counter++;
+						//if there are more than 2 dupes, remove them
+						if (counter >= 2)
+						{
+							//if the number has multiple dupes, the first part
+							//of this if statement checks if we are at the one of the dupes
+							if ((i != 0) && (numsList[i] == numsList[i - 1]))
+							{
+								//reset the counter
+								counter = 1;
+							}
+							numsList.Remove(numsList[i]);
+						}
+					}
+				}
+			}
 
 			foreach (var i in numsList)
 			{
 				Console.WriteLine(i);
 			}
-
 			return numsList.Count;
 		}
 
