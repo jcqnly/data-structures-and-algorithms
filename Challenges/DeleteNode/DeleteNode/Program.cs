@@ -7,6 +7,7 @@ namespace DeleteNode
 		public static void Main(string[] args)
 		{
 			Console.WriteLine("Delete a node");
+			Console.WriteLine("Delete a node nth from the end");
 		}
 
 		//delete a node
