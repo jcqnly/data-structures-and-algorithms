@@ -25,7 +25,23 @@ namespace DeleteNode
 
 		public void AddBefore(Node newNode, Node existingNode)
 		{
+			Current = Head;
+			if (Head.Value == existingNode.Value)
+			{
+				Add(newNode);
+				return;
+			}
 
+			while (Current.Next != null)
+			{
+				if (Current.Next.Value == existingNode.Value)
+				{
+					newNode.Next = Current.Next;
+					Current.Next = newNode;
+					return;
+				}
+				Current = Current.Next;
+			}
 		}
 	}
 }
