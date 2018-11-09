@@ -13,8 +13,8 @@ namespace DeleteNode
 			LL.Add(new Node(20));
 			LL.Add(new Node(34));
 			DeleteNode(LL);
-
-			Console.WriteLine("Delete a node nth from the end");
+			LL.Print();
+			//Console.WriteLine("Delete a node nth from the end");
 		}
 
 		//delete a node

@@ -42,6 +42,21 @@ namespace DeleteNode
 				}
 				Current = Current.Next;
 			}
+
+		}
+
+		public void Print()
+		{
+			Console.WriteLine("Printing:\n");
+
+			Current = Head;
+			while (Current.Next != null)
+			{
+				Console.Write($" {Current.Value} ");
+				Current = Current.Next;
+			}
+
+			Console.WriteLine("\n");
 		}
 	}
 }
