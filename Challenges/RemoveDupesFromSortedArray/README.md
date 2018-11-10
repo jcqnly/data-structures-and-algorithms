@@ -1,5 +1,4 @@
 # Remove Dupes From a Sorted Array
-
 Problem can be found [here](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/).
 
 ## Problem Domain
