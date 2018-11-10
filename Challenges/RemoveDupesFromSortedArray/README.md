@@ -10,14 +10,15 @@ and return the new length.
 ## Problem Solving Process
 
 #### Easy
-
+The solution for the easy problem was found 
+[here](https://stackoverflow.com/questions/50033837/c-sharp-modify-an-array-in-place-without-creating-another-array-in-memory)
 
 #### Medium
 My original solution for the medium difficulty question works on 
-Visual Studio and was replicated by a friend on repl.it in Java 
-and it works.  However, the same algorithm does not return the 
-modified array on LeetCode nor for a job coding challenge.
+Visual Studio and was replicated by a friend on repl.it in Java, 
+and it works.  It works because it returns the correct list of numbers. 
+The same algorithm does not return the correct numbers on 
+LeetCode nor for a job coding challenge on the RexTester IDE.  
+No, I was not able to do this in-place as asked.
 
-
-The solution for the easy problem was found 
-[here](https://stackoverflow.com/questions/50033837/c-sharp-modify-an-array-in-place-without-creating-another-array-in-memory)
+I have also added an accepted solution for the medium problem.
