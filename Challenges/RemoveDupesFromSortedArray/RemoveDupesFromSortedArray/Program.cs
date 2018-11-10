@@ -15,7 +15,8 @@ namespace RemoveDupesFromSortedArray
 				Console.WriteLine(i);
 			}
 			Console.WriteLine("----");
-			Console.WriteLine($"Total number of numbers is {RemoveDupes(array1)}");
+			Console.WriteLine($"Total number of numbers is {RemoveDupesEasy(array1)}");
+			//Console.WriteLine($"Total number of numbers is {RemoveDupesMedium(array1)}");
 
 			Console.WriteLine("----");
 			//lots of dupes in the middle
@@ -25,7 +26,8 @@ namespace RemoveDupesFromSortedArray
 				Console.WriteLine(i);
 			}
 			Console.WriteLine("----");
-			Console.WriteLine($"Total number of numbers is {RemoveDupes(array2)}");
+			Console.WriteLine($"Total number of numbers is {RemoveDupesEasy(array2)}");
+			//Console.WriteLine($"Total number of numbers is {RemoveDupesMedium(array2)}");
 
 			Console.WriteLine("----");
 			//lots of dupes at the end
@@ -35,10 +37,26 @@ namespace RemoveDupesFromSortedArray
 				Console.WriteLine(i);
 			}
 			Console.WriteLine("----");
-			Console.WriteLine($"Total number of numbers is {RemoveDupes(array3)}");
+			Console.WriteLine($"Total number of numbers is {RemoveDupesEasy(array3)}");
+			//Console.WriteLine($"Total number of numbers is {RemoveDupesMedium(array3)}");
 		}
 
-		public static int RemoveDupes(int[] arr)
+		public static int RemoveDupesEasy(int[] arr)
+		{
+			if (arr.Length == 0) return 0;
+			int i = 0;
+			for (int j = 1; j < arr.Length; j++)
+			{
+				if (arr[j] != arr[i])
+				{
+					i++;
+					arr[i] = arr[j];
+				}
+			}
+			return i+1;
+		}
+
+		public static int RemoveDupesMedium(int[] arr)
 		{
 			var numsList = new List<int>(arr);
 			int counter = 1;

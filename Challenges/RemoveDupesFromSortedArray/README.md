@@ -8,3 +8,16 @@ Medium difficulty can be found [here](https://leetcode.com/problems/remove-dupli
 and return the new length.
 
 ## Problem Solving Process
+
+#### Easy
+
+
+#### Medium
+My original solution for the medium difficulty question works on 
+Visual Studio and was replicated by a friend on repl.it in Java 
+and it works.  However, the same algorithm does not return the 
+modified array on LeetCode nor for a job coding challenge.
+
+
+The solution for the easy problem was found 
+[here](https://stackoverflow.com/questions/50033837/c-sharp-modify-an-array-in-place-without-creating-another-array-in-memory)
