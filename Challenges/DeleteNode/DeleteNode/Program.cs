@@ -48,8 +48,8 @@ namespace DeleteNode
 			Console.WriteLine($"Original list is: ");
 			LL3.Print();
 
-			Node nodeToDelete = new Node(34);
-			Console.WriteLine($"Node to delete is {nodeToDelete.Value}");
+			int k = 1;
+			Console.WriteLine($"Delete node {k} from the end.");
 			DeleteNode(LL, nodeToDelete);
 			LL3.Print();
 		}
@@ -85,5 +85,16 @@ namespace DeleteNode
 		}
 
 		//delete a node nth from the end
+		public static void DeleteNodeKthFromEnd(LinkList LL, int k)
+		{
+			LL.Current = LL.Head;
+			LL.Runner = LL.Head;
+			int counter = 0;
+			while (LL.Runner.Next != null)
+			{
+				counter++;
+				LL.Runner = LL.Runner.Next;
+			}
+		}
 	}
 }
