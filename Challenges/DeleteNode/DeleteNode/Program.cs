@@ -22,27 +22,35 @@ namespace DeleteNode
 			DeleteNode(LL, nodeToDelete);
 			LL.Print();
 
-			LinkList LL2 = new LinkList(new Node(10));
-			LL2.Add(new Node(15));
-			LL2.Add(new Node(51));
-			LL2.Add(new Node(20));
-			LL2.Add(new Node(34));
-			LL2.Add(new Node(27));
-			LL2.Add(new Node(44));
+			LinkList LL2 = new LinkList(new Node(6));
+			LL2.Add(new Node(5));
+			LL2.Add(new Node(1));
+			LL2.Add(new Node(2));
+			LL2.Add(new Node(4));
+			LL2.Add(new Node(7));
+			LL2.Add(new Node(9));
+			Console.WriteLine("Original list is ");
+			LL2.Print();
 
-			//DeleteNode(LL2, nodeToDelete);
-			//LL2.Print();
+			Node nodeToDelete2 = new Node(1);
+			Console.WriteLine($"Node to delete is {nodeToDelete2.Value}");
+			DeleteNode(LL2, nodeToDelete2);
+			LL2.Print();
 
 			//Console.WriteLine("Delete a node nth from the end");
 		}
 
-		//delete a node
-		public static void DeleteNode(LinkList LL, Node deleteNode)
+		/// <summary>
+		/// Delete a node by setting the current.next to point to current.next.next
+		/// </summary>
+		/// <param name="LL">A singly linked list</param>
+		/// <param name="deleteNode">the node to be deleted</param>
+		public static void DeleteNode(LinkList LL, Node nodeToDelete)
 		{
 			LL.Current = LL.Head;
 			while (LL.Current.Next != null)
 			{
-				if (LL.Current.Next.Value == deleteNode.Value)
+				if (LL.Current.Next.Value == nodeToDelete.Value)
 				{
 					LL.Current.Next = LL.Current.Next.Next;
 				}
@@ -50,6 +58,11 @@ namespace DeleteNode
 			}
 		}
 
+		public static void DeleteNodeSwap(Node nodeToDelete)
+		{
+			nodeToDelete.Value = nodeToDelete.Next.Value;
+			nodeToDelete.Next = nodeToDelete.Next.Next;
+		}
 		//delete a node nth from the end
 	}
 }

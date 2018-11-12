@@ -19,7 +19,10 @@ deleted, set the current.next pointer to current.next.next.
 _Strategy 2_:
 Walk through the linked list.  Go to the node to be deleted.  Set its 
 value to the one after it.  Set its current.next pointer to 
-current.next.next.  This will not work if the node to be deleted is 
+current.next.next.
+
+This strategy assumes you only have access to that node in the 
+linked list.  This will not work if the node to be deleted is 
 the last node.
 (This strategy is from LeetCode)
 
