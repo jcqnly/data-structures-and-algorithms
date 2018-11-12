@@ -55,6 +55,7 @@ namespace DeleteNode
 				Console.Write($" {Current.Value} ");
 				Current = Current.Next;
 			}
+			Console.Write($" {Current.Value} ");
 
 			Console.WriteLine("\n");
 		}
