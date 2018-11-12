@@ -22,22 +22,36 @@ namespace DeleteNode
 			DeleteNode(LL, nodeToDelete);
 			LL.Print();
 
-			LinkList LL2 = new LinkList(new Node(6));
-			LL2.Add(new Node(5));
-			LL2.Add(new Node(1));
-			LL2.Add(new Node(2));
-			LL2.Add(new Node(4));
-			LL2.Add(new Node(7));
-			LL2.Add(new Node(9));
-			Console.WriteLine("Original list is ");
-			LL2.Print();
+			//LinkList LL2 = new LinkList(new Node(6));
+			//LL2.Add(new Node(5));
+			//LL2.Add(new Node(1));
+			//LL2.Add(new Node(2));
+			//LL2.Add(new Node(4));
+			//LL2.Add(new Node(7));
+			//LL2.Add(new Node(9));
+			//Console.WriteLine("Original list is ");
+			//LL2.Print();
 
-			Node nodeToDelete2 = new Node(1);
-			Console.WriteLine($"Node to delete is {nodeToDelete2.Value}");
-			DeleteNode(LL2, nodeToDelete2);
-			LL2.Print();
+			//Node nodeToDelete2 = new Node(1);
+			//Console.WriteLine($"Node to delete is {nodeToDelete2.Value}");
+			//DeleteNodeSwap(nodeToDelete2);
+			//LL2.Print();
 
-			//Console.WriteLine("Delete a node nth from the end");
+			Console.WriteLine("Delete a node nth from the end");
+			LinkList LL3 = new LinkList(new Node(3));
+			LL3.Add(new Node(16));
+			LL3.Add(new Node(41));
+			LL3.Add(new Node(2));
+			LL3.Add(new Node(39));
+			LL3.Add(new Node(72));
+			LL3.Add(new Node(11));
+			Console.WriteLine($"Original list is: ");
+			LL3.Print();
+
+			Node nodeToDelete = new Node(34);
+			Console.WriteLine($"Node to delete is {nodeToDelete.Value}");
+			DeleteNode(LL, nodeToDelete);
+			LL3.Print();
 		}
 
 		/// <summary>
@@ -58,11 +72,18 @@ namespace DeleteNode
 			}
 		}
 
+		/// <summary>
+		/// This strategy is intended for situations where you only have access
+		/// to the node to delete rather than the start of the linked list
+		/// I'm not sure how to test this.  If anyone knows, please let me know.
+		/// </summary>
+		/// <param name="nodeToDelete"></param>
 		public static void DeleteNodeSwap(Node nodeToDelete)
 		{
 			nodeToDelete.Value = nodeToDelete.Next.Value;
 			nodeToDelete.Next = nodeToDelete.Next.Next;
 		}
+
 		//delete a node nth from the end
 	}
 }
