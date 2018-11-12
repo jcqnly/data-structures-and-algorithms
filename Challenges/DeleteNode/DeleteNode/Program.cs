@@ -17,13 +17,15 @@ namespace DeleteNode
 
 			DeleteNode(LL);
 			LL.Print();
+
+
 			//Console.WriteLine("Delete a node nth from the end");
 		}
 
 		//delete a node
 		public static void DeleteNode(LinkList LL)
 		{
-
+			//2 ways to delete  n
 		}
 
 		//delete a node nth from the end
