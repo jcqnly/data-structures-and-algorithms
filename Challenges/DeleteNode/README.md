@@ -11,15 +11,20 @@ Given a singly linked list, delete a certain node.
 10 -> 5 -> 13 -> 18
 
 ### Problem Solving Process
-Ideally, the pointer of the node before the node to be deleted 
-should be pointed to the node after the node to be deleted.  
+_Strategy 1_:
+Walk through the linked list.  If the next node is the one to be 
+deleted, set the current.next pointer to current.next.next.
+(This strategy is from Hacker Rank)
 
-Since we cannot travel backwards in a singly linked list, a way to 
-solve this problem is to assign the value of the node to be deleted 
-with the value of the node after it.  Then the pointer of the node 
-to be deleted points to the node after it, the one whose value we 
-just used.
+_Strategy 2_:
+Walk through the linked list.  Go to the node to be deleted.  Set its 
+value to the one after it.  Set its current.next pointer to 
+current.next.next.
 
+This strategy assumes you only have access to that node in the 
+linked list.  This will not work if the node to be deleted is 
+the last node.
+(This strategy is from LeetCode)
 
 ## Delete a node Kth from the end
 Problem found [here](https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/)
