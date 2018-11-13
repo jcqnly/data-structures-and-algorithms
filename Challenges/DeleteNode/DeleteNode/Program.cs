@@ -6,21 +6,21 @@ namespace DeleteNode
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Delete a node");
-			LinkList LL = new LinkList(new Node(10));
-			LL.Add(new Node(15));
-			LL.Add(new Node(51));
-			LL.Add(new Node(20));
-			LL.Add(new Node(34));
-			LL.Add(new Node(27));
-			LL.Add(new Node(44));
-			Console.WriteLine($"Original list is: ");
-			LL.Print();
+			//Console.WriteLine("Delete a node");
+			//LinkList LL = new LinkList(new Node(10));
+			//LL.Add(new Node(15));
+			//LL.Add(new Node(51));
+			//LL.Add(new Node(20));
+			//LL.Add(new Node(34));
+			//LL.Add(new Node(27));
+			//LL.Add(new Node(44));
+			//Console.WriteLine($"Original list is: ");
+			//LL.Print();
 
-			Node nodeToDelete = new Node(34);
-			Console.WriteLine($"Node to delete is {nodeToDelete.Value}");
-			DeleteNode(LL, nodeToDelete);
-			LL.Print();
+			//Node nodeToDelete = new Node(34);
+			//Console.WriteLine($"Node to delete is {nodeToDelete.Value}");
+			//DeleteNode(LL, nodeToDelete);
+			//LL.Print();
 
 			//LinkList LL2 = new LinkList(new Node(6));
 			//LL2.Add(new Node(5));
@@ -48,9 +48,10 @@ namespace DeleteNode
 			Console.WriteLine($"Original list is: ");
 			LL3.Print();
 
-			int k = 1;
+			//k less that 0 is not allowed	
+			int k = 0;
 			Console.WriteLine($"Delete node {k} from the end.");
-			DeleteNode(LL, nodeToDelete);
+			DeleteNodeKthFromEnd(LL3, k);
 			LL3.Print();
 		}
 
@@ -90,11 +91,37 @@ namespace DeleteNode
 			LL.Current = LL.Head;
 			LL.Runner = LL.Head;
 			int counter = 0;
-			while (LL.Runner.Next != null)
+
+			//if there's only 1 element, and we're deleting the only node
+			if (LL.Current.Next == null && k == 0)
 			{
-				counter++;
-				LL.Runner = LL.Runner.Next;
+				LL.Current = null;
 			}
+			else if (LL.Current.Next == null && k > 0) //LL is 1 element and k > 0
+			{
+				Console.WriteLine("This Linked List is 1 element long and k is not within range.");
+			}
+			else
+			{
+				while (LL.Runner.Next != null)
+				{
+					counter++;
+					LL.Runner = LL.Runner.Next;
+					if (counter > k)
+					{
+						LL.Current = LL.Current.Next;
+					}
+					//if k is the last element
+					if (LL.Runner.Next == null && k == 0)
+					{
+						LL.Current.
+					}
+				}
+				Console.WriteLine($"The node {k} from the end has a value of {LL.Current.Value}");
+				LL.Current.Value = LL.Current.Next.Value;
+				LL.Current.Next = LL.Current.Next.Next;
+			}
+
 		}
 	}
 }

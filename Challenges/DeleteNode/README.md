@@ -36,3 +36,8 @@ delete that node.
 ### Output
 
 ### Problem Solving Process
+
+### Edge Cases
+1. Lists that have 1 element and k is not 0
+2. Empty lists
+
