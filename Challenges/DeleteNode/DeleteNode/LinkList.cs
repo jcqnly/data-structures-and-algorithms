@@ -8,11 +8,13 @@ namespace DeleteNode
 	{
 		public Node Head { get; set; }
 		public Node Current { get; set; }
+		public Node Runner { get; set; }
 
 		public LinkList(Node node)
 		{
 			Head = node;
 			Current = node;
+			Runner = node;
 		}
 
 		public void Add(Node node)
