@@ -38,9 +38,9 @@ namespace AddToTargetNumber
 
 			for (int i = 0; i < arr.Length; i++)
 			{
-				if (!numsList.Contains(arr[i])) numsList.Add(arr[i]);
 				int num2 = targetNum - arr[i];
 				if (numsList.Contains(num2)) return true;
+				numsList.Add(arr[i]);
 			}
 			return false;
 		}
