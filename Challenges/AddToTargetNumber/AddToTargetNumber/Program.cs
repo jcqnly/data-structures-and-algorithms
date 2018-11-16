@@ -17,6 +17,12 @@ namespace AddToTargetNumber
 			Console.WriteLine($"O(N) Solution returns {FindTwoNumsFaster(arr, targetNum)}");
 		}
 
+		/// <summary>
+		/// O(N)^2 time complexity, but O(1) Space
+		/// </summary>
+		/// <param name="arr">array to look through</param>
+		/// <param name="targetNum">the number that the 2 numbers in the array add to</param>
+		/// <returns></returns>
 		public static bool FindTwoNums(int[] arr, int targetNum)
 		{
 			if (arr.Length < 2) return false;
@@ -32,6 +38,13 @@ namespace AddToTargetNumber
 			return false;
 		}
 
+		/// <summary>
+		/// O(N) solution in terms of time, and O(N) in terms of space
+		/// .Contains still iterates through something.  Under the hood, it's another for loop
+		/// </summary>
+		/// <param name="arr"></param>
+		/// <param name="targetNum"></param>
+		/// <returns></returns>
 		public static bool FindTwoNumsFaster(int[] arr, int targetNum)
 		{
 			var numsList = new List<int>();

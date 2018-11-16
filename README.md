@@ -65,3 +65,6 @@
 31. [Find Length of Last Word](/Challenges/LengthOfLastWord)
 
 32. [Delete a Node](/Challenges/DeleteNode)
+
+33. [Add to Target Number](/Challenges/AddToTargetNumber)
+
