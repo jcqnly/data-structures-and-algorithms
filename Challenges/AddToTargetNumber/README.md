@@ -8,6 +8,8 @@
 ### Output
 8, 2
 
+### Problem Solving Process
+There are 2 ways to solve this. One strategy requires an O(N^2) solution in terms of time and an O(1) in terms of space.  The other strategy requires an O(N) in terms of time, but an O(N) in terms of space.
 
 ## Find 3 Numbers That Add to a Target Number
 
