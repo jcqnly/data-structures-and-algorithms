@@ -9,7 +9,11 @@
 8, 2
 
 ### Problem Solving Process
-There are 2 ways to solve this. One strategy requires an O(N^2) solution in terms of time and an O(1) in terms of space.  The other strategy requires an O(N) in terms of time, but an O(N) in terms of space.
+There are multiple ways to solve this. 
+
+One strategy requires an O(N^2) solution in terms of time and an O(1) in terms of space.  
+The other strategy requires an O(N) in terms of time, but an O(N) in terms of space.
+Another strategy involves 2 counters, but the array needs to be sorted. Time efficiency is O(n log n).
 
 ## Find 3 Numbers That Add to a Target Number
 
