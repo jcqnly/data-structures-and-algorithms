@@ -5,8 +5,6 @@ namespace PrintAllParentheses
 {
 	public class Program
 	{
-
-		// driver program  
 		public static void Main()
 		{
 			int n = 3;
@@ -21,6 +19,11 @@ namespace PrintAllParentheses
 			}
 		}
 
+		/// <summary>
+		/// DFS search
+		/// </summary>
+		/// <param name="n"></param>
+		/// <returns></returns>
 		public static List<string> GenerateParenthesis(int n)
 		{
 			List<string> list = new List<string>();
@@ -28,6 +31,13 @@ namespace PrintAllParentheses
 			return list;
 		}
 
+		/// <summary>
+		/// DFS search
+		/// </summary>
+		/// <param name="sublist"></param>
+		/// <param name="list"></param>
+		/// <param name="left"></param>
+		/// <param name="right"></param>
 		public static void GenerateOneByOne(string sublist, List<string> list, int left, int right)
 		{
 			if (left > right) return;
