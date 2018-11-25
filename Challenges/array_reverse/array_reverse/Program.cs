@@ -13,7 +13,7 @@ namespace array_reverse
 			foreach (int item in arrayToReverse) Console.Write(item + " ");
 			Console.WriteLine("\n");
 
-			//Recursive solution:
+			//Recursive solution for an array with an odd amount of numbers:
 			int[] givenArray2 = new int[] { 1, 2, 3, 4, 5};
 			int i = 0;
 			int j = givenArray2.Length-1;
@@ -22,6 +22,7 @@ namespace array_reverse
 			foreach (int k in givenArray2) Console.Write(k + " ");
 			Console.WriteLine("\n");
 
+			//Recursive solution for an array with an even amount of numbers:
 			int[] givenArray3 = new int[] { 1, 2, 3, 4, 5, 6 };
 			int l = 0;
 			int m = givenArray3.Length - 1;
@@ -62,9 +63,10 @@ namespace array_reverse
 			//base case for arrays with an odd amount of numbers
 			if (i == j) return;
 
-			//account for arrays with an even amount of numbers
+			//base case for arrays with an even amount of numbers
 			if (i == j - 1) return;
 
+			//swap the 2 numbers
 			int temp;
 			temp = arr[j];
 			arr[j] = arr[i];
