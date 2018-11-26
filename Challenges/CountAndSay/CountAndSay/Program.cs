@@ -13,22 +13,33 @@ namespace CountAndSay
 
 			for (int i = 1; i <= n; i++)
 			{
-				Count(s);
-				Console.WriteLine(s);
+				//Count(s);
+				Console.WriteLine(Count(s));
 			}
 		}
 
-		public static void Count(string s)
+		public static string Count(string s)
 		{
 			StringBuilder sb = new StringBuilder();
 			int count = 1;
-			for (int i = 0; i < s.Length; i++)
+			char c = s[0];
+			for (int i = 1; i < s.Length; i++)
 			{
-				if (s[i])
+				if (s[i] == c)
 				{
-
+					count++;
 				}
+				else
+				{
+					sb.Append(count);
+					sb.Append(c);
+					c = s[i];
+					count = 1;
+				}				
 			}
+			sb.Append(count);
+			sb.Append(c);
+			return sb.ToString();
 		}
 	}
 }
