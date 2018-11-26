@@ -9,17 +9,26 @@ namespace CountAndSay
 		{
 			Console.WriteLine("Count and Say");
 			int n = 5;
-			StringBuilder sb = new StringBuilder();
+			string s = "1";
 
-			for (int i = 0; i < n; i++)
+			for (int i = 1; i <= n; i++)
 			{
-				Count();
+				Count(s);
+				Console.WriteLine(s);
 			}
 		}
 
-		public void Count()
+		public static void Count(string s)
 		{
+			StringBuilder sb = new StringBuilder();
+			int count = 1;
+			for (int i = 0; i < s.Length; i++)
+			{
+				if (s[i])
+				{
 
+				}
+			}
 		}
 	}
 }
