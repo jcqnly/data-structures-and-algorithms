@@ -49,7 +49,7 @@ namespace Trees
         }
 
         /// <summary>
-        /// This traversal method checks the root first
+        /// This traversal method checks root, left, right	
         /// </summary>
         /// <param name="node">node</param>
         public void PreOrder(Node node)
@@ -68,8 +68,7 @@ namespace Trees
         }
 
         /// <summary>
-        /// This traversal method checks the root node
-        /// in between checking the left and right child nodes
+        /// This traversal method checks left, root, right
         /// </summary>
         /// <param name="node">nod</param>
         public void InOrder(Node node)
@@ -88,7 +87,7 @@ namespace Trees
         }
 
         /// <summary>
-        /// This traversal method checks the root node last
+        /// This traversal method checks left, right, root
         /// </summary>
         /// <param name="node">node</param>
         public void PostOrder(Node node)
