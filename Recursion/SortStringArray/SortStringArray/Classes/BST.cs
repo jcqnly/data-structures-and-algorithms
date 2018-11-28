@@ -18,7 +18,7 @@ namespace SortStringArray.Classes
 			{
 				if (root.Left != null)
 				{
-
+					Add(root.Left, newNode);
 				}
 				else
 				{
@@ -26,6 +26,21 @@ namespace SortStringArray.Classes
 				}
 				return newNode;
 			}
+
+			if (newNode.Value > root.Value)
+			{
+				if (root.Right != null)
+				{
+					Add(root.Right, newNode);
+				}
+				else
+				{
+					root.Right = newNode;
+				}
+				return newNode;
+			}
+
+			return root;
 		}
 	}
 }
