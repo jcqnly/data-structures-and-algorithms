@@ -42,5 +42,6 @@ namespace SortStringArray.Classes
 
 			return root;
 		}
+
 	}
 }

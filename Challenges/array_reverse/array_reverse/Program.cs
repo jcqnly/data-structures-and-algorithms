@@ -64,7 +64,7 @@ namespace array_reverse
 			if (i == j) return;
 
 			//base case for arrays with an even amount of numbers
-			if (i == j - 1) return;
+			if (j == i - 1) return;
 
 			//swap the 2 numbers
 			int temp;
