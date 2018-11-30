@@ -34,11 +34,14 @@ namespace SortStringArray
 				bst.Add(firstNodeOfArray, new Node(arr[i], value));
 			}
 			InOrder(firstNodeOfArray);
+			MinVal(firstNodeOfArray);
+			MaxVal(firstNodeOfArray);
 
-			foreach (string s in list)
-			{
-				Console.WriteLine(s);
-			}
+			//print the list in order
+			//foreach (string s in list)
+			//{
+			//	Console.WriteLine(s);
+			//}
 		}
 
 		/// <summary>
@@ -51,6 +54,33 @@ namespace SortStringArray
 			//Add the letter to a list
 			list.Add(node.Letter);
 			if (node.Right != null) InOrder(node.Right);
+		}
+
+		/// <summary>
+		/// Find the min value of a tree
+		/// </summary>
+		/// <param name="node"></param>
+		public static void MinVal(Node node)
+		{
+			if (node.Left != null) MinVal(node.Left);
+			if (node.Left == null)
+			{
+				Console.WriteLine($"The smallest value is {node.Value} and that letter is {node.Letter}");
+				return;
+			}
+		}
+
+		/// <summary>
+		/// Find the max value of a tree
+		/// </summary>
+		/// <param name="node"></param>
+		public static void MaxVal(Node node)
+		{
+			if (node.Right != null) MaxVal(node.Right);
+			if (node.Right == null)
+			{
+				Console.WriteLine($"The largest value is {node.Value} and that letter is {node.Letter}.");
+			}
 		}
 	}
 }
