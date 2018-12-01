@@ -1,10 +1,13 @@
 ﻿using MaxPathSum.Classes;
 using System;
+using System.Collections.Generic;
 
 namespace MaxPathSum
 {
 	public class Program
 	{
+		public static int Max = Int32.MinValue;
+
 		public static void Main(string[] args)
 		{
 			Console.WriteLine("Find max path sum");
@@ -32,28 +35,27 @@ namespace MaxPathSum
 			nodeG.Right = nodeH;
 			nodeH.Left = nodeI;
 
-			int sum = nodeA.Value;
-
-			int maxSum = DFS(nodeA, sum);
+			int maxSum = DFS(nodeA);
 			Console.WriteLine(maxSum);
 		}
 
-		public static int DFS(Node node, int sum)
+		public static int DFS(Node node)
 		{
+			//at a leaf, return 0
+			if (node == null) return 0;
+			
+			//go all the way left
+			int left = DFS(node.Left);
 
-			if (node.Left != null)
-			{
-				sum += node.Left.Value;
-				DFS(node.Left, sum);
-			}
+			//go all the way right
+			int right = DFS(node.Right);
 
-			if (node.Right != null)
-			{
-				sum += node.Right.Value;
-				DFS(node.Right, sum);
-			}
+			int currentMax = 0;
 
-			return sum;
+			currentMax = Math.Max(currentMax, Math.Max(left + node.Value, right + node.Value));
+			Max = Math.Max(Max, left + node.Value + right);
+
+			return currentMax;
 		}
 	}
 }
