@@ -6,5 +6,6 @@ namespace MaxPathSum.Classes
 {
 	public class BT
 	{
+
 	}
 }
