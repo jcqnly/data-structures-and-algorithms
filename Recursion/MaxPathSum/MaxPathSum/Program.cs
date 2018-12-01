@@ -35,8 +35,25 @@ namespace MaxPathSum
 			int sum = nodeA.Value;
 
 			int maxSum = DFS(nodeA, sum);
+			Console.WriteLine(maxSum);
 		}
 
-		public static int
+		public static int DFS(Node node, int sum)
+		{
+
+			if (node.Left != null)
+			{
+				sum += node.Left.Value;
+				DFS(node.Left, sum);
+			}
+
+			if (node.Right != null)
+			{
+				sum += node.Right.Value;
+				DFS(node.Right, sum);
+			}
+
+			return sum;
+		}
 	}
 }
