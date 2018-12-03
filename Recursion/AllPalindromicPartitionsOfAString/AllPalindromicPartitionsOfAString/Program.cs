@@ -4,7 +4,7 @@ namespace AllPalindromicPartitionsOfAString
 {
 	public class Program
 	{
-		public static void Main(string[] args)
+		public j\jb                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             static void Main(string[] args)
 		{
 			Console.WriteLine("Hello World!");
 		}

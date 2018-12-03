@@ -6,4 +6,8 @@ Set of problems solved by using recursion.
 
 1. [Alphabetize a String Array](/Recursion/SortStringArray)
 2. [Max Path Sum](/Recursion/SortStringArray)
-3. 
+3. [All Palindromic Partitions of a String](/Recursion/AllPalindromicPartitionsOfAString) - need to finish, G4G problem
+4. [All Combinations of a String]() - Need to finish, G4G problem
+
+
+
