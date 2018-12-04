@@ -4,9 +4,9 @@ namespace AllPalindromicPartitionsOfAString
 {
 	public class Program
 	{
-		public j\jb                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             static void Main(string[] args)
+		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			Console.WriteLine("Print all palindromic partitions of a string: ");
 		}
 	}
 }
