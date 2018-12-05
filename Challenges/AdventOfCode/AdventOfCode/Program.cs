@@ -43,6 +43,11 @@ namespace AdventOfCode
 			return sum;
 		}
 
+		public static int CheckSumDay2()
+		{
+			int checkSum = 1;
 
+			return checkSum;
+		}
 	}
 }
