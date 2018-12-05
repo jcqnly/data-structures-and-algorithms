@@ -21,10 +21,9 @@ namespace AdventOfCode
 		/// <returns>integer that represents the frequency</returns>
 		public static int FrequencyDay1()
 		{
-			//list to store numbers that will be read in using StreamReader
-			List<int> numList = new List<int>();
 			string path = "../../../numbers.txt";
 
+			int frequency = 0;
 			using (StreamReader sr = File.OpenText(path))
 			{
 				string s = "";
@@ -32,20 +31,16 @@ namespace AdventOfCode
 				{
 					//read each line as an int
 					int num = Int32.Parse(s);
-					numList.Add(num);
+					frequency += num;
 				}
 			}
-			int sum = 0;
-			for (int i = 0; i < numList.Count; i++)
-			{
-				sum += numList[i];
-			}
-			return sum;
+			return frequency;
 		}
 
 		public static int CheckSumDay2()
 		{
 			int checkSum = 1;
+			var d = new Dictionary<string, int>();
 
 			return checkSum;
 		}
