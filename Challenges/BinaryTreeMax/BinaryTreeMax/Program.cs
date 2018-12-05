@@ -35,6 +35,9 @@ namespace BinaryTreeMax
             //display the max value that was found
             Console.WriteLine(FindMax(nodeA));
             Console.Read();
+
+			//Recursive solution:
+			//Console.WriteLine();
         }
 
         /// <summary>
@@ -66,5 +69,24 @@ namespace BinaryTreeMax
             }
             return max;
         }
+
+		public static void DFS(Node node)
+		{
+			if (node.LeftChild != null)
+			{
+				DFS(node.LeftChild);
+			}
+
+			if (node.RightChild != null)
+			{
+				DFS(node.RightChild);
+			}
+
+		}
+
+		//public static int Helper()
+		//{
+
+		//}
     }
 }
