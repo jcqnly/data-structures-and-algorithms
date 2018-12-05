@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.28307.102
+VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllPalindromicPartitionsOfAString", "AllPalindromicPartitionsOfAString\AllPalindromicPartitionsOfAString.csproj", "{C1BEED89-B9F0-4154-B855-96B973A547ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllPalindromicPartitionsOfAString", "AllPalindromicPartitionsOfAString\AllPalindromicPartitionsOfAString.csproj", "{AC55C947-FA62-431C-BE28-E2039AE8EAD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1BEED89-B9F0-4154-B855-96B973A547ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C1BEED89-B9F0-4154-B855-96B973A547ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C1BEED89-B9F0-4154-B855-96B973A547ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C1BEED89-B9F0-4154-B855-96B973A547ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC55C947-FA62-431C-BE28-E2039AE8EAD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC55C947-FA62-431C-BE28-E2039AE8EAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC55C947-FA62-431C-BE28-E2039AE8EAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC55C947-FA62-431C-BE28-E2039AE8EAD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {F6DD52C7-0C58-4F97-93F2-86B63D85E996}
+		SolutionGuid = {380B5B54-85E0-4C14-8AA3-643D44500912}
 	EndGlobalSection
 EndGlobal

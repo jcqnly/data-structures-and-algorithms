@@ -1,3 +1,4 @@
-# Print Palindromic Partitions of a String
+# Print All Palindromic Partitions Of A String
 
-Problem from [here](https://www.geeksforgeeks.org/print-palindromic-partitions-string/).
+Problem found [here](https://www.geeksforgeeks.org/print-palindromic-partitions-string/).
+
