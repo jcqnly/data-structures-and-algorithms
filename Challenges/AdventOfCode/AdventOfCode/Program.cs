@@ -39,10 +39,13 @@ namespace AdventOfCode
 			return frequency;
 		}
 
+		/// <summary>
+		/// Calls the AddorUpdate method to figure out the core of Day2's challenge
+		/// </summary>
+		/// <returns>checksum is the # IDs with chars that show 2x times the # of IDs with chars that show 3x</returns>
 		public static int CheckSumDay2()
 		{
 			string path = "../../../boxID.txt";
-			int checkSum = 1;
 
 			List<string> idList = new List<string>();
 
@@ -56,27 +59,31 @@ namespace AdventOfCode
 				}
 			}
 			var holder = new Dictionary<char, int>();
-			//store IDs that have a letter that appears 2 times
-			var numsThatShowTwice = new Dictionary<string, int>();
 
-			//store IDs that have a letter that appears 3 times
-			var numsThatShowThrice = new Dictionary<string, int>();
-
-			//search for IDs that have a letter that appears at most 2 times
-			AddOrUpdate(idList, holder);
-			//search for IDs that have a letter that appears at most 3 times
-
-			return checkSum;
+			return AddOrUpdate(idList, holder);
 		}
 
-		public static Dictionary<char, int> AddOrUpdate(List<string> idList, Dictionary<char, int> holder)
+		/// <summary>
+		/// Iterates through every entry in idList and  determines if each entry
+		/// has chars that show up 2x, 3x or have chars that show up 2x and 3x
+		/// </summary>
+		/// <param name="idList">list with initial IDs</param>
+		/// <param name="holder">temp dictionary to store calcutalion for every entry</param>
+		/// <returns>the checksum</returns>
+		public static int AddOrUpdate(List<string> idList, Dictionary<char, int> holder)
 		{
+			//store IDs that have a letter that appears 2 times
+			var idWithLettersThatShowTwice = new List<string>();
+
+			//store IDs that have a letter that appears 3 times
+			var idWithLettersThatShowThrice = new List<string>();
+
 			//store the IDs that have multiple instances
 			//go through every char of the string and add it to the dictionary
 			//along with how many times that char appeared so far
-			for (int i = 0; i < 2; i++)
+			for (int i = 0; i < idList.Count; i++)
 			{
-				Console.WriteLine($"ID is {idList[i]}");
+				//Console.WriteLine($"ID is {idList[i]}");
 				for (int j = 0; j < idList[i].Length; j++)
 				{
 					if (!holder.ContainsKey(idList[i][j]))
@@ -90,24 +97,37 @@ namespace AdventOfCode
 						holder[idList[i][j]]++;
 					}
 
-					//after we're done checking the last letter,
+					//after checking the last letter,
 					//go back through the dictionary and check for conditions
 					if (j == idList[i].Length - 1)
 					{
 						foreach (KeyValuePair<char, int> entry in holder)
 						{
-							if (entry.Value == 2 || entry.Value == 3)
+							//if that entry has letters that show twice and thrice, add that entry to both lists
+							if (holder.ContainsValue(2) && holder.ContainsValue(3))
 							{
-								Console.WriteLine($"{entry.Key} showed up {entry.Value} times.");
-
+								idWithLettersThatShowTwice.Add(idList[i]);
+								idWithLettersThatShowThrice.Add(idList[i]);
+								break;
+							}
+							else if (holder.ContainsValue(2) && !holder.ContainsValue(3))
+							{
+								//add entry to the list where the chars only show 2x but not 3x
+								idWithLettersThatShowTwice.Add(idList[i]);
+								break;
+							}
+							else
+							{
+								//add entry to the list where the chars only show 3x but not 2x
+								idWithLettersThatShowThrice.Add(idList[i]);
+								break;
 							}
 						}
 					}
-				}				
+				}
+				holder.Clear(); //clear the temp dictionary for the next entry in idList
 			}
-
-			
-			return holder;
+			return idWithLettersThatShowTwice.Count * idWithLettersThatShowThrice.Count;
 		}
 	}
 }
