@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Text;
 
 namespace AdventOfCode
 {
@@ -13,8 +15,11 @@ namespace AdventOfCode
 			//call method to figure Day1
 			//Console.WriteLine($"Frequency is {FrequencyDay1()}.");
 
-			//call method to figure Day2
-			//Console.WriteLine($"Checksum is {CheckSumDay2()}");
+			//call method to figure Day2, part 1
+			Console.WriteLine($"Checksum is {CheckSumDay2()}");
+
+			//call method to figure Day2, part 2 is in CheckSumDay2 method
+			
 		}
 
 		/// <summary>
@@ -80,11 +85,14 @@ namespace AdventOfCode
 			//store IDs that have a letter that appears 3 times
 			var idWithLettersThatShowThrice = new List<string>();
 
-			//store the IDs that have multiple instances
-			//go through every char of the string and add it to the dictionary
-			//along with how many times that char appeared so far
+			//Dictionary of dictionaries
+			var ListOfAllDictionaries = new List<Dictionary<char, int>>();
+
+			//loop through every ID
 			for (int i = 0; i < idList.Count; i++)
 			{
+				//go through every char of the ID and add it to the dictionary
+				//along with how many times that char appeared so far
 				//Console.WriteLine($"ID is {idList[i]}");
 				for (int j = 0; j < idList[i].Length; j++)
 				{
@@ -127,11 +135,32 @@ namespace AdventOfCode
 						}
 					}
 				}
-				holder.Clear(); //clear the temp dictionary for the next entry in idList
+				ListOfAllDictionaries.Add(holder);
+				holder.Clear(); //clear the temp dictionary for the next ID in idList
 			}
+
+			//for Day 2, part 2 challenge
+			FindMatchingChars(ListOfAllDictionaries);
 			return idWithLettersThatShowTwice.Count * idWithLettersThatShowThrice.Count;
 		}
 
-
+		public static string FindMatchingChars(List<Dictionary<char, int>> list)
+		{
+			StringBuilder sb = new StringBuilder();
+			var IdDictionary = new Dictionary<char, int>();
+			foreach (var element in list)
+			{
+				Console.WriteLine($"{element.Keys}");
+			}
+			//for (int i = 0; i < list.Count; i++)
+			//{
+			//	Console.WriteLine(KeyValuePair<char, int> list[i].Keys);
+			//	//for (int j = i++; j < list.Count; j++)
+			//	//{
+					
+			//	//}
+			//}
+			return sb.ToString();
+		}
 	}
 }
