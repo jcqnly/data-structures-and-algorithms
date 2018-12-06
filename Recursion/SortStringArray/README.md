@@ -23,4 +23,8 @@ and place them into a BST based on that value.  Then use an
 in-order traversal method to travel through the tree and place 
 the characters, in order, in a list.
 
+
+## Stretch Goal
+Expand upon this to handle strings that are more than 1 character long.
+
 *This project also finds the min and max value in the BST.*
