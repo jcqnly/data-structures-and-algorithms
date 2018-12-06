@@ -12,7 +12,9 @@ namespace AdventOfCode
 
 			//call method to figure Day1
 			//Console.WriteLine($"Frequency is {FrequencyDay1()}.");
-			CheckSumDay2();
+
+			//call method to figure Day2
+			//Console.WriteLine($"Checksum is {CheckSumDay2()}");
 		}
 
 		/// <summary>
@@ -129,5 +131,7 @@ namespace AdventOfCode
 			}
 			return idWithLettersThatShowTwice.Count * idWithLettersThatShowThrice.Count;
 		}
+
+
 	}
 }
