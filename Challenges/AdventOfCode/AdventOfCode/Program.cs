@@ -18,7 +18,7 @@ namespace AdventOfCode
 			//call method to figure Day2, part 1
 			Console.WriteLine($"Checksum is {CheckSumDay2()}");
 
-			//call method to figure Day2, part 2 is in CheckSumDay2 method
+			//call method to figure Day 2, part 2 is in CheckSumDay2
 			
 		}
 
@@ -67,6 +67,9 @@ namespace AdventOfCode
 			}
 			var holder = new Dictionary<char, int>();
 
+			//call method for Day 2, part 2
+			FindMatchingChars(idList);
+
 			return AddOrUpdate(idList, holder);
 		}
 
@@ -84,9 +87,6 @@ namespace AdventOfCode
 
 			//store IDs that have a letter that appears 3 times
 			var idWithLettersThatShowThrice = new List<string>();
-
-			//Dictionary of dictionaries
-			var ListOfAllDictionaries = new List<Dictionary<char, int>>();
 
 			//loop through every ID
 			for (int i = 0; i < idList.Count; i++)
@@ -135,32 +135,36 @@ namespace AdventOfCode
 						}
 					}
 				}
-				ListOfAllDictionaries.Add(holder);
 				holder.Clear(); //clear the temp dictionary for the next ID in idList
 			}
-
-			//for Day 2, part 2 challenge
-			FindMatchingChars(ListOfAllDictionaries);
 			return idWithLettersThatShowTwice.Count * idWithLettersThatShowThrice.Count;
 		}
 
-		public static string FindMatchingChars(List<Dictionary<char, int>> list)
+		public static string FindMatchingChars(List<string> list)
 		{
-			StringBuilder sb = new StringBuilder();
-			var IdDictionary = new Dictionary<char, int>();
-			foreach (var element in list)
+			for (int i = 0; i < list.Count; i++)
 			{
-				Console.WriteLine($"{element.Keys}");
+				string id1 = list[i];
+				for (int j = i+1; i < list.Count; j++)
+				{
+					string id2 = list[j];
+					string firstMatch = GetMatch(id1, id2, false);
+					string lastMatch = GetMatch(id1, id2, true);
+					string center1 = id1.Substring(firstMatch.Length, id1.Length - 
+						(firstMatch.Length + lastMatch.Length));
+					string center2 = id2.Substring(firstMatch.Length, id1.Length - 
+						(firstMatch.Length + lastMatch.Length));
+					if (center1.Length == 1 && center2.Length == 1)
+					{
+						return firstMatch + lastMatch;
+					}
+				}
 			}
-			//for (int i = 0; i < list.Count; i++)
-			//{
-			//	Console.WriteLine(KeyValuePair<char, int> list[i].Keys);
-			//	//for (int j = i++; j < list.Count; j++)
-			//	//{
-					
-			//	//}
-			//}
-			return sb.ToString();
+		}
+
+		public static string GetMatch(string id1, string id2, bool isReverse)
+		{
+
 		}
 	}
 }
