@@ -8,5 +8,8 @@ namespace FlipWordOrder
 		{
 			Console.WriteLine("Flip word order");
 		}
+		//Algo:
+		//flip entire string
+		//flip each word
 	}
 }

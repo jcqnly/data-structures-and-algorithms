@@ -9,6 +9,8 @@ namespace ReverseWordsInString
 		public static void Main(string[] args)
 		{
 			string givenString = "Hello world!";
+			string s2 = "pound cake steak";
+			string s3 = "pound cake steak steal";
 
 			//reverse words in a string
 			//Hello world -> world Hello
@@ -35,6 +37,11 @@ namespace ReverseWordsInString
 			}
 
 			return sb.ToString();
+		}
+
+		public static string ReverseWithRecursion(string givenString)
+		{
+
 		}
 	}
 }
