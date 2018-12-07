@@ -61,19 +61,24 @@ namespace array_reverse
 		static void ReverseArrayRecursive(int[] arr, int i, int j)
 		{
 			//base case for arrays with an odd amount of numbers
-			if (i == j) return;
+			//if (i == j) return;
 
 			//base case for arrays with an even amount of numbers
-			if (j == i - 1) return;
+			//if (j == i - 1) return;
+			//if (i == j + 1) return;
 
-			//swap the 2 numbers
-			int temp;
-			temp = arr[j];
-			arr[j] = arr[i];
-			arr[i] = temp;
-			i++;
-			j--;
-			ReverseArrayRecursive(arr, i, j);
+			//the if conditional is another base case to for swapping
+			if (i < j)
+			{
+				//swap the 2 numbers
+				int temp;
+				temp = arr[j];
+				arr[j] = arr[i];
+				arr[i] = temp;
+				i++;
+				j--;
+				ReverseArrayRecursive(arr, i, j);
+			}
 		}
     }
 }
