@@ -8,15 +8,17 @@ namespace AdventOfCode
 {
 	public class Program
 	{
+		public static List<int> dupeFrequency = new List<int>();
+
 		public static void Main(string[] args)
 		{
 			Console.WriteLine("Advent of Code");
 
 			//call method to figure Day1
-			//Console.WriteLine($"Frequency is {FrequencyDay1()}.");
+			Console.WriteLine($"Frequency is {FrequencyDay1()}.");
 
 			//call method to figure Day2, part 1
-			Console.WriteLine($"Checksum is {CheckSumDay2()}");
+			//Console.WriteLine($"Checksum is {CheckSumDay2()}");
 
 			//call method to figure Day 2, part 2 is in CheckSumDay2
 			
@@ -30,8 +32,8 @@ namespace AdventOfCode
 		public static int FrequencyDay1()
 		{
 			string path = "../../../numbers.txt";
-
 			int frequency = 0;
+			
 			using (StreamReader sr = File.OpenText(path))
 			{
 				string s = "";
@@ -41,9 +43,25 @@ namespace AdventOfCode
 					int num = Int32.Parse(s);
 					//add those numbers to find the frequency
 					frequency += num;
+					DupeChecker(frequency);
+					dupeFrequency.Add(frequency);
 				}
 			}
 			return frequency;
+		}
+
+		public static void DupeChecker(int frequency)
+		{
+			if (dupeFrequency.Contains(frequency))
+			{
+				Console.WriteLine($"The duplicate frequency is {frequency}");
+			}
+			else
+			{
+				Console.WriteLine(frequency);
+				dupeFrequency.Add(frequency);
+			}
+			
 		}
 
 		/// <summary>
@@ -140,12 +158,19 @@ namespace AdventOfCode
 			return idWithLettersThatShowTwice.Count * idWithLettersThatShowThrice.Count;
 		}
 
+		/// <summary>
+		/// This method, ReverseString, and the GetMatch method was from here: 
+		/// https://stackoverflow.com/questions/7879636/compare-the-characters-in-two-strings
+		/// </summary>
+		/// <param name="list">list of all the box IDs</param>
+		/// <returns></returns>
 		public static string FindMatchingChars(List<string> list)
 		{
+			StringBuilder sb = new StringBuilder();
 			for (int i = 0; i < list.Count; i++)
 			{
 				string id1 = list[i];
-				for (int j = i+1; i < list.Count; j++)
+				for (int j = i+1; j < list.Count; j++)
 				{
 					string id2 = list[j];
 					string firstMatch = GetMatch(id1, id2, false);
@@ -156,15 +181,60 @@ namespace AdventOfCode
 						(firstMatch.Length + lastMatch.Length));
 					if (center1.Length == 1 && center2.Length == 1)
 					{
-						return firstMatch + lastMatch;
+						sb.Append(firstMatch + lastMatch);
+						Console.WriteLine(sb);
 					}
 				}
 			}
+			return sb.ToString();
 		}
 
-		public static string GetMatch(string id1, string id2, bool isReverse)
+		/// <summary>
+		/// This method, ReverseString, and the FindMatchingChars method was from here:
+		/// https://stackoverflow.com/questions/7879636/compare-the-characters-in-two-strings
+		/// </summary>
+		/// <param name="first"></param>
+		/// <param name="second"></param>
+		/// <param name="isReverse"></param>
+		/// <returns></returns>
+		public static string GetMatch(string first, string second, bool isReverse)
 		{
+			if (isReverse)
+			{
+				first = ReverseString(first);
+				second = ReverseString(second);
+			}
+			StringBuilder sb = new StringBuilder();
+			char[] ar1 = first.ToArray();
+			for (int i = 0; i < ar1.Length; i++)
+			{
+				if (first.Length > i + 1 && ar1[i].Equals(second[i]))
+				{
+					sb.Append(ar1[i]);
+				}
+				else
+				{
+					break;
+				}
+			}
+			if (isReverse)
+			{
+				return ReverseString(sb.ToString());
+			}
+			return sb.ToString();
+		}
 
+		/// <summary>
+		/// This method, FindMatchingChars, and GetMatch was from here:
+		/// https://stackoverflow.com/questions/7879636/compare-the-characters-in-two-strings
+		/// </summary>
+		/// <param name="s"></param>
+		/// <returns></returns>
+		public static string ReverseString(string s)
+		{
+			char[] arr = s.ToCharArray();
+			Array.Reverse(arr);
+			return new string(arr);
 		}
 	}
 }
