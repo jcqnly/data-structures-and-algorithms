@@ -8,17 +8,19 @@ namespace AdventOfCode
 {
 	public class Program
 	{
+		public static List<int> dupeFrequency = new List<int>();
+
 		public static void Main(string[] args)
 		{
 			Console.WriteLine("Advent of Code");
 
 			//call method to figure Day1
-			//Console.WriteLine($"Frequency is {FrequencyDay1()}.");
+			Console.WriteLine($"Frequency is {FrequencyDay1()}.");
 
 			//call method to figure Day2, part 1
-			Console.WriteLine($"Checksum is {CheckSumDay2()}");
+			//Console.WriteLine($"Checksum is {CheckSumDay2()}");
 
-			//call method to figure Day2, part 2 is in CheckSumDay2 method
+			//call method to figure Day 2, part 2 is in CheckSumDay2
 			
 		}
 
@@ -30,8 +32,8 @@ namespace AdventOfCode
 		public static int FrequencyDay1()
 		{
 			string path = "../../../numbers.txt";
-
 			int frequency = 0;
+			
 			using (StreamReader sr = File.OpenText(path))
 			{
 				string s = "";
@@ -41,9 +43,25 @@ namespace AdventOfCode
 					int num = Int32.Parse(s);
 					//add those numbers to find the frequency
 					frequency += num;
+					DupeChecker(frequency);
+					dupeFrequency.Add(frequency);
 				}
 			}
 			return frequency;
+		}
+
+		public static void DupeChecker(int frequency)
+		{
+			if (dupeFrequency.Contains(frequency))
+			{
+				Console.WriteLine($"The duplicate frequency is {frequency}");
+			}
+			else
+			{
+				Console.WriteLine(frequency);
+				dupeFrequency.Add(frequency);
+			}
+			
 		}
 
 		/// <summary>
@@ -67,6 +85,9 @@ namespace AdventOfCode
 			}
 			var holder = new Dictionary<char, int>();
 
+			//call method for Day 2, part 2
+			FindMatchingChars(idList);
+
 			return AddOrUpdate(idList, holder);
 		}
 
@@ -84,9 +105,6 @@ namespace AdventOfCode
 
 			//store IDs that have a letter that appears 3 times
 			var idWithLettersThatShowThrice = new List<string>();
-
-			//Dictionary of dictionaries
-			var ListOfAllDictionaries = new List<Dictionary<char, int>>();
 
 			//loop through every ID
 			for (int i = 0; i < idList.Count; i++)
@@ -135,32 +153,88 @@ namespace AdventOfCode
 						}
 					}
 				}
-				ListOfAllDictionaries.Add(holder);
 				holder.Clear(); //clear the temp dictionary for the next ID in idList
 			}
-
-			//for Day 2, part 2 challenge
-			FindMatchingChars(ListOfAllDictionaries);
 			return idWithLettersThatShowTwice.Count * idWithLettersThatShowThrice.Count;
 		}
 
-		public static string FindMatchingChars(List<Dictionary<char, int>> list)
+		/// <summary>
+		/// This method, ReverseString, and the GetMatch method was from here: 
+		/// https://stackoverflow.com/questions/7879636/compare-the-characters-in-two-strings
+		/// </summary>
+		/// <param name="list">list of all the box IDs</param>
+		/// <returns></returns>
+		public static string FindMatchingChars(List<string> list)
 		{
 			StringBuilder sb = new StringBuilder();
-			var IdDictionary = new Dictionary<char, int>();
-			foreach (var element in list)
+			for (int i = 0; i < list.Count; i++)
 			{
-				Console.WriteLine($"{element.Keys}");
+				string id1 = list[i];
+				for (int j = i+1; j < list.Count; j++)
+				{
+					string id2 = list[j];
+					string firstMatch = GetMatch(id1, id2, false);
+					string lastMatch = GetMatch(id1, id2, true);
+					string center1 = id1.Substring(firstMatch.Length, id1.Length - 
+						(firstMatch.Length + lastMatch.Length));
+					string center2 = id2.Substring(firstMatch.Length, id1.Length - 
+						(firstMatch.Length + lastMatch.Length));
+					if (center1.Length == 1 && center2.Length == 1)
+					{
+						sb.Append(firstMatch + lastMatch);
+						Console.WriteLine(sb);
+					}
+				}
 			}
-			//for (int i = 0; i < list.Count; i++)
-			//{
-			//	Console.WriteLine(KeyValuePair<char, int> list[i].Keys);
-			//	//for (int j = i++; j < list.Count; j++)
-			//	//{
-					
-			//	//}
-			//}
 			return sb.ToString();
+		}
+
+		/// <summary>
+		/// This method, ReverseString, and the FindMatchingChars method was from here:
+		/// https://stackoverflow.com/questions/7879636/compare-the-characters-in-two-strings
+		/// </summary>
+		/// <param name="first"></param>
+		/// <param name="second"></param>
+		/// <param name="isReverse"></param>
+		/// <returns></returns>
+		public static string GetMatch(string first, string second, bool isReverse)
+		{
+			if (isReverse)
+			{
+				first = ReverseString(first);
+				second = ReverseString(second);
+			}
+			StringBuilder sb = new StringBuilder();
+			char[] ar1 = first.ToArray();
+			for (int i = 0; i < ar1.Length; i++)
+			{
+				if (first.Length > i + 1 && ar1[i].Equals(second[i]))
+				{
+					sb.Append(ar1[i]);
+				}
+				else
+				{
+					break;
+				}
+			}
+			if (isReverse)
+			{
+				return ReverseString(sb.ToString());
+			}
+			return sb.ToString();
+		}
+
+		/// <summary>
+		/// This method, FindMatchingChars, and GetMatch was from here:
+		/// https://stackoverflow.com/questions/7879636/compare-the-characters-in-two-strings
+		/// </summary>
+		/// <param name="s"></param>
+		/// <returns></returns>
+		public static string ReverseString(string s)
+		{
+			char[] arr = s.ToCharArray();
+			Array.Reverse(arr);
+			return new string(arr);
 		}
 	}
 }
