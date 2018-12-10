@@ -18,9 +18,10 @@ namespace AdventOfCode
 			Console.WriteLine($"Frequency is {FrequencyDay1()}.");
 
 			//call method to figure Day2, part 1
-			//Console.WriteLine($"Checksum is {CheckSumDay2()}");
+			Console.WriteLine($"Checksum is {CheckSumDay2()}");
 
-			//call method to figure Day 2, part 2 is in CheckSumDay2
+			//call method to figure Day 2, part 2
+			DupeChecker();
 			
 		}
 
@@ -43,24 +44,32 @@ namespace AdventOfCode
 					int num = Int32.Parse(s);
 					//add those numbers to find the frequency
 					frequency += num;
-					DupeChecker(frequency);
 					dupeFrequency.Add(frequency);
 				}
 			}
 			return frequency;
 		}
 
-		public static void DupeChecker(int frequency)
+		public static void DupeChecker()
 		{
-			if (dupeFrequency.Contains(frequency))
+			bool flag = true;
+			int frequency = 0;
+			List<int> sumsList = new List<int>();
+			while(flag)
 			{
-				Console.WriteLine($"The duplicate frequency is {frequency}");
+				for (int i = 0; i < dupeFrequency.Count; i++)
+				{
+					frequency += dupeFrequency[i];
+					sumsList.Add(frequency);
+					if (sumsList.Contains(frequency))
+					{
+						flag = false;
+						break;
+					}
+				}
+
 			}
-			else
-			{
-				Console.WriteLine(frequency);
-				dupeFrequency.Add(frequency);
-			}
+			Console.WriteLine($"Dupe frequency is {frequency}");
 			
 		}
 
