@@ -9,6 +9,7 @@ namespace AdventOfCode
 	public class Program
 	{
 		public static List<int> dupeFrequency = new List<int>();
+		public static List<int> puzzleInputDay1 = new List<int>();
 
 		public static void Main(string[] args)
 		{
@@ -42,6 +43,9 @@ namespace AdventOfCode
 				{
 					//read each line as an int
 					int num = Int32.Parse(s);
+					//add original puzzle input to its own list
+					puzzleInputDay1.Add(num);
+
 					//add those numbers to find the frequency
 					frequency += num;
 					dupeFrequency.Add(frequency);
@@ -50,27 +54,41 @@ namespace AdventOfCode
 			return frequency;
 		}
 
+		/// <summary>
+		/// Runs through an ever increasing list of frequencies that keeps getting added
+		/// with the numbers from the original puzzel input until a duplicate frequency is found
+		/// </summary>
 		public static void DupeChecker()
 		{
+			//store the new list of numbers that will be added to the puzzle input
+			List<int> frequencyList = new List<int>();
+			//running sum that will be added to frequencyList
+			int sum = 0;
 			bool flag = true;
+			//first num to add will be 0;
 			int frequency = 0;
-			List<int> sumsList = new List<int>();
-			while(flag)
+			frequencyList.Add(frequency);
+
+			while (flag)
 			{
-				for (int i = 0; i < dupeFrequency.Count; i++)
+				//keep running through every # in the puzzle input
+				for (int i = 0; i < puzzleInputDay1.Count; i++)
 				{
-					frequency += dupeFrequency[i];
-					sumsList.Add(frequency);
-					if (sumsList.Contains(frequency))
+					//at that index at puzzleInputDay1, add that to the last integer
+					//in frequencyList, which is continually growing b/c
+					sum = puzzleInputDay1[i] + frequencyList.Last();
+					//if that sum exists
+					if (frequencyList.Contains(sum))
 					{
+						//break out of the while loop
+						Console.WriteLine($"Dupe is {sum}");
 						flag = false;
 						break;
-					}
+					} 
+					//if that sum doesn't exist, keep adding and checking
+					frequencyList.Add(sum);
 				}
-
 			}
-			Console.WriteLine($"Dupe frequency is {frequency}");
-			
 		}
 
 		/// <summary>
