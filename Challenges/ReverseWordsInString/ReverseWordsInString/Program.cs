@@ -14,8 +14,12 @@ namespace ReverseWordsInString
 
 			//reverse words in a string
 			//Hello world -> world Hello
-
-			Console.WriteLine(ReverseWordsStringBuilder(givenString));		
+			//Console.WriteLine(ReverseWordsStringBuilder(givenString));
+			//string[] answer = ReverseWithRecursion(s2);
+			//foreach (string s in answer) Console.WriteLine(s);
+			//Console.WriteLine("------------");
+			//string[] answer2 = ReverseWithRecursion(s3);
+			//foreach (string s in answer2) Console.WriteLine(s);
 		}
 
 		/// <summary>
@@ -39,9 +43,46 @@ namespace ReverseWordsInString
 			return sb.ToString();
 		}
 
-		public static string ReverseWithRecursion(string givenString)
+		/// <summary>
+		/// Split the string on a space and put each word into an array
+		/// </summary>
+		/// <param name="s">an array of string type</param>
+		/// <returns></returns>
+		public static string[] ReverseWithRecursion(string s)
 		{
+			string[] newString = s.Split(" ");
+			int start = 0;
+			int end = newString.Length-1;
+				
+			return RecursingTheString(start, end, newString);
+		}
 
+
+		/// <summary>
+		/// recursive method to swap
+		/// </summary>
+		/// <param name="start">start of the string</param>
+		/// <param name="end">end of the string</param>
+		/// <param name="s">aray of string type</param>
+		/// <returns>array of the string swapped so far</returns>
+		public static string[] RecursingTheString(int start, int end, string[] s)
+		{
+			//base case for arrays with an odd number of words
+			//if (start == end) return s;
+			//base case for arrays with an even number of words
+			//if (start == end + 1) return s;
+
+			//the if conditional is another base case
+			if (start < end)
+			{
+				string temp = s[start];
+				s[start] = s[end];
+				s[end] = temp;
+				start++;
+				end--;
+				RecursingTheString(start, end, s);
+			}
+			return s;
 		}
 	}
 }

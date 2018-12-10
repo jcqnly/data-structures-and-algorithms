@@ -9,6 +9,7 @@ namespace AdventOfCode
 	public class Program
 	{
 		public static List<int> dupeFrequency = new List<int>();
+		public static List<int> puzzleInputDay1 = new List<int>();
 
 		public static void Main(string[] args)
 		{
@@ -18,9 +19,10 @@ namespace AdventOfCode
 			Console.WriteLine($"Frequency is {FrequencyDay1()}.");
 
 			//call method to figure Day2, part 1
-			//Console.WriteLine($"Checksum is {CheckSumDay2()}");
+			Console.WriteLine($"Checksum is {CheckSumDay2()}");
 
-			//call method to figure Day 2, part 2 is in CheckSumDay2
+			//call method to figure Day 2, part 2
+			DupeChecker();
 			
 		}
 
@@ -41,27 +43,52 @@ namespace AdventOfCode
 				{
 					//read each line as an int
 					int num = Int32.Parse(s);
+					//add original puzzle input to its own list
+					puzzleInputDay1.Add(num);
+
 					//add those numbers to find the frequency
 					frequency += num;
-					DupeChecker(frequency);
 					dupeFrequency.Add(frequency);
 				}
 			}
 			return frequency;
 		}
 
-		public static void DupeChecker(int frequency)
+		/// <summary>
+		/// Runs through an ever increasing list of frequencies that keeps getting added
+		/// with the numbers from the original puzzel input until a duplicate frequency is found
+		/// </summary>
+		public static void DupeChecker()
 		{
-			if (dupeFrequency.Contains(frequency))
+			//store the new list of numbers that will be added to the puzzle input
+			List<int> frequencyList = new List<int>();
+			//running sum that will be added to frequencyList
+			int sum = 0;
+			bool flag = true;
+			//first num to add will be 0;
+			int frequency = 0;
+			frequencyList.Add(frequency);
+
+			while (flag)
 			{
-				Console.WriteLine($"The duplicate frequency is {frequency}");
+				//keep running through every # in the puzzle input
+				for (int i = 0; i < puzzleInputDay1.Count; i++)
+				{
+					//at that index at puzzleInputDay1, add that to the last integer
+					//in frequencyList, which is continually growing b/c
+					sum = puzzleInputDay1[i] + frequencyList.Last();
+					//if that sum exists
+					if (frequencyList.Contains(sum))
+					{
+						//break out of the while loop
+						Console.WriteLine($"Dupe is {sum}");
+						flag = false;
+						break;
+					} 
+					//if that sum doesn't exist, keep adding and checking
+					frequencyList.Add(sum);
+				}
 			}
-			else
-			{
-				Console.WriteLine(frequency);
-				dupeFrequency.Add(frequency);
-			}
-			
 		}
 
 		/// <summary>
