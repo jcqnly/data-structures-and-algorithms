@@ -21,6 +21,8 @@ namespace MaxIntInArray
 
 		/// <summary>
 		/// Recursive method to compare the max values through the call stack
+		/// Solution from: 
+		/// https://stackoverflow.com/questions/1984734/finding-the-largest-positive-int-in-an-array-by-recursion
 		/// </summary>
 		/// <param name="arr"></param>
 		/// <param name="position"></param>
