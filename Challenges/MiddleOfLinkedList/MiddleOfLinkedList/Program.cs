@@ -52,10 +52,13 @@ namespace MiddleOfLinkedList
 			Console.WriteLine($"Middle of the Linked List is {ll.Head.Value}");
 		}
 
-		//stretch goal - find another solution
+		//Find the middle in one pass iteratively
 		public static void FindMiddleWithArray(LinkList ll2)
 		{
 
 		}
+
+		//Find the middle in one pass recursively
+
 	}
 }

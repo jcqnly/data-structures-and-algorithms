@@ -60,7 +60,6 @@ namespace MiddleOfLinkedList
 			return Current.Value == value ? Current : null;
 		}
 
-
 		/// <summary>
 		/// Print out all values in the list by iterating through until null is reached
 		/// This will take O(N)
