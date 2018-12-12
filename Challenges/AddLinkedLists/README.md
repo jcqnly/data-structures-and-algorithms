@@ -8,10 +8,10 @@ linked to each other in reverse order.  Instead of 3 -> 5 -> 5, it's
 visualized as 3 <- 5 <- 5.
 
 ### Input
-Linked list1 : 3 <- 5 <- 5
+Linked list1 : (tail) 3 <- 5 <- 5 (head)
 
-Linked list2 : 4 <- 9 <- 5
+Linked list2 : (tail) 4 <- 9 <- 5 (head)
 
 ### Output
-Linked list3 : 9 <- 5 <- 0
+Linked list3 : (tail) 9 <- 5 <- 0 (head)
 

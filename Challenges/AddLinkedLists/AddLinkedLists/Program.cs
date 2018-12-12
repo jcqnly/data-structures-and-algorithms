@@ -33,10 +33,9 @@ namespace AddLinkedLists
 			Node currA = A;
 			Node currB = B;
 			int carryOver = 0;
-			int sum = currA.Value + currB.Value;
-			int remainder = sum % 10;
-
+			int sum = currA.Value + currB.Value + carryOver;
 			if (sum >= 10) carryOver = 1;
+			int remainder = sum % 10;
 
 			Node currC = new Node(remainder);
 			LinkList LLC = new LinkList(currC);
