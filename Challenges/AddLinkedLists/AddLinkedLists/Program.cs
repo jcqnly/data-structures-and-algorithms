@@ -46,8 +46,8 @@ namespace AddLinkedLists
 			while (currA != null)
 			{
 				sum = currA.Value + currB.Value + carryOver;
-				remainder = sum % 10;
 				if (sum >= 10) carryOver = 1;
+				remainder = sum % 10;
 				Node newNode = new Node(remainder);
 				LLC.AddLast(newNode);
 				currA = currA.Next;

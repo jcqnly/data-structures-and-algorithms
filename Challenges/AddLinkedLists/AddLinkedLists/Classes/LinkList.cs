@@ -26,6 +26,16 @@ namespace AddLinkedLists.Classes
 			Current.Next = newNode;
 		}
 
+		public void AddFirst(Node newNode)
+		{
+			Current = Head;
+			newNode.Next = Head;
+			Head = newNode;
+			Current = Head;
+		}
+
+
+		//Print the reverse with out actually reversing it
 		public void Print()
 		{
 			Current = Head;
