@@ -15,11 +15,15 @@ namespace AddLinkedLists.Classes
 			Current = node;
 		}
 
-		public void Add(Node newNode)
+		public void AddLast(Node newNode)
 		{
-			newNode.Next = Head;
-			Head = newNode;
 			Current = Head;
+			while (Current.Next != null)
+			{
+				Current = Current.Next;
+			}
+
+			Current.Next = newNode;
 		}
 
 		public void Print()
