@@ -23,7 +23,7 @@ namespace AddLinkedLists
 			LLB.Print();
 			Console.WriteLine("----");
 
-			//call method with the heads of LL1 and LL2 passed in
+			//call method with the heads of LLA and LLB passed in
 			Sum2Lists(LLA.Head, LLB.Head);
 		}
 
