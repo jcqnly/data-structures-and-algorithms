@@ -26,6 +26,13 @@ namespace AddLinkedLists
 			Sum2Lists(LLA.First, LLB.First);
 		}
 
+		/// <summary>
+		/// Add the values of 2 linked list.  This travels to each node and
+		/// a helper method is needed to sum the values of the nodes
+		/// </summary>
+		/// <param name="A">Linked List A</param>
+		/// <param name="B">Linked List B</param>
+		/// <returns>the head node of Linked List C</returns>
 		public static LinkedListNode<Node> Sum2Lists(LinkedListNode<Node> A, LinkedListNode<Node> B)
 		{
 			LinkedList<Node> LLC = new LinkedList<Node>();
@@ -49,7 +56,7 @@ namespace AddLinkedLists
 				//move along the LL 
 				//edge case: accounting for when an LL is longer than the other
 				if (currA == null)
-				{	//only move along the LL if there exists another node if the other LL is shorter
+				{	//only move along the LL if there exists another node and if the other LL is shorter
 					if (currB != null) currB = currB.Next;
 				}
 				if (currB == null)
@@ -74,15 +81,16 @@ namespace AddLinkedLists
 			return LLC.First;
 		}
 
-		//public static LinkedListNode<Node> NullCheck(LinkedListNode<Node> node)
-		//{
-		//	if (node == null)
-		//	{
-		//		return new LinkedListNode<Node>(new Node(0));
-		//	}
-		//	return node;
-		//}
-
+		/// <summary>
+		/// This method sums the values of 2 nodes.  
+		/// It finds the remainder of a modulus equation, which represents the ones place.
+		/// This value is placed into a new node in the 3rd Linked List
+		/// </summary>
+		/// <param name="LL">the 3rd Linked List with the sum of the nodes</param>
+		/// <param name="A">Node from Linked List A</param>
+		/// <param name="B">Node from Linked List B</param>
+		/// <param name="carryOver">the value in the tens place after summing the values</param>
+		/// <returns>an integer value, how much to carry over to the next addition</returns>
 		public static int SumNodes(LinkedList<Node> LL, LinkedListNode<Node> A, LinkedListNode<Node> B, int carryOver)
 		{
 			int sum = 0;
@@ -114,59 +122,5 @@ namespace AddLinkedLists
 			}
 
 		}
-		//public static void Main(string[] args)
-		//{
-		//	Console.WriteLine("Add values in a linked list and return a new list");
-
-		//	//declare LLA and LLB
-		//	LinkList LLA = new LinkList(new Node(5));
-		//	LLA.AddLast(new Node(9));
-		//	LLA.AddLast(new Node(4));
-		//	LLA.Print();
-		//	Console.WriteLine("----");
-
-		//	LinkList LLB = new LinkList(new Node(5));
-		//	LLB.AddLast(new Node(5));
-		//	LLB.AddLast(new Node(3));
-		//	LLB.Print();
-		//	Console.WriteLine("----");
-
-		//	//call method with the heads of LLA and LLB passed in
-		//	Sum2Lists(LLA.Head, LLB.Head);
-		//}
-
-		////method to iterate through LLs
-		//public static LinkList Sum2Lists(Node A, Node B)
-		//{
-		//	Node currA = A;
-		//	Node currB = B;
-		//	int carryOver = 0;
-		//	int sum = currA.Value + currB.Value + carryOver;
-		//	if (sum >= 10) carryOver = 1;
-		//	int remainder = sum % 10;
-
-		//	Node currC = new Node(remainder);
-		//	LinkList LLC = new LinkList(currC);
-
-		//	currA = currA.Next;
-		//	currB = currB.Next;
-
-		//	while (currA != null)
-		//	{
-		//		sum = currA.Value + currB.Value + carryOver;
-		//		if (sum >= 10) carryOver = 1;
-		//		remainder = sum % 10;
-		//		Node newNode = new Node(remainder);
-		//		LLC.AddLast(newNode);
-		//		currA = currA.Next;
-		//		currB = currB.Next;
-		//		currC = currC.Next;
-		//	}
-
-		//	LLC.Print();
-		//	return LLC;
-		//}
-
-		//method to sum
 	}
 }
