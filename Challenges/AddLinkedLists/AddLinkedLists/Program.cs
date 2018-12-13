@@ -11,16 +11,17 @@ namespace AddLinkedLists
 			//solve this challenge with the built-in LL class
 			Console.WriteLine("Add values in a linked list and return a new list");
 			LinkedList<Node> LLA = new LinkedList<Node>();
+			//LLA.AddLast(new Node(5));
 			LLA.AddLast(new Node(5));
-			LLA.AddLast(new Node(5));
-			LLA.AddLast(new Node(3));
-
-			LinkedListNode<Node> LLAHead = LLA.First;
+			LLA.AddLast(new Node(9));
+			LLA.AddLast(new Node(1));
+			Print(LLA.First);
 
 			LinkedList<Node> LLB = new LinkedList<Node>();
+			//LLB.AddLast(new Node(5));
+			//LLB.AddLast(new Node(9));
 			LLB.AddLast(new Node(5));
-			LLB.AddLast(new Node(9));
-			LLB.AddLast(new Node(4));
+			Print(LLB.First);
 
 			Sum2Lists(LLA.First, LLB.First);
 		}
@@ -36,6 +37,7 @@ namespace AddLinkedLists
 			//edge case: both LLs are empty
 			if (currA == null && currB == null)
 			{
+				Console.WriteLine("Both lists were empty");
 				return null;
 			}
 
@@ -43,9 +45,22 @@ namespace AddLinkedLists
 			{
 				if (SumNodes(LLC, currA, currB, carryOver) == 1) carryOver = 1;
 				else carryOver = 0;
-				//move along the LL
-				currA = currA.Next;
-				currB = currB.Next;
+
+				//move along the LL 
+				//edge case: accounting for when an LL is longer than the other
+				if (currA == null)
+				{	//only move along the LL if there exists another node if the other LL is shorter
+					if (currB != null) currB = currB.Next;
+				}
+				if (currB == null)
+				{
+					if (currA != null) currA = currA.Next;
+				} 
+				else
+				{
+					currA = currA.Next;
+					currB = currB.Next;
+				}
 
 				//edge case: if both nodes next in both lists are null and there's a carryOver
 				//create an extra new node
@@ -59,11 +74,26 @@ namespace AddLinkedLists
 			return LLC.First;
 		}
 
-		public static int SumNodes(LinkedList<Node>LL, LinkedListNode<Node> A, LinkedListNode<Node> B, int carryOver)
+		//public static LinkedListNode<Node> NullCheck(LinkedListNode<Node> node)
+		//{
+		//	if (node == null)
+		//	{
+		//		return new LinkedListNode<Node>(new Node(0));
+		//	}
+		//	return node;
+		//}
+
+		public static int SumNodes(LinkedList<Node> LL, LinkedListNode<Node> A, LinkedListNode<Node> B, int carryOver)
 		{
-			int sum = A.Value.Value + B.Value.Value + carryOver;
+			int sum = 0;
+			//edge cases: one of the LLs is longer than the other
+			if (B != null && A == null) sum = B.Value.Value + carryOver;
+			else if (A != null && B == null) sum = A.Value.Value + carryOver;
+			else sum = A.Value.Value + B.Value.Value + carryOver;
+
 			int remainder = sum % 10; //get the num in the ones place
 			LL.AddLast(new Node(remainder)); //create a new node
+
 			//get the num to carryOver
 			if (sum >= 10) return carryOver = 1;
 			return carryOver = 0;
