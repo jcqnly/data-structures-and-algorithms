@@ -70,7 +70,7 @@
 
 34. [Add 2 Linked Lists](/Challenges/AddLinkedLists)
 
-35. [Zig Zag BT](/Challenges/ZigZagBTTraversal)
+35. Need to finish[Zig Zag BT](/Challenges/ZigZagBTTraversal)
 
 
 
