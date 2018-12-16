@@ -9,11 +9,11 @@ namespace AddDigits
 			Console.WriteLine("Repeatedly add digits in a number until 1 remains:");
 
 			int num = 38;
-			Console.WriteLine(AddDigitsTogether(num));
-			Console.WriteLine(AddDigitsRecursively(num));
+			//Console.WriteLine(AddDigitsTogether(num));
+			//Console.WriteLine(AddDigitsRecursively(num));
 
 			int num2 = 12345;
-			Console.WriteLine(AddAnyNumberOfDigits(num2));
+			//Console.WriteLine(AddAnyNumberOfDigits(num2));
 			Console.WriteLine(AddDigitsRecursively(num2));
 		}
 
@@ -41,15 +41,27 @@ namespace AddDigits
 			return sum;
 		}
 
-		//recursive method currently doesn't add the final 2 numbers
+		/// <summary>
+		/// Recursive method to repeatedly add digits
+		/// I did not figure this out, but this solution makes the most sense
+		/// Acknowledgement in README
+		/// </summary>
+		/// <param name="num">number to add</param>
+		/// <returns>the final single digit</returns>
 		public static int AddDigitsRecursively(int num)
 		{
-			if (num > 0)
-			{
-				return num % 10 + AddDigitsRecursively(num / 10);
-			}
+			int newNum = 0;
+			if (num < 10) return num;
+			//pretty interesting way to add the final 2 numbers together
+			//e.g. On the first iteration, 12345 becomes
+			//1239 = 1234 + 5
+			//132 = 123 + 9
+			//15 = 13 + 2
+			//6 = 1 + 5
+			newNum = num / 10 + num % 10;
 
-			return num % 10 + (num/10);
+			if (newNum <= 9) return newNum;
+			return AddDigitsRecursively(newNum);
 		}
 
 		//not my solution, but comments explain how I read this
@@ -68,6 +80,7 @@ namespace AddDigits
 				if (num == 0 && x >= 10)
 				{
 					//set num to the value of x to sum the final 2 numbers
+					//on the final iteration
 					num = x;
 					x = 0;
 				}

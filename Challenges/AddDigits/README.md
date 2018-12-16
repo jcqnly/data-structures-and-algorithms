@@ -11,8 +11,8 @@ Calculation should be: 4 + 9 -> 1 + 3 -> 4
 
 ## Problem Solving Process
 
-1. The non-recursive solution cannot handle 
-more than 2 digits.
+1. This recursive solution was found [here](https://stackoverflow.com/questions/30537333/reduce-number-to-single-digit-using-recurssion) 
+and it was the easiest to understand.
 
 2. Recursive solution is a work in progress.
 
