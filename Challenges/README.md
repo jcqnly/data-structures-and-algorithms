@@ -72,6 +72,12 @@
 
 35. Need to finish[Zig Zag BT](/Challenges/ZigZagBTTraversal)
 
+36. [Converge LL](/Challenges/ConvergeLL)
+
+37. [Unique SubString](/Challenges/UniqueSubString)
+
+
+
 
 
 

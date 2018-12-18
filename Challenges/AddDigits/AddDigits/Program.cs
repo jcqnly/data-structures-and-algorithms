@@ -10,11 +10,12 @@ namespace AddDigits
 
 			int num = 38;
 			//Console.WriteLine(AddDigitsTogether(num));
+			Console.WriteLine(AddAnyNumberOfDigits(num));
 			//Console.WriteLine(AddDigitsRecursively(num));
 
 			int num2 = 12345;
 			//Console.WriteLine(AddAnyNumberOfDigits(num2));
-			Console.WriteLine(AddDigitsRecursively(num2));
+			//Console.WriteLine(AddDigitsRecursively(num2));
 		}
 
 
