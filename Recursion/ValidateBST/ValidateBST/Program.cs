@@ -68,11 +68,6 @@ namespace ValidateBST
 
 			return true;
 		}
-
-		public bool Validate(Node node)
-		{			
-
-			return true;
-		}
+	
 	}
 }
