@@ -11,13 +11,15 @@ namespace PalindromePermutation
             string string1 = "civic";
             string string2 = "ivicc";
             string string3 = "llic";
-            Console.WriteLine(hasPalindromePermutation(string1));
-            Console.WriteLine(hasPalindromePermutation(string2));
-            Console.WriteLine(hasPalindromePermutation(string3));
-            
+			//Console.WriteLine(HasPalindromePermutation(string1));
+			//Console.WriteLine(HasPalindromePermutation(string2));
+			//Console.WriteLine(HasPalindromePermutation(string3));
+
+			string string4 = "Tacocat";
+			Console.WriteLine(IsPalindrome(string4));
         }
 
-        public static bool hasPalindromePermutation(string stringToTest)
+        public static bool HasPalindromePermutation(string stringToTest)
         {
             var unpairedChar = new HashSet<char>();
 
@@ -35,5 +37,20 @@ namespace PalindromePermutation
 
             return unpairedChar.Count <= 1;
         }
+
+		public static bool IsPalindrome(string input)
+		{
+			char[] inputArr = input.ToLower().ToCharArray();
+			int start = 0;
+			int end = input.Length - 1;
+
+			while (start < end)
+			{
+				if (inputArr[start] != inputArr[end]) return false;
+				start++;
+				end--;
+			}
+			return true;
+		}
     }
 }
