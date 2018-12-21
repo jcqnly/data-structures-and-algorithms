@@ -76,6 +76,8 @@
 
 37. Need to finish[Unique SubString](/Challenges/UniqueSubString)
 
+38. [Pascal's Triangle](/Chalenges/PascalsTriangle)
+
 
 
 
