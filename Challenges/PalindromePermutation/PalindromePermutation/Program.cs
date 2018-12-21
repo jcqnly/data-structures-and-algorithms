@@ -40,17 +40,20 @@ namespace PalindromePermutation
 
 		public static bool IsPalindrome(string input)
 		{
-			char[] inputArr = input.ToLower().ToCharArray();
+			//char[] inputArr = input.ToLower().ToCharArray();
+			string newString = input.ToLower();
 			int start = 0;
 			int end = input.Length - 1;
 
 			while (start < end)
 			{
-				if (inputArr[start] != inputArr[end]) return false;
+				if (newString[start] != newString[end]) return false;
 				start++;
 				end--;
 			}
 			return true;
 		}
+
+
     }
 }
