@@ -2,11 +2,27 @@
 
 namespace RotateAMatrix
 {
-	class Program
+	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			Console.WriteLine("Rotate a Matrix");
+			int[,] grid = {{1, 1, 1, 1, 5}, 
+							{2, 2, 2, 2, 2}, 
+							{3, 3, 3, 3, 3 },
+							{4, 4, 4, 4, 4} };
+
+			int N = 4;
+			int M = 5;
+
+			for (int rows = 0; rows < M; rows++)
+			{
+				for (int col = N-1; col >= 0; col--)
+				{
+					Console.Write("{0}\t", grid[col, rows]);
+				}
+				Console.WriteLine();
+			}
 		}
 	}
 }
