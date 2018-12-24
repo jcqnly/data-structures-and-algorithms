@@ -27,7 +27,7 @@ namespace CheckIfBalance
 
 		public static bool CheckBalance(Node node)
 		{
-			return Max(node) - Min(node) <= 1;
+			return Math.Abs(Max(node) - Min(node)) <= 1;
 		}
 
 		public static int Min(Node node)
