@@ -10,7 +10,11 @@ Set of problems solved by using recursion.
 4. [All Combinations of a String of Length K](/Recursion/AllCombosOfAStringLengthK) - Need to finish, G4G problem
 5. [Validate BST](/Recursion/ValidateBST)
 6. [Check If A Tree Is Balanced](/Recursion/CheckIfBalance)
-7. 
+7. [Create Min BST from Sorted Array](/Recursion/MinBST) need to finish
+
+
+
+
 
 
 
