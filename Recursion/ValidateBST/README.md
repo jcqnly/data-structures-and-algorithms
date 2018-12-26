@@ -2,8 +2,16 @@
 Given a BST, determine if it is a valid BST.
 
 #### Input
+```
+                   4
+                 /   \
+                1     6
+               / \   / \
+              0   2 5   7
+```
 
 #### Output
+True
 
 ## Problem Solving Process
 _What determines if a BST is balanced?_  
