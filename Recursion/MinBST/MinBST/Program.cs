@@ -16,6 +16,14 @@ namespace MinBST
 			InOrder(root);
 		}
 
+		/// <summary>
+		/// Recursive method to find the mid of the array, make a node
+		/// then repeat for the left and right subtrees
+		/// </summary>
+		/// <param name="arr">array to create the BST from</param>
+		/// <param name="start">the start of the half we're looking at</param>
+		/// <param name="end">the end of the half we're looking at</param>
+		/// <returns> the node that was created</returns>
 		public static Node NewBST(int[] arr, int start, int end)
 		{
 			//base case
@@ -32,6 +40,10 @@ namespace MinBST
 			return node;
 		}
 
+		/// <summary>
+		/// InOrder traversal to show that the BST was made correctly
+		/// </summary>
+		/// <param name="node"></param>
 		public static void InOrder(Node node)
 		{
 			if (node == null) return;
