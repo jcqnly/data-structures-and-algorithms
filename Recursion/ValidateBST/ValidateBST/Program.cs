@@ -49,7 +49,7 @@ namespace ValidateBST
 			Console.WriteLine(InOrder(node1));
 		}
 
-		//Validate using InOrder Traversal
+		
 		public static bool InOrder(Node node)
 		{
 			if (node == null) return true;
