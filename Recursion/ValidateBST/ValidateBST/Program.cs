@@ -10,18 +10,19 @@ namespace ValidateBST
 		public static void Main(string[] args)
 		{
 			Console.WriteLine("Validate a BST");
-
+			//creating the tree from the README
 			Node nodeA = new Node(4);
-			Node nodeB = new Node(11);
+			Node nodeB = new Node(1);
 			Node nodeC = new Node(6);
 
 			Node nodeD = new Node(0);
-			Node nodeE = new Node(2);
+			Node nodeE = new Node(12);
 
 			Node nodeF = new Node(5);
 			Node nodeG = new Node(7);
-
-			Node nodeH = new Node(1);
+			//additional node on an additional level to show
+			//that the iterative method can go deeper
+			//Node nodeH = new Node(1);
 
 			nodeA.Left = nodeB;
 			nodeA.Right = nodeC;
@@ -32,7 +33,7 @@ namespace ValidateBST
 			nodeC.Left = nodeF;
 			nodeC.Right = nodeG;
 
-			nodeG.Right = nodeH;
+			//nodeG.Right = nodeH;
 
 			Console.WriteLine(CheckValidityRecursive(nodeA));
 			Console.WriteLine(CheckValidityIterative(nodeA));
@@ -57,51 +58,57 @@ namespace ValidateBST
 			return true;
 		}
 
-		//iterative solution
+		/// <summary>
+		/// 2 Ways to write the iterative solution
+		/// Uses a stack to hold the nodes
+		/// </summary>
+		/// <param name="node">node to start with</param>
+		/// <returns>bool if this tree is a BST or not</returns>
 		public static bool CheckValidityIterative(Node node)
 		{
+			//Stack<Node> stack = new Stack<Node>();
+			//Node prev = null;
+			//while (prev != null || stack.Count == 0)
+			//{
+			//	while (node != null)
+			//	{
+			//		stack.Push(node);
+			//		node = node.Left;
+			//	}
+			//	if (stack.Count > 0)
+			//	{
+			//		node = stack.Pop();
+			//		if (prev != null && node.Value <= prev.Value) return false;
+			//		prev = node;
+			//		node = node.Right;
+			//	}
+			//}
+			//return true;
+			if (node == null) return true;
 			Stack<Node> stack = new Stack<Node>();
 			Node prev = null;
-			while (prev != null || stack.Count == 0)
+			bool done = false;
+
+			while (!done)
 			{
-				while (node != null)
+				if (node != null)
 				{
 					stack.Push(node);
 					node = node.Left;
 				}
-				if (stack.Count > 0)
+				else if (stack.Count > 0)
 				{
 					node = stack.Pop();
 					if (prev != null && node.Value <= prev.Value) return false;
 					prev = node;
 					node = node.Right;
 				}
+				else
+				{
+					done = true;
+				}
 			}
 			return true;
-			//if (node == null) return true;
-			//Stack<Node> stack = new Stack<Node>();
-			//Node prev = null;
-			//bool done = false;
-
-			//while (!done)
-			//{
-			//	if (node != null)
-			//	{
-			//		stack.Push(node);
-			//		node = node.Left;
-			//	}
-			//	else if (stack.Count > 0)
-			//	{
-			//		if (prev != null && node.Value <= prev.Value) return false;
-			//		node = stack.Pop();
-			//		node = node.Right;
-			//	} 
-			//	else
-			//	{
-			//		done = true;
-			//	}
-			//}
-			//return true;
 		}
 	}
 }
