@@ -41,3 +41,15 @@ This is _not_ valid:
 Note that the left and right nodes of 6 are in the correct place for the 
 subtree to be balanced.  In the grand scheme of the tree, the 3 is not in 
 the correct spot for the entire tree to be balanced.
+
+
+## Solution:
+The recursive solution shown here made the most sense and was 
+originally found [here](https://leetcode.com/problems/validate-binary-search-tree/discuss/32112/Learn-one-iterative-inorder-traversal-apply-it-to-multiple-tree-questions-(Java-Solution)).
+
+_Recursive Explanation:_
+Travel DF InOrder down the tree all the while keeping track of the value 
+of a previous node that we were at, so as to have something to compare 
+with the current node.  
+
+
