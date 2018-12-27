@@ -12,7 +12,7 @@ namespace ValidateBST
 			Console.WriteLine("Validate a BST");
 
 			Node nodeA = new Node(4);
-			Node nodeB = new Node(1);
+			Node nodeB = new Node(11);
 			Node nodeC = new Node(6);
 
 			Node nodeD = new Node(0);
@@ -20,6 +20,8 @@ namespace ValidateBST
 
 			Node nodeF = new Node(5);
 			Node nodeG = new Node(7);
+
+			Node nodeH = new Node(1);
 
 			nodeA.Left = nodeB;
 			nodeA.Right = nodeC;
@@ -29,6 +31,8 @@ namespace ValidateBST
 
 			nodeC.Left = nodeF;
 			nodeC.Right = nodeG;
+
+			nodeG.Right = nodeH;
 
 			Console.WriteLine(CheckValidityRecursive(nodeA));
 			Console.WriteLine(CheckValidityIterative(nodeA));
@@ -56,23 +60,48 @@ namespace ValidateBST
 		//iterative solution
 		public static bool CheckValidityIterative(Node node)
 		{
-			if (node == null) return true;
-
 			Stack<Node> stack = new Stack<Node>();
 			Node prev = null;
-			while (prev != null || stack.Count <= 0)
+			while (prev != null || stack.Count == 0)
 			{
 				while (node != null)
 				{
 					stack.Push(node);
 					node = node.Left;
 				}
-				node = stack.Pop();
-				if (prev != null && node.Value <= prev.Value) return false;
-				prev = node;
-				node = node.Right;
+				if (stack.Count > 0)
+				{
+					node = stack.Pop();
+					if (prev != null && node.Value <= prev.Value) return false;
+					prev = node;
+					node = node.Right;
+				}
 			}
 			return true;
+			//if (node == null) return true;
+			//Stack<Node> stack = new Stack<Node>();
+			//Node prev = null;
+			//bool done = false;
+
+			//while (!done)
+			//{
+			//	if (node != null)
+			//	{
+			//		stack.Push(node);
+			//		node = node.Left;
+			//	}
+			//	else if (stack.Count > 0)
+			//	{
+			//		if (prev != null && node.Value <= prev.Value) return false;
+			//		node = stack.Pop();
+			//		node = node.Right;
+			//	} 
+			//	else
+			//	{
+			//		done = true;
+			//	}
+			//}
+			//return true;
 		}
 	}
 }
