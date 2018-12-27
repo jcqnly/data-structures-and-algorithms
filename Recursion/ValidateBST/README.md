@@ -52,4 +52,22 @@ Travel DF InOrder down the tree all the while keeping track of the value
 of a previous node that we were at, so as to have something to compare 
 with the current node.  
 
+When the code starts checking the right side, the previous node value is 
+set to the current node value.  This previous value then can be compared 
+with the root node of the subtree where this subtree is located as 
+we go back through the recursive call stack.
+
+_Iterative Explanation:_  
+There are 2 similar ways to write this logic, and both are included in 
+this project.  Uncomment the commented code and give it a whirl!
+
+This strategy uses a stack to hold the values of the nodes.  While
+the stack is not empty or the node we're looking at is not null, 
+push it into the stack and go left until a null node is encountered.  
+When this happens and the stack is not empty, pop the top node.  Check 
+if the node's value is less than prev.  If it is, the tree is not a 
+valid BST.  Otherwise, reset the value of prev and go right.  Repeat 
+starting at the 'while' sentence of this paragraph.
+
+
 
