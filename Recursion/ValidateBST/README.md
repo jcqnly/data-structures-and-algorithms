@@ -52,7 +52,7 @@ Travel DF InOrder down the tree all the while keeping track of the value
 of a previous node that we were at, so as to have something to compare 
 with the current node.  
 
-When the code starts checking the right side, the previous node value is 
+When the right side gets checked, the previous node value is 
 set to the current node value.  This previous value then can be compared 
 with the root node of the subtree where this subtree is located as 
 we go back through the recursive call stack.

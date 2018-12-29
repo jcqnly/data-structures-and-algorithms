@@ -8,7 +8,7 @@ Set of problems solved by using recursion.
 2. [Max Path Sum](/Recursion/SortStringArray)
 3. [All Palindromic Partitions of a String](/Recursion/AllPalindromicPartitionsOfAString) - need to finish, G4G problem
 4. [All Combinations of a String of Length K](/Recursion/AllCombosOfAStringLengthK) - Need to finish, G4G problem
-5. [Validate BST](/Recursion/ValidateBST) need to finish
+5. [Validate BST](/Recursion/ValidateBST)
 6. [Check If A Tree Is Balanced](/Recursion/CheckIfBalance) demonstrate a better understanding
 7. [Create Min BST from Sorted Array](/Recursion/MinBST)
 
