@@ -6,7 +6,7 @@ namespace MergeTrees
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+			Console.WriteLine("Merge 2 trees");
 		}
 	}
 }
