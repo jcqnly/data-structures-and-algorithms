@@ -11,6 +11,7 @@ Set of problems solved by using recursion.
 5. [Validate BST](/Recursion/ValidateBST)
 6. [Check If A Tree Is Balanced](/Recursion/CheckIfBalance) demonstrate a better understanding
 7. [Create Min BST from Sorted Array](/Recursion/MinBST)
+8. Need to Finish[Merge 2 Binary Trees](/Recursion/MergeTrees)
 
 
 
