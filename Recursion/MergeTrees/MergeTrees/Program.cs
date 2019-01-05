@@ -30,13 +30,32 @@ namespace MergeTrees
 			node6.Right = node8;
 			node7.Right = node9;
 
-			Merge(node1, node5);
+			Node newTreeNode = Merge(node1, node5);
+			InOrder(newTreeNode);
 		}
 
 		public static Node Merge(Node node1, Node node2)
 		{
+			//base cases for when either node is null
+			if (node1 == null) return node2;
+			if (node2 == null) return node1;
 
+			//use node1 as the base and add node2's value to it
+			node1.Value += node2.Value;
+
+			//go left
+			node1.Left = Merge(node1.Left, node2.Left);
+			//go right
+			node1.Right = Merge(node1.Right, node2.Right);
+
+			return node1;
 		}
 
+		public static void InOrder(Node node)
+		{
+			if (node.Left != null) InOrder(node.Left);
+			Console.WriteLine(node.Value);
+			if (node.Right != null) InOrder(node.Right);
+		}
 	}
 }
