@@ -4,21 +4,21 @@ Problem from [here](https://leetcode.com/problems/merge-two-binary-trees/descrip
 #### Input
 ```
                 Tree 1                      Tree 2
-                  1                           2
+                 11                           2
                  / \                         / \
-                3   2                       1   3
+                3   2                       1   6
                /                             \   \
-              5                               4   7
+              5                               9   7
 
 ```
 
 
 #### Output
 ```
-                3
+                13
                / \
-              4   5
+              4   8
              / \   \
-            5   4   7  
+            5   9   7  
 
 ```
