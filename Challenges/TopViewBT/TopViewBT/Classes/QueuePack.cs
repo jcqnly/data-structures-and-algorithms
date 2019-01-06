@@ -14,5 +14,6 @@ namespace TopViewBT.Classes
 			Root = node;
 			Level = level;
 		}
+
 	}
 }

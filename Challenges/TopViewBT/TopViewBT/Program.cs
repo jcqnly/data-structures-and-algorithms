@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using TopViewBT.Classes;
 
 namespace TopViewBT
@@ -31,7 +32,21 @@ namespace TopViewBT
 
 		public static void TopView(Node root, int level)
 		{
+			if (root == null) return;
+			Queue<QueuePack> q = new Queue<QueuePack>();
+			Dictionary<int, Node> topView = new Dictionary<int, Node>();
 
+			if (root == null) return;
+			else q.Enqueue(new QueuePack(0, root));
+
+			while (q.Count > 0)
+			{
+				QueuePack temp = q.Dequeue();
+				if ()
+				{
+
+				}
+			}
 		}
 	}
 }
