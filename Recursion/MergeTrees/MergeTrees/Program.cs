@@ -69,5 +69,7 @@ namespace MergeTrees
 			Console.WriteLine(node.Value);
 			if (node.Right != null) InOrder(node.Right);
 		}
+
+		//try iterative method
 	}
 }
