@@ -10,6 +10,7 @@ namespace MergeTrees
 			Console.WriteLine("Merge 2 trees");
 
 			//make the 2 trees that are represented in the README
+			//tree1
 			Node node1 = new Node(11);
 			Node node2 = new Node(3);
 			Node node3 = new Node(2);
@@ -19,6 +20,7 @@ namespace MergeTrees
 			node1.Right = node3;
 			node2.Left = node4;
 
+			//tree2
 			Node node5 = new Node(2);
 			Node node6 = new Node(1);
 			Node node7 = new Node(6);
@@ -34,6 +36,12 @@ namespace MergeTrees
 			InOrder(newTreeNode);
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="node1">root node of tree1</param>
+		/// <param name="node2">root node of tree2</param>
+		/// <returns>node of the subtree</returns>
 		public static Node Merge(Node node1, Node node2)
 		{
 			//base cases for when either node is null
@@ -51,6 +59,10 @@ namespace MergeTrees
 			return node1;
 		}
 
+		/// <summary>
+		/// InOrder Traversal to show that the nodes have been merged
+		/// </summary>
+		/// <param name="node"></param>
 		public static void InOrder(Node node)
 		{
 			if (node.Left != null) InOrder(node.Left);
