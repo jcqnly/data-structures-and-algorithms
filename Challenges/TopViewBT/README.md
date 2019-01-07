@@ -16,4 +16,4 @@ makes the most sense.
                 6
 
 #### Output
-1, 2, 6
+2, 1, 3, 6
