@@ -37,7 +37,8 @@ namespace MergeTrees
 		}
 
 		/// <summary>
-		/// 
+		/// Adds the value of node2 to the value of node1, if
+		/// that value exists
 		/// </summary>
 		/// <param name="node1">root node of tree1</param>
 		/// <param name="node2">root node of tree2</param>
