@@ -18,7 +18,6 @@ namespace TopViewBT
 			Node node5 = new Node(5);
 			Node node6 = new Node(6);
 
-
 			node1.Left = node2;
 			node1.Right = node3;
 
@@ -42,9 +41,23 @@ namespace TopViewBT
 			while (q.Count > 0)
 			{
 				QueuePack temp = q.Dequeue();
-				if ()
-				{
+				Node tnode = temp.Root;
+				int lvl = temp.Level;
 
+				if (!topView.ContainsKey(lvl))
+				{
+					Console.WriteLine(tnode.Value + " ");
+					topView.Add(lvl, tnode);
+				}
+
+				if (tnode.Left != null)
+				{
+					q.Enqueue(new QueuePack(lvl-1, tnode.Left));
+				}
+
+				if (tnode.Right != null)
+				{
+					q.Enqueue(new QueuePack(lvl+1, tnode.Right));
 				}
 			}
 		}
