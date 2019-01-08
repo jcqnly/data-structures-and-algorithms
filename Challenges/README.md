@@ -78,7 +78,7 @@
 
 38. [Pascal's Triangle](/Chalenges/PascalsTriangle)
 
-39. Need to finish[Top View of a Binary Tree](/Challenges/TopView)
+39. [Top View of a Binary Tree](/Challenges/TopViewBT) Add recursive strategy
 
 40. Need to finish[]()
 
