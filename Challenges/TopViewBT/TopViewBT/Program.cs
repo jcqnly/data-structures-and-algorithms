@@ -32,7 +32,10 @@ namespace TopViewBT
 		public static void TopView(Node root, int level)
 		{
 			if (root == null) return;
+			//each QueuePack will hold the distance from the root and the root
 			Queue<QueuePack> q = new Queue<QueuePack>();
+
+			//the dictionary will hold only unique values
 			Dictionary<int, Node> topView = new Dictionary<int, Node>();
 
 			if (root == null) return;
@@ -61,5 +64,7 @@ namespace TopViewBT
 				}
 			}
 		}
+
+		//try recursive method
 	}
 }
