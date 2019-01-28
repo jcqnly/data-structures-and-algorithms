@@ -24,33 +24,30 @@ namespace SearchBST
 			nodeE.Right = nodeF;
 
 			int valueToSearch = 2;
-			SearchForValue(nodeA, valueToSearch);
+			Node foundNode = SearchForValue(nodeA, valueToSearch);
+			AddRestOfSubtree(foundNode);
 
+			//print the values from the list
 			foreach (int i in foundTree)
 			{
 				Console.WriteLine(i);
 			}
 		}
 
-		public static void SearchForValue(Node root, int valueToSearch)
+		public static Node SearchForValue(Node root, int valueToSearch)
 		{
 			//base case for recursive call
-			if (root == null) return;
+			if (root == null || root.Value == valueToSearch) return root;
 
-			//if the value is found
-			if (root.Value == valueToSearch)
-			{				
-				//call helper to traverse that subtree
-				AddRestOfSubtree(root);
-			}
-			//keep traversing the tree if the value is not found
-			SearchForValue(root.Left, valueToSearch);
-			SearchForValue(root.Right, valueToSearch);
+			//if the value is greater than the current root's value, go right
+			if (root.Value < valueToSearch) return SearchForValue(root.Right, valueToSearch);
+			else return SearchForValue(root.Left, valueToSearch);		
 		}
 
 		public static void AddRestOfSubtree(Node root)
 		{
 			if (root == null) return;
+
 			//add value to the list
 			foundTree.Add(root.Value);
 			AddRestOfSubtree(root.Left);
