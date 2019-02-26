@@ -25,7 +25,7 @@ namespace PrintVerticalBT
 			node4.Right = node5;
 			node5.Right = node6;
 
-
+			Vertical(node1, 0);
 		}
 
 		public static void Vertical(Node root, int level)
@@ -33,7 +33,7 @@ namespace PrintVerticalBT
 			if (root == null) return;
 			Queue<Layer> q = new Queue<Layer>();
 
-			var vertical = new Dictionary<int, List<Node>>();
+			var vertical = new Dictionary<int, List<int>>();
 
 			q.Enqueue(new Layer(0, root));
 
@@ -46,24 +46,32 @@ namespace PrintVerticalBT
 				//if the dictionary has that key, add the other nodes found at that HD
 				if (vertical.ContainsKey(HD))
 				{
-					vertical[HD].Add(root);
+					vertical[HD].Add(root.Value);
 				}
 				else
 				{
-					vertical.Add(HD, new List<Node> { root });
+					vertical.Add(HD, new List<int> { root.Value });
 				}
 
-				if (root.Left != null) 
+				if (tnode.Left != null) 
 				{
-					q.Enqueue(new Layer(HD - 1, root.Left));
+					q.Enqueue(new Layer(HD - 1, tnode.Left));
 				}
 
-				if (root.Right != null)
+				if (tnode.Right != null)
 				{
-					q.Enqueue(new Layer(HD + 1, root.Right));
+					q.Enqueue(new Layer(HD + 1, tnode.Right));
 				}
 			}
 
+			foreach (KeyValuePair<int, List<int>> entry in vertical)
+			{
+				Console.WriteLine($"Key: {entry.Key}");
+				foreach (var nodes in entry.Value)
+				{
+					Console.WriteLine($"{nodes}");
+				}
+			}
 		}
 	}
 }
