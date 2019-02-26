@@ -46,11 +46,11 @@ namespace PrintVerticalBT
 				//if the dictionary has that key, add the other nodes found at that HD
 				if (vertical.ContainsKey(HD))
 				{
-					vertical[HD].Add(root.Value);
+					vertical[HD].Add(tnode.Value);
 				}
 				else
 				{
-					vertical.Add(HD, new List<int> { root.Value });
+					vertical.Add(HD, new List<int> { tnode.Value });
 				}
 
 				if (tnode.Left != null) 
@@ -67,7 +67,7 @@ namespace PrintVerticalBT
 			foreach (KeyValuePair<int, List<int>> entry in vertical)
 			{
 				Console.WriteLine($"Key: {entry.Key}");
-				foreach (var nodes in entry.Value)
+				foreach (int nodes in entry.Value)
 				{
 					Console.WriteLine($"{nodes}");
 				}
