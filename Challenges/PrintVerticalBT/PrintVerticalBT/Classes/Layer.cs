@@ -4,6 +4,7 @@ using System.Text;
 
 namespace PrintVerticalBT.Classes
 {
+	//
 	public class Layer
 	{
 		public int HD { get; set; }

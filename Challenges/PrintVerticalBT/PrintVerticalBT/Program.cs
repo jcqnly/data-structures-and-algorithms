@@ -25,10 +25,52 @@ namespace PrintVerticalBT
 			node4.Right = node5;
 			node5.Right = node6;
 
-			Vertical(node1, 0);
+			//VerticalWExtraClass(node1, 0);
+			VerticalNoExtraClass(node1, 0);
 		}
 
-		public static void Vertical(Node root, int level)
+		/// <summary>
+		/// Figures out the vertical traversal of a BT using only what comes with the language
+		/// </summary>
+		/// <param name="root"></param>
+		/// <param name="level"></param>
+		public static void VerticalNoExtraClass(Node root, int level)
+		{
+			if (root == null) return;
+			//need to declare HD and tempNode outside of the while loop because of scoping
+			int HD = 0;
+			Node tempNode = null;
+			//this queue is needed for BFS traversal
+			Queue<Dictionary<int, Node>> q = new Queue<Dictionary<int, Node>>();
+
+			var vertical = new List<List<int>>();
+
+			q.Enqueue(new Dictionary<int, Node> { { 0, root } });
+
+			while (q.Count > 0)
+			{
+				Dictionary<int, Node> temp = q.Dequeue();
+				foreach (KeyValuePair<int, Node> pair in temp)
+				{
+					HD = pair.Key;
+					tempNode = temp[temp.Count - 1];
+				}
+
+				//if the dictionary doesn't have the key, add it
+				if ()
+				{
+
+				}
+
+			}
+		}
+
+		/// <summary>
+		/// Figures out the Vertical Traversal of a BT, but uses an extra class called Layers
+		/// </summary>
+		/// <param name="root">the starting point</param>
+		/// <param name="level">the starting level of the starting point, which starts at 0</param>
+		public static void VerticalWExtraClass(Node root, int level)
 		{
 			if (root == null) return;
 			Queue<Layer> q = new Queue<Layer>();
