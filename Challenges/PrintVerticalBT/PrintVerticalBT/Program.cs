@@ -43,25 +43,54 @@ namespace PrintVerticalBT
 			//this queue is needed for BFS traversal
 			Queue<Dictionary<int, Node>> q = new Queue<Dictionary<int, Node>>();
 
-			var vertical = new List<List<int>>();
+			var vertical = new Dictionary<int, List<int>>();
+			//so we can return a list of values:
+			var results = new List<List<int>>();
 
 			q.Enqueue(new Dictionary<int, Node> { { 0, root } });
 
 			while (q.Count > 0)
 			{
 				Dictionary<int, Node> temp = q.Dequeue();
+
+				//only way I could figure out how to grab the key and value
 				foreach (KeyValuePair<int, Node> pair in temp)
 				{
 					HD = pair.Key;
-					tempNode = temp[temp.Count - 1];
+					tempNode = temp[HD];
 				}
 
 				//if the dictionary doesn't have the key, add it
-				if ()
+				if (vertical.ContainsKey(HD))
 				{
-
+					vertical[HD].Add(tempNode.Value);
+				}
+				else
+				{
+					vertical.Add(HD, new List<int> { tempNode.Value });
 				}
 
+				if (tempNode.Left != null)
+				{
+					q.Enqueue(new Dictionary<int, Node> { { HD - 1, tempNode.Left } });
+				}
+
+				if (tempNode.Right != null)
+				{
+					q.Enqueue(new Dictionary<int, Node> { { HD + 1, tempNode.Right} });
+				}
+			}
+
+			foreach (KeyValuePair<int, List<int>> entry in vertical)
+			{
+				var innerList = new List<int>();
+				foreach (int nodes in entry.Value)
+				{
+					Console.Write($" {nodes} ");
+					innerList.Add(nodes);
+				}
+				Console.WriteLine();
+				results.Add(innerList);
 			}
 		}
 
